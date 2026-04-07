@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zingsite — Mumbai's Web Design Agency</title>
+<title>Zingsite — Modern Web Design for Small Businesses</title>
 <meta name="description" content="We build modern, fast, and beautiful websites that help small businesses in Mumbai go online and grow their customer base.">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -78,6 +78,14 @@
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
+  }
+  
+  /* Custom logo image extracted from the provided link */
+  .logo-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
   }
 
   .nav-links {
@@ -471,76 +479,6 @@
     flex-shrink: 0;
   }
 
-  /* PORTFOLIO */
-  .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  .portfolio-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    text-decoration: none;
-    color: var(--white);
-    transition: all 0.3s;
-    display: block;
-  }
-
-  .portfolio-card:hover {
-    border-color: rgba(0,217,255,0.4);
-    box-shadow: 0 0 30px rgba(0,217,255,0.1);
-    transform: translateY(-4px);
-  }
-
-  .portfolio-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.4s;
-    display: block;
-    background: var(--border);
-  }
-
-  .portfolio-card:hover .portfolio-img { transform: scale(1.08); }
-
-  .portfolio-img-wrap {
-    overflow: hidden;
-    height: 200px;
-    background: linear-gradient(135deg, var(--blue-dim), transparent);
-  }
-
-  .portfolio-info {
-    padding: 1.25rem 1.5rem;
-  }
-
-  .portfolio-info h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-  }
-
-  .portfolio-info p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    margin-bottom: 0.75rem;
-  }
-
-  .portfolio-link {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--blue);
-    transition: gap 0.2s;
-  }
-
-  .portfolio-card:hover .portfolio-link { gap: 0.7rem; }
-
   /* ABOUT */
   .about-grid {
     display: grid;
@@ -779,7 +717,6 @@
     .hero-cards { max-width: 400px; }
     .pricing-grid { grid-template-columns: 1fr; }
     .pricing-card.featured { transform: none; }
-    .portfolio-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     .nav-links { display: none; }
@@ -818,12 +755,12 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <div class="logo-icon">⚡</div>
+      <!-- Extracted logo image from provided link -->
+      <img src="https://zingsite-smgnvcsu.manus.space/logo.png" alt="Zingsite Logo" class="logo-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%2300d9ff%22/%3E%3Ctext x=%2250%22 y=%2265%22 text-anchor=%22middle%22 fill=%22%23000%22 font-size=%2240%22 font-weight=%22bold%22%3EZ%3C/text%3E%3C/svg%3E';">
       Zingsite
     </a>
     <ul class="nav-links">
       <li><a href="#services" onclick="closeMenu()">Services</a></li>
-      <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
       <li><a href="#about" onclick="closeMenu()">About</a></li>
       <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
@@ -834,7 +771,6 @@
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#services" onclick="closeMenu()">Services</a>
-    <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
     <a href="#about" onclick="closeMenu()">About</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
     <a href="https://wa.me/918828685342?text=Hi%20Zingsite!%20I'm%20interested%20in%20your%20web%20design%20services." target="_blank" class="btn btn-primary">💬 Chat on WhatsApp</a>
@@ -989,79 +925,34 @@
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section id="portfolio">
-  <div class="container">
-    <div class="section-header fade-in">
-      <h2>Our Recent Work</h2>
-      <p>Check out some of the amazing websites we've built for local businesses in Mumbai.</p>
-    </div>
-
-    <div class="portfolio-grid">
-      <a href="https://localbizweb-zoj8nbuy.manus.space/" target="_blank" class="portfolio-card fade-in">
-        <div class="portfolio-img-wrap">
-          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663489663530/SMGNvcsuA8JQM87Y7wSCbt/1000063814_4e9d9c8f.jpg" alt="The Bigg Small Cafe" class="portfolio-img">
-        </div>
-        <div class="portfolio-info">
-          <h3>The Bigg Small Cafe</h3>
-          <p>Modern cafe website with menu showcase and reservation system.</p>
-          <div class="portfolio-link">View Project →</div>
-        </div>
-      </a>
-
-      <a href="https://badnaamcafe-nhkcadk8.manus.space/" target="_blank" class="portfolio-card fade-in fade-in-delay-1">
-        <div class="portfolio-img-wrap">
-          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663489663530/SMGNvcsuA8JQM87Y7wSCbt/IMG_20260406_003724_c0c2c7a0.jpg" alt="BadNaam Cafe" class="portfolio-img">
-        </div>
-        <div class="portfolio-info">
-          <h3>BadNaam Cafe</h3>
-          <p>Legendary taste cafe with vibrant branding and online ordering.</p>
-          <div class="portfolio-link">View Project →</div>
-        </div>
-      </a>
-
-      <a href="https://localbizweb-zoj8nbuy.manus.space/" target="_blank" class="portfolio-card fade-in fade-in-delay-2">
-        <div class="portfolio-img-wrap">
-          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663489663530/SMGNvcsuA8JQM87Y7wSCbt/IMG_20260406_003716_c0c2c7a0.jpg" alt="Hotel Mahalaxmi Garden" class="portfolio-img">
-        </div>
-        <div class="portfolio-info">
-          <h3>Hotel Mahalaxmi Garden</h3>
-          <p>Premium restaurant website with elegant design and booking system.</p>
-          <div class="portfolio-link">View Project →</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
+<!-- ABOUT (enhanced with extracted content) -->
 <section id="about" class="section-alt">
   <div class="container">
     <div class="about-grid">
       <div class="fade-in">
         <h2>About Zingsite</h2>
-        <p>We're passionate web designers and developers based in Mumbai. We believe that every business, big or small, deserves a professional online presence.</p>
-        <p>Our mission is to help local businesses go online fast and grow their customer base through beautiful, modern websites that actually work.</p>
+        <p>We're a Mumbai-based web design agency passionate about helping local businesses go online and reach more customers. With years of experience building modern websites, we understand what it takes to create a digital presence that works.</p>
+        <p>From startups to established businesses, we've helped dozens of companies in Mumbai build beautiful, fast, and effective websites that drive real results.</p>
         <div class="about-features">
           <div class="about-feature">
             <div class="feature-icon">⚡</div>
             <div>
-              <h3>Fast Turnaround</h3>
-              <p style="color:var(--muted); font-size:0.85rem;">We deliver your website within 5–7 working days without compromising quality.</p>
+              <h3>Modern Design</h3>
+              <p>Beautiful, contemporary websites that stand out</p>
             </div>
           </div>
           <div class="about-feature">
             <div class="feature-icon">🌐</div>
             <div>
-              <h3>Responsive Design</h3>
-              <p style="color:var(--muted); font-size:0.85rem;">Every website works perfectly on mobile, tablet, and desktop — always.</p>
+              <h3>Mobile First</h3>
+              <p>Fully responsive design that works on all devices</p>
             </div>
           </div>
           <div class="about-feature">
-            <div class="feature-icon">🤝</div>
+            <div class="feature-icon">⚡</div>
             <div>
-              <h3>Ongoing Support</h3>
-              <p style="color:var(--muted); font-size:0.85rem;">We're here after launch — updates, edits, and help via WhatsApp whenever you need.</p>
+              <h3>Lightning Fast</h3>
+              <p>Optimized for speed and search engine rankings</p>
             </div>
           </div>
         </div>
@@ -1088,8 +979,8 @@
 <section id="contact">
   <div class="container">
     <div class="section-header fade-in">
-      <h2>Let's Work Together</h2>
-      <p>Have a project in mind? Get in touch and let's create something amazing for your business.</p>
+      <h2>Ready to Get Started?</h2>
+      <p>Let's talk about your project and how we can help your business grow online.</p>
     </div>
 
     <div class="contact-grid">
@@ -1142,7 +1033,7 @@
   <div class="container">
     <div class="footer-inner">
       <a href="#" class="footer-logo">
-        <div class="logo-icon" style="width:28px;height:28px;font-size:0.9rem;">⚡</div>
+        <img src="https://zingsite-smgnvcsu.manus.space/logo.png" alt="Zingsite Logo" style="width:28px; height:28px; object-fit:contain;" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%2300d9ff%22/%3E%3Ctext x=%2250%22 y=%2265%22 text-anchor=%22middle%22 fill=%22%23000%22 font-size=%2240%22 font-weight=%22bold%22%3EZ%3C/text%3E%3C/svg%3E';">
         Zingsite
       </a>
       <p class="footer-copy">© 2026 Zingsite. All rights reserved.</p>
