@@ -5,18 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zingsite - Web Design Mumbai</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+        body {
             font-family: Arial, sans-serif;
             background: #0a0e17;
             color: white;
-            text-align: center;
         }
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 32px;
+            margin: 50px 0 30px;
+            text-align: center;
+        }
+        .blue {
+            color: #00d9ff;
         }
         .btn {
             display: inline-block;
@@ -27,136 +41,293 @@
             border-radius: 30px;
             font-weight: bold;
             margin: 10px;
+            border: none;
+            cursor: pointer;
         }
         .btn-outline {
             background: transparent;
             border: 1px solid #00d9ff;
             color: #00d9ff;
         }
+        .btn-outline:hover {
+            background: rgba(0, 217, 255, 0.1);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3);
+        }
+        
+        /* PRICING GRID - FIXED ALIGNMENT */
+        .pricing-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
         .pricing-card {
             background: #121826;
             border-radius: 20px;
             padding: 30px;
-            margin: 20px;
-            display: inline-block;
-            width: 280px;
-            vertical-align: top;
+            width: 320px;
             border: 1px solid #2d3748;
+            transition: all 0.3s;
         }
-        .featured {
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+        }
+        .pricing-card.featured {
             border: 2px solid #00d9ff;
-            transform: scale(1.02);
+            position: relative;
         }
+        .popular-tag {
+            background: #00d9ff;
+            color: black;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .setup-price {
+            font-size: 14px;
+            color: #a0aec0;
+            margin-bottom: 10px;
+        }
+        .setup-price strong {
+            font-size: 28px;
+            color: white;
+        }
+        .monthly-price {
+            font-size: 14px;
+            color: #a0aec0;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #2d3748;
+        }
+        .monthly-price strong {
+            font-size: 32px;
+            color: #00d9ff;
+        }
+        .features {
+            list-style: none;
+            text-align: left;
+            margin: 20px 0;
+        }
+        .features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .features li::before {
+            content: "✓";
+            color: #00d9ff;
+            font-weight: bold;
+        }
+        .card-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            padding: 12px;
+        }
+        
+        /* REEL SECTION */
+        .reel-section {
+            background: #121826;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .reel-prices {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .reel-price {
+            text-align: center;
+        }
+        .reel-amount {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00d9ff;
+        }
+        
+        /* TERMS BANNER */
         .terms-banner {
             background: #00d9ff;
             color: black;
-            padding: 20px;
+            padding: 25px;
             border-radius: 16px;
             margin: 40px 0;
+            text-align: center;
         }
         .terms-banner a {
             color: black;
             font-weight: bold;
         }
-        h1 { font-size: 48px; }
-        .blue { color: #00d9ff; }
+        
+        /* ABOUT SECTION */
+        .about-text {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            color: #a0aec0;
+            line-height: 1.6;
+        }
+        
+        /* CONTACT SECTION */
+        .contact-section {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        /* FOOTER */
+        footer {
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid #2d3748;
+            text-align: center;
+        }
+        footer a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #a0aec0;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            .pricing-card { width: 100%; max-width: 350px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>Your Business Deserves a Website That <span class="blue">Works</span></h1>
+        <p>Mumbai-based web design agency. Modern, fast, beautiful websites for small businesses.</p>
+        <a href="https://wa.me/918828685342" class="btn">💬 Chat on WhatsApp</a>
+        <a href="#pricing" class="btn btn-outline">View Pricing →</a>
+    </div>
 
-    <!-- HERO -->
-    <h1>Your Business Deserves a Website That <span class="blue">Works</span></h1>
-    <p style="font-size: 18px; color: #a0aec0;">Mumbai-based web design agency. Modern, fast, beautiful websites for small businesses.</p>
-    
-    <a href="https://wa.me/918828685342" class="btn">💬 Chat on WhatsApp</a>
-    <a href="#pricing" class="btn btn-outline">View Pricing →</a>
-
-    <!-- PRICING -->
-    <h2 style="margin-top: 60px;">Simple, Transparent Pricing</h2>
-
-    <div id="pricing">
-        <!-- Basic -->
+    <!-- PRICING SECTION - FIXED ALIGNMENT -->
+    <h2>Simple, Transparent Pricing</h2>
+    <div class="pricing-grid" id="pricing">
+        <!-- BASIC CARD -->
         <div class="pricing-card">
             <h3>Basic</h3>
-            <p><strong style="font-size: 28px;">₹5,000</strong> setup</p>
-            <p><strong style="font-size: 32px; color:#00d9ff;">₹3,000</strong> /month</p>
-            <ul style="text-align: left; list-style: none; padding: 0;">
-                <li>✓ Responsive Design</li>
-                <li>✓ 5 Pages</li>
-                <li>✓ Contact Form</li>
-                <li>✓ Basic SEO</li>
-                <li>✓ 3 Edits/month</li>
-                <li>✓ Free Domain (Year 1)</li>
+            <div class="setup-price"><strong>₹5,000</strong> setup</div>
+            <div class="monthly-price"><strong>₹3,000</strong> /month</div>
+            <ul class="features">
+                <li>Responsive Design</li>
+                <li>5 Pages</li>
+                <li>Contact Form</li>
+                <li>Basic SEO</li>
+                <li>3 Edits/month</li>
+                <li>Free Domain (Year 1)</li>
+                <li>SSL Certificate</li>
             </ul>
-            <a href="https://wa.me/918828685342?text=I want Basic plan" class="btn btn-outline" style="display: block;">Select Plan →</a>
+            <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Basic%20plan" class="btn btn-outline card-btn">Get Started →</a>
         </div>
 
-        <!-- Standard -->
+        <!-- STANDARD CARD (FEATURED) -->
         <div class="pricing-card featured">
-            <span style="background:#00d9ff; color:black; padding:4px 12px; border-radius:20px;">⭐ Most Popular</span>
+            <div class="popular-tag">⭐ Most Popular</div>
             <h3>Standard</h3>
-            <p><strong style="font-size: 28px;">₹9,000</strong> setup</p>
-            <p><strong style="font-size: 32px; color:#00d9ff;">₹5,000</strong> /month</p>
-            <ul style="text-align: left; list-style: none; padding: 0;">
-                <li>✓ Everything in Basic</li>
-                <li>✓ 10 Pages + Blog</li>
-                <li>✓ Advanced SEO</li>
-                <li>✓ Email Support</li>
-                <li>✓ 5 Edits/month</li>
-                <li>✓ Priority Support</li>
+            <div class="setup-price"><strong>₹9,000</strong> setup</div>
+            <div class="monthly-price"><strong>₹5,000</strong> /month</div>
+            <ul class="features">
+                <li>Everything in Basic</li>
+                <li>10 Pages + Blog</li>
+                <li>Advanced SEO</li>
+                <li>Email Support</li>
+                <li>5 Edits/month</li>
+                <li>Priority Response</li>
             </ul>
-            <a href="https://wa.me/918828685342?text=I want Standard plan" class="btn" style="display: block;">Select Plan →</a>
+            <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Standard%20plan" class="btn card-btn">Get Started →</a>
         </div>
 
-        <!-- Premium -->
+        <!-- PREMIUM CARD -->
         <div class="pricing-card">
             <h3>Premium</h3>
-            <p><strong style="font-size: 28px;">₹12,000</strong> setup</p>
-            <p><strong style="font-size: 32px; color:#00d9ff;">₹6,500</strong> /month</p>
-            <ul style="text-align: left; list-style: none; padding: 0;">
-                <li>✓ Everything in Standard</li>
-                <li>✓ Unlimited Pages</li>
-                <li>✓ E-commerce Ready</li>
-                <li>✓ Analytics & Reports</li>
-                <li>✓ 10 Edits/month</li>
-                <li>✓ Priority Support</li>
+            <div class="setup-price"><strong>₹12,000</strong> setup</div>
+            <div class="monthly-price"><strong>₹6,500</strong> /month</div>
+            <ul class="features">
+                <li>Everything in Standard</li>
+                <li>Unlimited Pages</li>
+                <li>E-commerce Ready</li>
+                <li>Analytics & Reports</li>
+                <li>10 Edits/month</li>
+                <li>Priority Support</li>
             </ul>
-            <a href="https://wa.me/918828685342?text=I want Premium plan" class="btn btn-outline" style="display: block;">Select Plan →</a>
+            <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Premium%20plan" class="btn btn-outline card-btn">Get Started →</a>
         </div>
     </div>
 
-    <!-- REEL ADD-ON -->
-    <div style="background:#121826; border-radius:20px; padding:30px; margin: 40px 0;">
+    <!-- REEL EDITING ADD-ON -->
+    <div class="reel-section">
         <h3>🎬 Reel Editing Add-on</h3>
-        <p>You shoot, we edit. SEO captions + thumbnails included.</p>
-        <p><strong style="color:#00d9ff; font-size:24px;">₹2,000</strong>/month (4 reels) &nbsp;&nbsp;|&nbsp;&nbsp; <strong style="color:#00d9ff; font-size:24px;">₹3,500</strong>/month (8 reels)</p>
+        <p>You shoot, we edit. SEO captions + thumbnails included free.</p>
+        <div class="reel-prices">
+            <div class="reel-price">
+                <div class="reel-amount">₹2,000</div>
+                <div>/month · 4 reels</div>
+            </div>
+            <div class="reel-price">
+                <div class="reel-amount">₹3,500</div>
+                <div>/month · 8 reels</div>
+            </div>
+        </div>
     </div>
 
-    <!-- TERMS & CONDITIONS - PROMINENT -->
+    <!-- TERMS & CONDITIONS BANNER - PROMINENT -->
     <div class="terms-banner">
-        <strong>📜 IMPORTANT: Terms & Conditions Apply</strong><br><br>
-        By using Zingsite services, you agree to our payment terms, cancellation policy, and service terms.<br><br>
-        <a href="https://fernandesbenson876-coder.github.io/Zingsite-T-C/" target="_blank">👉 Read Full Terms & Client Agreement Here 👈</a>
+        <strong style="font-size: 18px;">📜 IMPORTANT: Terms & Conditions Apply</strong>
+        <p style="margin: 15px 0 0;">By using Zingsite services, you agree to our payment terms, cancellation policy, and service terms.</p>
+        <p style="margin: 15px 0 0;"><a href="https://fernandesbenson876-coder.github.io/Zingsite-T-C/" target="_blank">👉 Read Full Terms & Client Agreement Here 👈</a></p>
     </div>
 
-    <!-- ABOUT -->
+    <!-- ABOUT SECTION -->
     <h2>About Zingsite</h2>
-    <p style="max-width: 700px; margin: 0 auto; color: #a0aec0;">We're a Mumbai-based web design agency helping local businesses go online. 50+ websites built, 100+ happy clients. 24/7 WhatsApp support.</p>
+    <div class="about-text">
+        <p>We're a Mumbai-based web design agency passionate about helping local businesses go online and reach more customers.</p>
+        <p style="margin-top: 15px;">50+ websites built | 100+ happy clients | 24/7 WhatsApp support</p>
+    </div>
 
-    <!-- CONTACT -->
-    <h2 style="margin-top: 60px;">Ready to Get Started?</h2>
-    <p>Before signing up, please review our <a href="https://fernandesbenson876-coder.github.io/Zingsite-T-C/" style="color:#00d9ff;">Terms & Client Agreement</a></p>
-    
-    <a href="https://wa.me/918828685342" class="btn">💬 Chat on WhatsApp</a>
+    <!-- CONTACT SECTION -->
+    <div class="contact-section">
+        <h2>Ready to Get Started?</h2>
+        <p style="color: #a0aec0; margin-bottom: 20px;">Before signing up, please review our <a href="https://fernandesbenson876-coder.github.io/Zingsite-T-C/" style="color: #00d9ff;">Terms & Client Agreement</a></p>
+        <a href="https://wa.me/918828685342" class="btn">💬 Chat on WhatsApp</a>
+    </div>
 
     <!-- FOOTER -->
-    <footer style="margin-top: 60px; padding: 30px; border-top: 1px solid #2d3748;">
+    <footer>
         <p>© 2026 Zingsite. All rights reserved. | Mumbai, India</p>
-        <p><a href="https://fernandesbenson876-coder.github.io/Zingsite-T-C/" style="color:#00d9ff;">📜 Terms & Agreement</a></p>
+        <p style="margin-top: 10px;"><a href="https://fernandesbenson876-coder.github.io/Zingsite-T-C/" target="_blank">📜 View Full Terms & Client Agreement</a></p>
     </footer>
-
 </div>
 
 </body>
