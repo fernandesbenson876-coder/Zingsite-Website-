@@ -537,6 +537,14 @@
 
     .social-links a:hover { color: #00d9ff; }
 
+    /* Portfolio Card Image */
+    .portfolio-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .nav-links, .nav-wa { display: none; }
@@ -669,54 +677,17 @@
       </div>
     </div>
 
-<!-- PORTFOLIO SECTION -->
-<section id="portfolio" style="padding: 80px 0;">
-  <div class="container">
-    <div class="section-header">
-      <h2>Our Recent Work</h2>
-      <p>Real websites built for Mumbai businesses</p>
-    </div>
-    
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;" id="portfolioGrid">
-      <!-- Portfolio items load here -->
-    </div>
-  </div>
-</section>
-
-<script>
-  const portfolioItems = [
-    {
-      name: "Badnaam Cafe",
-      type: "Restaurant Website",
-      image: "https://placehold.co/600x400/f97316/ffffff?text=Badnaam+Cafe",
-      link: "https://fernandesbenson876-coder.github.io/Badnaam-Cafe-/",
-      bgColor: "#f97316"
-    }
-  ];
-
-  const grid = document.getElementById("portfolioGrid");
-  if (grid) {
-    portfolioItems.forEach(item => {
-      const card = document.createElement("div");
-      card.style.cssText = "background: #121826; border-radius: 24px; overflow: hidden; border: 1px solid #2d3748; width: 320px; transition: all 0.3s; cursor: pointer;";
-      card.onmouseenter = () => { card.style.transform = "translateY(-8px)"; card.style.borderColor = "#00d9ff"; };
-      card.onmouseleave = () => { card.style.transform = "translateY(0)"; card.style.borderColor = "#2d3748"; };
-      card.onclick = () => window.open(item.link, "_blank");
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio" style="padding: 80px 0 40px 0;">
+      <div class="section-header">
+        <h2>Our Recent Work</h2>
+        <p>Real websites built for Mumbai businesses</p>
+      </div>
       
-      card.innerHTML = `
-        <div style="background: ${item.bgColor || '#1a1f2e'}; height: 200px; display: flex; align-items: center; justify-content: center;">
-          <span style="font-size: 3rem;">🌐</span>
-        </div>
-        <div style="padding: 20px;">
-          <span style="background: rgba(0, 217, 255, 0.15); color: #00d9ff; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600;">${item.type}</span>
-          <h3 style="margin: 12px 0 8px; font-size: 1.3rem;">${item.name}</h3>
-          <p style="color: #a0aec0; font-size: 0.85rem;">View Live Site →</p>
-        </div>
-      `;
-      grid.appendChild(card);
-    });
-  }
-</script>
+      <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;" id="portfolioGrid">
+        <!-- Portfolio items load here -->
+      </div>
+    </section>
 
     <!-- TERMS BANNER -->
     <div class="terms-banner">
@@ -848,6 +819,38 @@
     }
     const text = `Hi Zingsite!%0A%0AName: ${name}%0AEmail: ${email}%0AMessage: ${message}%0A%0AI'm interested in your web design services.`;
     window.open(`https://wa.me/918828685342?text=${text}`, '_blank');
+  }
+
+  // Portfolio Section - Dynamic with your image
+  const portfolioItems = [
+    {
+      name: "Badnaam Cafe",
+      type: "Restaurant Website",
+      image: "IMG_20260408_084228.jpg",
+      link: "https://fernandesbenson876-coder.github.io/Badnaam-Cafe-/",
+      bgColor: "#f97316"
+    }
+  ];
+
+  const grid = document.getElementById("portfolioGrid");
+  if (grid) {
+    portfolioItems.forEach(item => {
+      const card = document.createElement("div");
+      card.style.cssText = "background: #121826; border-radius: 24px; overflow: hidden; border: 1px solid #2d3748; width: 320px; transition: all 0.3s; cursor: pointer;";
+      card.onmouseenter = () => { card.style.transform = "translateY(-8px)"; card.style.borderColor = "#00d9ff"; };
+      card.onmouseleave = () => { card.style.transform = "translateY(0)"; card.style.borderColor = "#2d3748"; };
+      card.onclick = () => window.open(item.link, "_blank");
+      
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" class="portfolio-img" onerror="this.src='https://placehold.co/600x400/f97316/ffffff?text=Badnaam+Cafe'">
+        <div style="padding: 20px;">
+          <span style="background: rgba(0, 217, 255, 0.15); color: #00d9ff; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600;">${item.type}</span>
+          <h3 style="margin: 12px 0 8px; font-size: 1.3rem;">${item.name}</h3>
+          <p style="color: #a0aec0; font-size: 0.85rem;">View Live Site →</p>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
   }
 </script>
 </body>
