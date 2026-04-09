@@ -204,6 +204,41 @@
       margin-bottom: 40px;
     }
 
+    /* Offer Banner */
+    .offer-banner {
+      background: linear-gradient(135deg, #f97316, #e65100);
+      border-radius: 60px;
+      padding: 14px 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
+    }
+    .offer-banner span:first-child {
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .offer-tag {
+      background: white;
+      color: #e65100;
+      padding: 6px 18px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s;
+    }
+    .offer-tag:hover {
+      transform: scale(1.05);
+    }
+
     /* Section Styles */
     section { padding: 80px 0; }
 
@@ -344,7 +379,7 @@
       color: white;
     }
 
-    .monthly-price, .annual-price {
+    .monthly-price, .annual-price, .semi-annual-price {
       font-size: 0.9rem;
       color: #a0aec0;
       margin-bottom: 24px;
@@ -352,20 +387,27 @@
       border-bottom: 1px solid #2d3748;
     }
 
-    .monthly-price strong, .annual-price strong {
+    .monthly-price strong, .annual-price strong, .semi-annual-price strong {
       font-size: 2rem;
       color: #00d9ff;
     }
 
-    .annual-price {
+    .annual-price, .semi-annual-price {
       display: none;
     }
 
-    .pricing-card.show-annual .monthly-price {
+    .pricing-card.show-annual .monthly-price,
+    .pricing-card.show-annual .semi-annual-price {
       display: none;
     }
-
     .pricing-card.show-annual .annual-price {
+      display: block;
+    }
+    .pricing-card.show-semi .monthly-price,
+    .pricing-card.show-semi .annual-price {
+      display: none;
+    }
+    .pricing-card.show-semi .semi-annual-price {
       display: block;
     }
 
@@ -383,6 +425,42 @@
     }
 
     .features li i { color: #00d9ff; width: 20px; }
+
+    /* Offer Cards */
+    .offers-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin: 40px 0;
+    }
+    .offer-card {
+      background: #121826;
+      border-radius: 20px;
+      padding: 24px;
+      width: 280px;
+      text-align: center;
+      border: 1px solid #2d3748;
+      transition: all 0.3s;
+    }
+    .offer-card:hover {
+      border-color: #f97316;
+      transform: translateY(-5px);
+    }
+    .offer-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .offer-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .offer-desc {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
 
     /* Reel Add-on */
     .reel-card {
@@ -421,6 +499,16 @@
       font-size: 1.6rem;
       font-weight: 700;
       color: #00d9ff;
+    }
+
+    /* Bundle Offer */
+    .bundle-card {
+      background: linear-gradient(135deg, #1e2b6e, #0f1a3a);
+      border-radius: 20px;
+      padding: 28px;
+      margin: 30px 0;
+      text-align: center;
+      border: 1px solid #00d9ff;
     }
 
     /* Terms Banner */
@@ -582,6 +670,31 @@
       margin-bottom: 16px;
     }
 
+    /* Floating Offer */
+    .floating-offer {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      background: #f97316;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      animation: pulse 1.5s infinite;
+    }
+    .floating-offer span {
+      background: white;
+      color: #f97316;
+      padding: 2px 10px;
+      border-radius: 30px;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .nav-links, .nav-wa { display: none; }
@@ -593,6 +706,7 @@
       .reel-prices { justify-content: center; }
       .footer-inner { flex-direction: column; text-align: center; }
       .logo-img { height: 35px; }
+      .floating-offer { bottom: 20px; right: 10px; font-size: 0.8rem; padding: 8px 12px; }
     }
   </style>
 </head>
@@ -606,6 +720,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="#pricing">💰 Pricing</a></li>
+      <li><a href="#offers">🎁 Offers</a></li>
       <li><a href="#about">📌 About</a></li>
       <li><a href="#portfolio">🎨 Portfolio</a></li>
       <li><a href="#contact">📞 Contact</a></li>
@@ -616,6 +731,7 @@
   </div>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#pricing" onclick="closeMenu(); smoothScroll('#pricing')">💰 Pricing</a>
+    <a href="#offers" onclick="closeMenu(); smoothScroll('#offers')">🎁 Offers</a>
     <a href="#about" onclick="closeMenu(); smoothScroll('#about')">📌 About</a>
     <a href="#portfolio" onclick="closeMenu(); smoothScroll('#portfolio')">🎨 Portfolio</a>
     <a href="#contact" onclick="closeMenu(); smoothScroll('#contact')">📞 Contact</a>
@@ -624,6 +740,11 @@
     <a href="https://www.instagram.com/zingsite" target="_blank" onclick="closeMenu()">📸 Instagram</a>
   </div>
 </nav>
+
+<!-- Floating Offer Button -->
+<a href="https://wa.me/918828685342?text=Hi!%20I%20want%20to%20claim%20the%2020%25%20OFF%20offer!" target="_blank" class="floating-offer">
+  🔥 20% OFF <span>Claim</span>
+</a>
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -634,6 +755,69 @@
     <div class="hero-buttons">
       <a href="https://wa.me/918828685342?text=Hi%20Zingsite!%20I'm%20interested%20in%20your%20services." target="_blank" class="btn-primary btn-large">💬 Chat on WhatsApp</a>
       <a href="#pricing" class="btn-outline btn-large" onclick="smoothScroll('#pricing'); return false;">View Pricing →</a>
+    </div>
+    
+    <!-- HERO OFFER BANNER -->
+    <div class="offer-banner">
+      <span>🔥 LIMITED TIME OFFER 🔥</span>
+      <span>20% OFF setup fee for first 5 clients</span>
+      <a href="https://wa.me/918828685342?text=I%20want%20the%2020%25%20off%20offer!" target="_blank" class="offer-tag">Claim Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS SECTION -->
+<section id="offers" style="background: #0f1419;">
+  <div class="container">
+    <div class="section-header">
+      <h2>🎁 Exclusive Offers</h2>
+      <p>Limited time deals – grab them before they're gone!</p>
+    </div>
+    
+    <div class="offers-grid">
+      <!-- Discount Offer -->
+      <div class="offer-card">
+        <div class="offer-icon">🔥</div>
+        <div class="offer-title">20% OFF Setup</div>
+        <div class="offer-desc">First 5 clients get 20% off setup fee. Limited slots available!</div>
+        <a href="https://wa.me/918828685342?text=I%20want%20the%2020%25%20off%20setup%20offer!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Claim →</a>
+      </div>
+      
+      <!-- Bundle Offer -->
+      <div class="offer-card">
+        <div class="offer-icon">📦</div>
+        <div class="offer-title">Website + Reel Bundle</div>
+        <div class="offer-desc">Get Standard plan + 8 reels/month at ₹7,500/month (Save ₹1,000)</div>
+        <a href="https://wa.me/918828685342?text=I%20want%20the%20Website%20%2B%20Reel%20bundle%20offer!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Grab Bundle →</a>
+      </div>
+      
+      <!-- Referral Offer -->
+      <div class="offer-card">
+        <div class="offer-icon">👥</div>
+        <div class="offer-title">Refer & Earn</div>
+        <div class="offer-desc">Refer a friend, both get 1 month FREE on your next billing cycle.</div>
+        <a href="https://wa.me/918828685342?text=I%20want%20to%20refer%20someone%20to%20Zingsite!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Refer Now →</a>
+      </div>
+    </div>
+    
+    <!-- Semi-Annual & Annual Offer Banner -->
+    <div class="bundle-card">
+      <i class="fas fa-calendar-alt" style="font-size: 2rem; color: #00d9ff; margin-bottom: 12px; display: inline-block;"></i>
+      <h3 style="margin-bottom: 16px;">📅 Long Term Commitment? Bigger Savings!</h3>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px;">
+        <div>
+          <span style="font-size: 1.8rem; font-weight: 800;">6 Months</span>
+          <p style="color: #00d9ff; font-weight: 700;">+ 1 Month FREE</p>
+          <small>Pay for 6, get 7 months</small>
+        </div>
+        <div style="font-size: 2rem;">→</div>
+        <div>
+          <span style="font-size: 1.8rem; font-weight: 800;">12 Months</span>
+          <p style="color: #00d9ff; font-weight: 700;">+ 2 Months FREE</p>
+          <small>Pay for 12, get 14 months</small>
+        </div>
+      </div>
+      <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Semi-Annual%20or%20Annual%20plan%20with%20free%20months!" target="_blank" class="btn-primary" style="margin-top: 24px; display: inline-flex;">Claim Long Term Offer →</a>
     </div>
   </div>
 </section>
@@ -646,13 +830,17 @@
       <p>Choose the perfect package for your business. All plans include free domain for Year 1 + SSL certificate.</p>
     </div>
 
-    <!-- Billing Toggle -->
+    <!-- Billing Toggle - Updated with Semi-Annual -->
     <div class="pricing-toggle">
       <span class="toggle-label active" id="monthlyLabel">Monthly</span>
       <div class="toggle-switch" id="billingToggle">
         <div class="toggle-knob"></div>
       </div>
-      <span class="toggle-label" id="annualLabel">Annual <span class="save-badge">Save 10%</span></span>
+      <span class="toggle-label" id="semiAnnualLabel">6 Months <span class="save-badge">+1 Month Free</span></span>
+      <div class="toggle-switch" id="billingToggle2" style="margin-left: 5px;">
+        <div class="toggle-knob"></div>
+      </div>
+      <span class="toggle-label" id="annualLabel">12 Months <span class="save-badge">+2 Months Free</span></span>
     </div>
 
     <div class="pricing-grid">
@@ -661,7 +849,8 @@
         <div class="plan-name">Basic</div>
         <div class="setup-price"><strong>₹5,000</strong> setup</div>
         <div class="monthly-price"><strong>₹3,000</strong> /month</div>
-        <div class="annual-price"><strong>₹32,400</strong> /year</div>
+        <div class="semi-annual-price"><strong>₹16,200</strong> /6 months <span style="color:#00d9ff;">(+1 month free)</span></div>
+        <div class="annual-price"><strong>₹32,400</strong> /year <span style="color:#00d9ff;">(+2 months free)</span></div>
         <ul class="features">
           <li><i class="fas fa-check-circle"></i> Responsive Design</li>
           <li><i class="fas fa-check-circle"></i> 5 Pages</li>
@@ -679,7 +868,8 @@
         <div class="plan-name">Standard</div>
         <div class="setup-price"><strong>₹9,000</strong> setup</div>
         <div class="monthly-price"><strong>₹5,000</strong> /month</div>
-        <div class="annual-price"><strong>₹54,000</strong> /year</div>
+        <div class="semi-annual-price"><strong>₹27,000</strong> /6 months <span style="color:#00d9ff;">(+1 month free)</span></div>
+        <div class="annual-price"><strong>₹54,000</strong> /year <span style="color:#00d9ff;">(+2 months free)</span></div>
         <ul class="features">
           <li><i class="fas fa-check-circle"></i> Everything in Basic</li>
           <li><i class="fas fa-check-circle"></i> 10 Pages + Blog</li>
@@ -695,7 +885,8 @@
         <div class="plan-name">Premium</div>
         <div class="setup-price"><strong>₹12,000</strong> setup</div>
         <div class="monthly-price"><strong>₹6,500</strong> /month</div>
-        <div class="annual-price"><strong>₹70,200</strong> /year</div>
+        <div class="semi-annual-price"><strong>₹35,100</strong> /6 months <span style="color:#00d9ff;">(+1 month free)</span></div>
+        <div class="annual-price"><strong>₹70,200</strong> /year <span style="color:#00d9ff;">(+2 months free)</span></div>
         <ul class="features">
           <li><i class="fas fa-check-circle"></i> Everything in Standard</li>
           <li><i class="fas fa-check-circle"></i> Unlimited Pages</li>
@@ -723,6 +914,14 @@
           <div>/month · 8 reels</div>
         </div>
       </div>
+    </div>
+
+    <!-- Bundle Offer Details -->
+    <div class="bundle-card">
+      <i class="fas fa-rocket" style="font-size: 2rem; color: #00d9ff; margin-bottom: 12px; display: inline-block;"></i>
+      <h3 style="margin-bottom: 10px;">🎯 Bundle & Save ₹2,000/month</h3>
+      <p style="color: #a0aec0; margin-bottom: 16px;">Standard Website + 8 Reels = <strong style="color: #00d9ff; font-size: 1.5rem;">₹7,500/month</strong> (was ₹9,500)</p>
+      <a href="https://wa.me/918828685342?text=I%20want%20the%20Website%20%2B%20Reel%20bundle%20(₹7,500/month)!" target="_blank" class="btn-primary" style="display: inline-flex;">Get Bundle →</a>
     </div>
 
     <!-- PORTFOLIO SECTION -->
@@ -789,7 +988,7 @@
   </div>
 </section>
 
-<!-- CONTACT SECTION with Fixed Form -->
+<!-- CONTACT SECTION -->
 <section id="contact" style="background: #0f1419;">
   <div class="container">
     <div class="section-header">
@@ -840,31 +1039,26 @@
 </footer>
 
 <script>
-  // Smooth scroll function for menu links
+  // Smooth scroll function
   function smoothScroll(target) {
     const element = document.querySelector(target);
     if (element) {
       const offset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
   }
 
-  // Mobile menu toggle
   function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
+    document.getElementById('mobileMenu').classList.toggle('open');
   }
   
   function closeMenu() {
     document.getElementById('mobileMenu').classList.remove('open');
   }
 
-  // Attach smooth scroll to all nav links
+  // Attach smooth scroll to nav links
   document.querySelectorAll('.nav-links a, .hero-buttons a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -875,35 +1069,59 @@
     });
   });
 
-  // Billing toggle (Monthly/Annual)
-  let isAnnual = false;
-  const toggle = document.getElementById('billingToggle');
+  // Billing toggle logic (Monthly / Semi-Annual / Annual)
+  let billingMode = 'monthly'; // 'monthly', 'semi', 'annual'
   const monthlyLabel = document.getElementById('monthlyLabel');
+  const semiAnnualLabel = document.getElementById('semiAnnualLabel');
   const annualLabel = document.getElementById('annualLabel');
+  const toggle1 = document.getElementById('billingToggle');
+  const toggle2 = document.getElementById('billingToggle2');
   const cards = ['cardBasic', 'cardStandard', 'cardPremium'];
 
   function updateBilling() {
     cards.forEach(cardId => {
       const card = document.getElementById(cardId);
-      if (isAnnual) {
+      card.classList.remove('show-annual', 'show-semi');
+      if (billingMode === 'annual') {
         card.classList.add('show-annual');
-      } else {
-        card.classList.remove('show-annual');
+      } else if (billingMode === 'semi') {
+        card.classList.add('show-semi');
       }
     });
-    monthlyLabel.classList.toggle('active', !isAnnual);
-    annualLabel.classList.toggle('active', isAnnual);
-    toggle.classList.toggle('active', isAnnual);
+    monthlyLabel.classList.toggle('active', billingMode === 'monthly');
+    semiAnnualLabel.classList.toggle('active', billingMode === 'semi');
+    annualLabel.classList.toggle('active', billingMode === 'annual');
+    if (toggle1) toggle1.classList.toggle('active', billingMode !== 'monthly');
+    if (toggle2) toggle2.classList.toggle('active', billingMode === 'annual');
   }
 
-  if (toggle) {
-    toggle.addEventListener('click', () => {
-      isAnnual = !isAnnual;
+  if (toggle1) {
+    toggle1.addEventListener('click', () => {
+      if (billingMode === 'monthly') {
+        billingMode = 'semi';
+      } else if (billingMode === 'semi') {
+        billingMode = 'monthly';
+      } else {
+        billingMode = 'semi';
+      }
       updateBilling();
     });
   }
 
-  // Contact form with validation
+  if (toggle2) {
+    toggle2.addEventListener('click', () => {
+      if (billingMode === 'annual') {
+        billingMode = 'semi';
+      } else if (billingMode === 'semi') {
+        billingMode = 'annual';
+      } else {
+        billingMode = 'annual';
+      }
+      updateBilling();
+    });
+  }
+
+  // Contact form validation
   function validateAndSend() {
     const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
@@ -911,8 +1129,6 @@
     const email = document.getElementById('email').value.trim();
     
     let isValid = true;
-    
-    // Hide all errors first
     document.getElementById('nameError').style.display = 'none';
     document.getElementById('phoneError').style.display = 'none';
     document.getElementById('messageError').style.display = 'none';
@@ -921,12 +1137,10 @@
       document.getElementById('nameError').style.display = 'block';
       isValid = false;
     }
-    
     if (phone === '') {
       document.getElementById('phoneError').style.display = 'block';
       isValid = false;
     }
-    
     if (message === '') {
       document.getElementById('messageError').style.display = 'block';
       isValid = false;
@@ -937,21 +1151,17 @@
       return;
     }
     
-    // Send to WhatsApp
     const whatsappText = `Hi Zingsite!%0A%0A📋 New Inquiry:%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email || 'Not provided'}%0AMessage: ${message}%0A%0APlease contact me.`;
     window.open(`https://wa.me/918828685342?text=${whatsappText}`, '_blank');
   }
 
-  // Portfolio Section - Dynamic with your image
-  const portfolioItems = [
-    {
-      name: "Badnaam Cafe",
-      type: "Restaurant Website",
-      image: "https://raw.githubusercontent.com/fernandesbenson876-coder/Zingsite-Website-/main/IMG_20260408_084228.jpg",
-      link: "https://fernandesbenson876-coder.github.io/Badnaam-Cafe-/",
-      bgColor: "#f97316"
-    }
-  ];
+  // Portfolio
+  const portfolioItems = [{
+    name: "Badnaam Cafe",
+    type: "Restaurant Website",
+    image: "https://raw.githubusercontent.com/fernandesbenson876-coder/Zingsite-Website-/main/IMG_20260408_084228.jpg",
+    link: "https://fernandesbenson876-coder.github.io/Badnaam-Cafe-/"
+  }];
 
   const grid = document.getElementById("portfolioGrid");
   if (grid) {
@@ -961,7 +1171,6 @@
       card.onmouseenter = () => { card.style.transform = "translateY(-8px)"; card.style.borderColor = "#00d9ff"; };
       card.onmouseleave = () => { card.style.transform = "translateY(0)"; card.style.borderColor = "#2d3748"; };
       card.onclick = () => window.open(item.link, "_blank");
-      
       card.innerHTML = `
         <img src="${item.image}" alt="${item.name}" class="portfolio-img" onerror="this.src='https://placehold.co/600x400/f97316/ffffff?text=Badnaam+Cafe'">
         <div style="padding: 20px;">
