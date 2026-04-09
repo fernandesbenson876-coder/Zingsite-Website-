@@ -12,7 +12,7 @@
     body { background: #0a0e17; color: #ffffff; font-family: 'DM Sans', sans-serif; line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Navigation - Fixed Menu */
+    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -33,6 +33,7 @@
       align-items: center;
       padding: 16px 24px;
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
     }
     .logo {
@@ -48,13 +49,12 @@
       flex-shrink: 0;
     }
     .logo:hover { transform: scale(1.02); }
-    .logo-img { height: 50px; width: auto; display: block; border-radius: 12px; }
-    .logo span { font-weight: 700; font-size: 1.3rem; background: linear-gradient(135deg, #fff, #00d9ff); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    .logo-img { height: 45px; width: auto; display: block; border-radius: 12px; }
+    .logo span { font-weight: 700; font-size: 1.2rem; background: linear-gradient(135deg, #fff, #00d9ff); background-clip: text; -webkit-background-clip: text; color: transparent; }
     
-    /* FIXED MENU - No stretching */
     .nav-links { 
       display: flex; 
-      gap: 24px; 
+      gap: 20px; 
       list-style: none; 
       margin: 0;
       padding: 0;
@@ -71,7 +71,7 @@
       cursor: pointer;
       padding: 8px 0;
       display: inline-block;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     .nav-links a::after {
       content: '';
@@ -91,7 +91,7 @@
     .btn-primary {
       background: linear-gradient(135deg, #00d9ff, #0099cc);
       color: #000;
-      padding: 10px 24px;
+      padding: 8px 20px;
       border-radius: 30px;
       font-weight: 600;
       text-decoration: none;
@@ -102,6 +102,7 @@
       border: none;
       cursor: pointer;
       flex-shrink: 0;
+      font-size: 0.9rem;
     }
     .btn-primary:hover { background: linear-gradient(135deg, #00c4e6, #0088b3); transform: translateY(-2px); box-shadow: 0 0 20px rgba(0, 217, 255, 0.4); }
     .btn-outline {
@@ -302,20 +303,23 @@
     }
     .scroll-top:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3); }
     
-    /* Responsive Breakpoints - FIXED */
-    @media (min-width: 1200px) {
+    /* Responsive Breakpoints */
+    @media (min-width: 1100px) {
       .nav-links { gap: 28px; }
       .nav-links a { font-size: 0.95rem; }
+      .btn-primary { padding: 10px 24px; }
     }
     
-    @media (max-width: 1100px) and (min-width: 901px) {
+    @media (max-width: 1099px) and (min-width: 901px) {
       .nav-links { gap: 16px; }
       .nav-links a { font-size: 0.85rem; }
-      .btn-primary.nav-wa { padding: 8px 16px; font-size: 0.85rem; }
+      .btn-primary { padding: 8px 16px; font-size: 0.85rem; }
+      .logo-img { height: 38px; }
+      .logo span { font-size: 1rem; }
     }
     
     @media (max-width: 900px) {
-      .nav-links, .nav-wa { display: none; }
+      .nav-links, .btn-primary.nav-wa { display: none; }
       .hamburger { display: block; }
       h1 { font-size: 2.2rem; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -339,7 +343,7 @@
       <li><a href="#about">📌 About</a></li>
       <li><a href="#portfolio">🎨 Portfolio</a></li>
       <li><a href="#contact">📞 Contact</a></li>
-      <li><a href="updates.html" style="color: #00d9ff;">📢 Updates</a></li>
+      <li><a href="updates.html">📢 Updates</a></li>
     </ul>
     <a href="https://wa.me/918828685342" target="_blank" class="btn-primary nav-wa">💬 WhatsApp</a>
     <button class="hamburger" onclick="toggleMenu()">☰</button>
@@ -591,14 +595,12 @@
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
 
-  // Navbar scroll effect
   window.addEventListener('scroll', function() {
     const nav = document.getElementById('navbar');
     if (window.scrollY > 50) { nav.classList.add('scrolled'); } 
     else { nav.classList.remove('scrolled'); }
   });
 
-  // Active link highlighting
   const sections = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
     let current = '';
