@@ -12,7 +12,7 @@
     body { background: #0a0e17; color: #ffffff; font-family: 'DM Sans', sans-serif; line-height: 1.6; }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* Navigation - Enhanced Dynamic Menu */
+    /* Navigation - Fixed Menu */
     nav {
       position: fixed;
       top: 0;
@@ -45,13 +45,24 @@
       color: white;
       text-decoration: none;
       transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
     .logo:hover { transform: scale(1.02); }
     .logo-img { height: 50px; width: auto; display: block; border-radius: 12px; }
     .logo span { font-weight: 700; font-size: 1.3rem; background: linear-gradient(135deg, #fff, #00d9ff); background-clip: text; -webkit-background-clip: text; color: transparent; }
     
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links li { position: relative; }
+    /* FIXED MENU - No stretching */
+    .nav-links { 
+      display: flex; 
+      gap: 24px; 
+      list-style: none; 
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li { 
+      position: relative; 
+      white-space: nowrap;
+    }
     .nav-links a {
       color: #a0aec0;
       text-decoration: none;
@@ -60,6 +71,7 @@
       cursor: pointer;
       padding: 8px 0;
       display: inline-block;
+      font-size: 0.95rem;
     }
     .nav-links a::after {
       content: '';
@@ -89,6 +101,7 @@
       transition: all 0.3s;
       border: none;
       cursor: pointer;
+      flex-shrink: 0;
     }
     .btn-primary:hover { background: linear-gradient(135deg, #00c4e6, #0088b3); transform: translateY(-2px); box-shadow: 0 0 20px rgba(0, 217, 255, 0.4); }
     .btn-outline {
@@ -289,12 +302,25 @@
     }
     .scroll-top:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0, 217, 255, 0.3); }
     
+    /* Responsive Breakpoints - FIXED */
+    @media (min-width: 1200px) {
+      .nav-links { gap: 28px; }
+      .nav-links a { font-size: 0.95rem; }
+    }
+    
+    @media (max-width: 1100px) and (min-width: 901px) {
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 0.85rem; }
+      .btn-primary.nav-wa { padding: 8px 16px; font-size: 0.85rem; }
+    }
+    
     @media (max-width: 900px) {
       .nav-links, .nav-wa { display: none; }
       .hamburger { display: block; }
       h1 { font-size: 2.2rem; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
       .floating-offer { bottom: 20px; right: 10px; font-size: 0.8rem; padding: 8px 12px; }
+      .scroll-top { bottom: 20px; left: 10px; width: 38px; height: 38px; }
     }
   </style>
 </head>
@@ -471,7 +497,7 @@
       <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;" id="portfolioGrid"></div>
     </section>
 
-    <!-- TERMS BANNER - FIXED LINK -->
+    <!-- TERMS BANNER -->
     <div class="terms-banner">
       <i class="fas fa-file-contract"></i> <strong>📜 Terms & Conditions Apply</strong> — By using Zingsite services, you agree to our payment terms, cancellation policy, and service terms.
       <a href="terms.html">Read Full Terms & Client Agreement →</a>
