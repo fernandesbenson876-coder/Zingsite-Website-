@@ -8,24 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: #0a0e17;
-      color: #ffffff;
-      font-family: 'DM Sans', sans-serif;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a0e17; color: #ffffff; font-family: 'DM Sans', sans-serif; line-height: 1.6; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
     /* Navigation */
     nav {
@@ -37,7 +22,6 @@
       border-bottom: 1px solid rgba(0, 217, 255, 0.2);
       z-index: 1000;
     }
-
     .nav-inner {
       display: flex;
       justify-content: space-between;
@@ -46,7 +30,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .logo {
       display: flex;
       align-items: center;
@@ -57,152 +40,36 @@
       color: white;
       text-decoration: none;
     }
-
-    .logo-img {
-      height: 50px;
-      width: auto;
-      display: block;
-      border-radius: 12px;
-    }
-
-    .logo span {
-      font-weight: 700;
-      font-size: 1.3rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #a0aec0;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s;
-      cursor: pointer;
-    }
-
+    .logo-img { height: 50px; width: auto; display: block; border-radius: 12px; }
+    .logo span { font-weight: 700; font-size: 1.3rem; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { color: #a0aec0; text-decoration: none; font-weight: 500; transition: color 0.2s; cursor: pointer; }
     .nav-links a:hover { color: #00d9ff; }
-
     .btn-primary {
-      background: #00d9ff;
-      color: #000;
-      padding: 10px 24px;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
+      background: #00d9ff; color: #000; padding: 10px 24px; border-radius: 30px; font-weight: 600;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.3s;
+      border: none; cursor: pointer;
     }
-
-    .btn-primary:hover {
-      background: #00c4e6;
-      transform: translateY(-2px);
-      box-shadow: 0 0 20px rgba(0, 217, 255, 0.4);
-    }
-
+    .btn-primary:hover { background: #00c4e6; transform: translateY(-2px); box-shadow: 0 0 20px rgba(0, 217, 255, 0.4); }
     .btn-outline {
-      border: 1px solid #2d3748;
-      background: transparent;
-      color: white;
-      padding: 10px 24px;
-      border-radius: 30px;
-      font-weight: 500;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s;
-      cursor: pointer;
+      border: 1px solid #2d3748; background: transparent; color: white; padding: 10px 24px;
+      border-radius: 30px; font-weight: 500; text-decoration: none; display: inline-flex;
+      align-items: center; gap: 8px; transition: all 0.3s; cursor: pointer;
     }
-
-    .btn-outline:hover {
-      border-color: #00d9ff;
-      background: rgba(0, 217, 255, 0.1);
-    }
-
-    .btn-large {
-      padding: 14px 32px;
-      font-size: 1rem;
-    }
-
-    .hamburger {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    .mobile-menu {
-      display: none;
-      background: #0a0e17;
-      padding: 20px;
-      border-top: 1px solid #2d3748;
-    }
-
+    .btn-outline:hover { border-color: #00d9ff; background: rgba(0, 217, 255, 0.1); }
+    .btn-large { padding: 14px 32px; font-size: 1rem; }
+    .hamburger { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
+    .mobile-menu { display: none; background: #0a0e17; padding: 20px; border-top: 1px solid #2d3748; }
     .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; color: #a0aec0; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #2d3748; cursor: pointer; }
 
-    .mobile-menu a {
-      display: block;
-      color: #a0aec0;
-      text-decoration: none;
-      padding: 12px 0;
-      border-bottom: 1px solid #2d3748;
-      cursor: pointer;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 140px 0 80px;
-      background: radial-gradient(ellipse at 80% 30%, rgba(0, 217, 255, 0.08), transparent);
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(0, 217, 255, 0.15);
-      border: 1px solid rgba(0, 217, 255, 0.3);
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      color: #00d9ff;
-      margin-bottom: 24px;
-    }
-
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 3.5rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
+    /* Hero */
+    .hero { padding: 140px 0 80px; background: radial-gradient(ellipse at 80% 30%, rgba(0, 217, 255, 0.08), transparent); text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(0, 217, 255, 0.15); border: 1px solid rgba(0, 217, 255, 0.3); padding: 6px 16px; border-radius: 40px; font-size: 0.8rem; color: #00d9ff; margin-bottom: 24px; }
+    h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
     .accent { color: #00d9ff; }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #a0aec0;
-      margin-bottom: 32px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
+    .hero p { font-size: 1.1rem; color: #a0aec0; margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto; }
+    .hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
 
     /* Offer Banner */
     .offer-banner {
@@ -222,47 +89,16 @@
       70% { box-shadow: 0 0 0 10px rgba(249, 115, 22, 0); }
       100% { box-shadow: 0 0 0 0 rgba(249, 115, 22, 0); }
     }
-    .offer-banner span:first-child {
-      font-weight: 800;
-      font-size: 1.1rem;
-    }
-    .offer-tag {
-      background: white;
-      color: #e65100;
-      padding: 6px 18px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: transform 0.2s;
-    }
-    .offer-tag:hover {
-      transform: scale(1.05);
-    }
+    .offer-banner span:first-child { font-weight: 800; font-size: 1.1rem; }
+    .offer-tag { background: white; color: #e65100; padding: 6px 18px; border-radius: 40px; text-decoration: none; font-weight: 700; transition: transform 0.2s; }
+    .offer-tag:hover { transform: scale(1.05); }
 
-    /* Section Styles */
     section { padding: 80px 0; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-header h2 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; }
+    .section-header p { color: #a0aec0; max-width: 600px; margin: 0 auto; }
 
-    .section-dark { background: #0f1419; }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-header h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
-    .section-header p {
-      color: #a0aec0;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* Improved Pricing Toggle - Clean Button Style */
+    /* Pricing Toggle Buttons */
     .pricing-toggle-buttons {
       display: flex;
       justify-content: center;
@@ -301,415 +137,98 @@
     }
 
     /* Pricing Cards */
-    .pricing-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin: 20px 0 40px;
-    }
-
+    .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin: 20px 0 40px; }
     .pricing-card {
-      background: #121826;
-      border-radius: 24px;
-      padding: 32px;
-      width: 320px;
-      border: 1px solid #2d3748;
-      transition: all 0.3s;
+      background: #121826; border-radius: 24px; padding: 32px; width: 320px;
+      border: 1px solid #2d3748; transition: all 0.3s;
     }
-
-    .pricing-card:hover {
-      border-color: #00d9ff;
-      transform: translateY(-5px);
-    }
-
-    .pricing-card.featured {
-      border: 2px solid #00d9ff;
-      position: relative;
-    }
-
-    .popular-tag {
-      background: #00d9ff;
-      color: #000;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 16px;
-    }
-
-    .plan-name {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
-
-    .setup-price {
-      font-size: 0.9rem;
-      color: #a0aec0;
-      margin-bottom: 16px;
-    }
-
-    .setup-price strong {
-      font-size: 1.8rem;
-      color: white;
-    }
-
+    .pricing-card:hover { border-color: #00d9ff; transform: translateY(-5px); }
+    .pricing-card.featured { border: 2px solid #00d9ff; position: relative; }
+    .popular-tag { background: #00d9ff; color: #000; font-size: 0.7rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 16px; }
+    .plan-name { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 700; margin-bottom: 8px; }
+    .setup-price { font-size: 0.9rem; color: #a0aec0; margin-bottom: 16px; }
+    .setup-price strong { font-size: 1.8rem; color: white; }
     .monthly-price, .annual-price, .semi-annual-price {
-      font-size: 0.9rem;
-      color: #a0aec0;
-      margin-bottom: 24px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid #2d3748;
+      font-size: 0.9rem; color: #a0aec0; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid #2d3748;
     }
-
-    .monthly-price strong, .annual-price strong, .semi-annual-price strong {
-      font-size: 2rem;
-      color: #00d9ff;
-    }
-
-    .annual-price, .semi-annual-price {
-      display: none;
-    }
-
+    .monthly-price strong, .annual-price strong, .semi-annual-price strong { font-size: 2rem; color: #00d9ff; }
+    .annual-price, .semi-annual-price { display: none; }
     .pricing-card.show-annual .monthly-price,
-    .pricing-card.show-annual .semi-annual-price {
-      display: none;
-    }
-    .pricing-card.show-annual .annual-price {
-      display: block;
-    }
+    .pricing-card.show-annual .semi-annual-price { display: none; }
+    .pricing-card.show-annual .annual-price { display: block; }
     .pricing-card.show-semi .monthly-price,
-    .pricing-card.show-semi .annual-price {
-      display: none;
-    }
-    .pricing-card.show-semi .semi-annual-price {
-      display: block;
-    }
+    .pricing-card.show-semi .annual-price { display: none; }
+    .pricing-card.show-semi .semi-annual-price { display: block; }
 
-    .features {
-      list-style: none;
-      margin: 24px 0;
-      text-align: left;
-    }
-
-    .features li {
-      padding: 8px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
+    .features { list-style: none; margin: 24px 0; text-align: left; }
+    .features li { padding: 8px 0; display: flex; align-items: center; gap: 10px; }
     .features li i { color: #00d9ff; width: 20px; }
 
     /* Offer Cards */
-    .offers-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      margin: 40px 0;
-    }
+    .offers-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin: 40px 0; }
     .offer-card {
-      background: #121826;
-      border-radius: 20px;
-      padding: 24px;
-      width: 280px;
-      text-align: center;
-      border: 1px solid #2d3748;
-      transition: all 0.3s;
+      background: #121826; border-radius: 20px; padding: 24px; width: 280px;
+      text-align: center; border: 1px solid #2d3748; transition: all 0.3s;
     }
-    .offer-card:hover {
-      border-color: #f97316;
-      transform: translateY(-5px);
-    }
-    .offer-icon {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-    }
-    .offer-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .offer-desc {
-      color: #a0aec0;
-      font-size: 0.9rem;
-      margin-bottom: 20px;
-    }
+    .offer-card:hover { border-color: #f97316; transform: translateY(-5px); }
+    .offer-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .offer-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
+    .offer-desc { color: #a0aec0; font-size: 0.9rem; margin-bottom: 20px; }
 
-    /* Reel Add-on */
+    /* Reel, Bundle, About, Contact */
     .reel-card {
-      background: linear-gradient(135deg, #121826, #0a0e17);
-      border: 1px solid #2d3748;
-      border-left: 4px solid #00d9ff;
-      border-radius: 20px;
-      padding: 32px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
-      margin-bottom: 40px;
+      background: linear-gradient(135deg, #121826, #0a0e17); border: 1px solid #2d3748;
+      border-left: 4px solid #00d9ff; border-radius: 20px; padding: 32px;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+      margin: 20px 0 40px;
     }
+    .reel-prices { display: flex; gap: 32px; }
+    .reel-price { text-align: center; cursor: pointer; transition: transform 0.2s; padding: 8px 16px; border-radius: 20px; }
+    .reel-price:hover { transform: scale(1.05); background: rgba(0, 217, 255, 0.1); }
+    .reel-amount { font-size: 1.6rem; font-weight: 700; color: #00d9ff; }
 
-    .reel-prices {
-      display: flex;
-      gap: 32px;
-    }
-
-    .reel-price {
-      text-align: center;
-      cursor: pointer;
-      transition: transform 0.2s;
-      padding: 8px 16px;
-      border-radius: 20px;
-    }
-
-    .reel-price:hover {
-      transform: scale(1.05);
-      background: rgba(0, 217, 255, 0.1);
-    }
-
-    .reel-amount {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #00d9ff;
-    }
-
-    /* Bundle Offer */
     .bundle-card {
-      background: linear-gradient(135deg, #1e2b6e, #0f1a3a);
-      border-radius: 20px;
-      padding: 28px;
-      margin: 30px 0;
-      text-align: center;
-      border: 1px solid #00d9ff;
+      background: linear-gradient(135deg, #1e2b6e, #0f1a3a); border-radius: 20px;
+      padding: 28px; margin: 30px 0; text-align: center; border: 1px solid #00d9ff;
     }
+    .terms-banner { background: #00d9ff; color: #000; text-align: center; padding: 24px; border-radius: 16px; margin: 40px 0 20px; }
+    .terms-banner a { color: #000; font-weight: 700; text-decoration: underline; }
 
-    /* Terms Banner */
-    .terms-banner {
-      background: #00d9ff;
-      color: #000;
-      text-align: center;
-      padding: 24px;
-      border-radius: 16px;
-      margin: 40px 0 20px;
-    }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .about-text { color: #a0aec0; }
+    .feature-list { margin-top: 30px; }
+    .feature { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
+    .feature-icon { width: 50px; height: 50px; background: rgba(0, 217, 255, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
 
-    .terms-banner a {
-      color: #000;
-      font-weight: 700;
-      text-decoration: underline;
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 14px 18px; margin-bottom: 16px; background: #121826;
+      border: 1px solid #2d3748; border-radius: 12px; color: white; font-family: inherit;
     }
+    .error-message { color: #ff6b6b; font-size: 0.8rem; margin-top: -12px; margin-bottom: 12px; display: none; }
 
-    /* About Section */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .about-text {
-      color: #a0aec0;
-      font-size: 1rem;
-      line-height: 1.7;
-    }
-
-    .about-text p {
-      margin-bottom: 20px;
-    }
-
-    .feature-list {
-      margin-top: 30px;
-    }
-
-    .feature {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
-      align-items: flex-start;
-    }
-
-    .feature-icon {
-      width: 50px;
-      height: 50px;
-      background: rgba(0, 217, 255, 0.15);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
-    }
-
-    .feature h4 {
-      color: white;
-      margin-bottom: 5px;
-    }
-
-    .feature p {
-      color: #a0aec0;
-      font-size: 0.9rem;
-    }
-
-    /* Contact */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 14px 18px;
-      margin-bottom: 16px;
-      background: #121826;
-      border: 1px solid #2d3748;
-      border-radius: 12px;
-      color: white;
-      font-family: inherit;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: #00d9ff;
-    }
-
-    .error-message {
-      color: #ff6b6b;
-      font-size: 0.8rem;
-      margin-top: -12px;
-      margin-bottom: 12px;
-      display: none;
-    }
-
-    /* Footer */
-    footer {
-      background: #0a0e17;
-      border-top: 1px solid #2d3748;
-      padding: 40px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-logo-img {
-      height: 35px;
-      width: auto;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .social-links a {
-      color: #a0aec0;
-      font-size: 1.5rem;
-      transition: color 0.2s;
-    }
-
-    .social-links a:hover { color: #00d9ff; }
-
-    /* Portfolio Card Image */
-    .portfolio-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-
-    /* Latest News Teaser */
-    .news-teaser {
-      background: #121826;
-      border-radius: 24px;
-      padding: 30px;
-      text-align: center;
-      border: 1px solid #2d3748;
-      margin: 40px 0;
-    }
-    .news-teaser h3 {
-      color: #00d9ff;
-      margin-bottom: 12px;
-    }
-    .news-teaser p {
-      color: #a0aec0;
-      margin-bottom: 16px;
-    }
-
-    /* Floating Offer */
+    footer { background: #0a0e17; border-top: 1px solid #2d3748; padding: 40px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .portfolio-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .news-teaser { background: #121826; border-radius: 24px; padding: 30px; text-align: center; border: 1px solid #2d3748; margin: 40px 0; }
     .floating-offer {
-      position: fixed;
-      bottom: 100px;
-      right: 20px;
-      background: #f97316;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      z-index: 99;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      position: fixed; bottom: 100px; right: 20px; background: #f97316; color: white;
+      padding: 12px 20px; border-radius: 50px; text-decoration: none; font-weight: 700;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 99; display: flex; align-items: center; gap: 8px;
       animation: pulse 1.5s infinite;
     }
-    .floating-offer span {
-      background: white;
-      color: #f97316;
-      padding: 2px 10px;
-      border-radius: 30px;
-    }
-
-    /* Scroll to top button */
+    .floating-offer span { background: white; color: #f97316; padding: 2px 10px; border-radius: 30px; }
     .scroll-top {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      background: #00d9ff;
-      color: #000;
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s;
-      z-index: 99;
-      opacity: 0.8;
+      position: fixed; bottom: 20px; left: 20px; background: #00d9ff; color: #000;
+      width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; text-decoration: none; font-weight: bold; z-index: 99;
     }
-    .scroll-top:hover {
-      opacity: 1;
-      transform: translateY(-3px);
-    }
-
-    /* Responsive */
     @media (max-width: 900px) {
       .nav-links, .nav-wa { display: none; }
       .hamburger { display: block; }
-      .hero { padding: 120px 0 60px; }
       h1 { font-size: 2.2rem; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .reel-card { flex-direction: column; text-align: center; }
-      .reel-prices { justify-content: center; }
-      .footer-inner { flex-direction: column; text-align: center; }
-      .logo-img { height: 35px; }
       .floating-offer { bottom: 20px; right: 10px; font-size: 0.8rem; padding: 8px 12px; }
-      .scroll-top { bottom: 20px; left: 10px; width: 38px; height: 38px; }
     }
   </style>
 </head>
@@ -746,16 +265,11 @@
   </div>
 </nav>
 
-<!-- Scroll to Top Button -->
 <a href="#" class="scroll-top" id="scrollTopBtn" onclick="scrollToTop(); return false;">↑</a>
+<a href="https://wa.me/918828685342?text=Hi!%20I%20want%20to%20claim%20the%2020%25%20OFF%20offer!" target="_blank" class="floating-offer">🔥 20% OFF <span>Claim</span></a>
 
-<!-- Floating Offer Button -->
-<a href="https://wa.me/918828685342?text=Hi!%20I%20want%20to%20claim%20the%2020%25%20OFF%20offer!" target="_blank" class="floating-offer">
-  🔥 20% OFF <span>Claim</span>
-</a>
-
-<!-- HERO SECTION -->
-<section class="hero" id="home-section">
+<!-- HERO -->
+<section class="hero">
   <div class="container">
     <div class="hero-badge">✨ Mumbai-based Web Design Agency</div>
     <h1>Your Business Deserves a Website That <span class="accent">Works</span></h1>
@@ -764,8 +278,6 @@
       <a href="https://wa.me/918828685342?text=Hi%20Zingsite!%20I'm%20interested%20in%20your%20services." target="_blank" class="btn-primary btn-large">💬 Chat on WhatsApp</a>
       <a href="#pricing" class="btn-outline btn-large" onclick="smoothScroll('#pricing'); return false;">View Pricing →</a>
     </div>
-    
-    <!-- HERO OFFER BANNER -->
     <div class="offer-banner">
       <span>🔥 LIMITED TIME OFFER 🔥</span>
       <span>20% OFF setup fee for first 5 clients</span>
@@ -774,97 +286,53 @@
   </div>
 </section>
 
-<!-- OFFERS SECTION -->
+<!-- OFFERS -->
 <section id="offers" style="background: #0f1419;">
   <div class="container">
     <div class="section-header">
       <h2>🎁 Exclusive Offers</h2>
       <p>Limited time deals – grab them before they're gone!</p>
     </div>
-    
     <div class="offers-grid">
-      <!-- Discount Offer -->
-      <div class="offer-card">
-        <div class="offer-icon">🔥</div>
-        <div class="offer-title">20% OFF Setup</div>
-        <div class="offer-desc">First 5 clients get 20% off setup fee. Limited slots available!</div>
-        <a href="https://wa.me/918828685342?text=I%20want%20the%2020%25%20off%20setup%20offer!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Claim →</a>
-      </div>
-      
-      <!-- Bundle Offer -->
-      <div class="offer-card">
-        <div class="offer-icon">📦</div>
-        <div class="offer-title">Website + Reel Bundle</div>
-        <div class="offer-desc">Get Standard plan + 8 reels/month at ₹7,500/month (Save ₹1,000)</div>
-        <a href="https://wa.me/918828685342?text=I%20want%20the%20Website%20%2B%20Reel%20bundle%20offer!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Grab Bundle →</a>
-      </div>
-      
-      <!-- Referral Offer -->
-      <div class="offer-card">
-        <div class="offer-icon">👥</div>
-        <div class="offer-title">Refer & Earn</div>
-        <div class="offer-desc">Refer a friend, both get 1 month FREE on your next billing cycle.</div>
-        <a href="https://wa.me/918828685342?text=I%20want%20to%20refer%20someone%20to%20Zingsite!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Refer Now →</a>
-      </div>
+      <div class="offer-card"><div class="offer-icon">🔥</div><div class="offer-title">20% OFF Setup</div><div class="offer-desc">First 5 clients get 20% off setup fee. Limited slots available!</div><a href="https://wa.me/918828685342?text=I%20want%20the%2020%25%20off%20setup%20offer!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Claim →</a></div>
+      <div class="offer-card"><div class="offer-icon">📦</div><div class="offer-title">Website + Reel Bundle</div><div class="offer-desc">Get Standard plan + 8 reels/month at ₹7,500/month (Save ₹1,000)</div><a href="https://wa.me/918828685342?text=I%20want%20the%20Website%20%2B%20Reel%20bundle%20offer!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Grab Bundle →</a></div>
+      <div class="offer-card"><div class="offer-icon">👥</div><div class="offer-title">Refer & Earn</div><div class="offer-desc">Refer a friend, both get 1 month FREE on your next billing cycle.</div><a href="https://wa.me/918828685342?text=I%20want%20to%20refer%20someone%20to%20Zingsite!" target="_blank" class="btn-outline" style="padding: 6px 20px;">Refer Now →</a></div>
     </div>
-    
-    <!-- Semi-Annual & Annual Offer Banner -->
     <div class="bundle-card">
       <i class="fas fa-calendar-alt" style="font-size: 2rem; color: #00d9ff; margin-bottom: 12px; display: inline-block;"></i>
       <h3 style="margin-bottom: 16px;">📅 Long Term Commitment? Bigger Savings!</h3>
       <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px;">
-        <div>
-          <span style="font-size: 1.8rem; font-weight: 800;">6 Months</span>
-          <p style="color: #00d9ff; font-weight: 700;">+ 1 Month FREE</p>
-          <small>Pay for 6, get 7 months</small>
-        </div>
+        <div><span style="font-size: 1.8rem; font-weight: 800;">6 Months</span><p style="color: #00d9ff; font-weight: 700;">+ 1 Month FREE</p><small>Pay for 6, get 7 months</small></div>
         <div style="font-size: 2rem;">→</div>
-        <div>
-          <span style="font-size: 1.8rem; font-weight: 800;">12 Months</span>
-          <p style="color: #00d9ff; font-weight: 700;">+ 2 Months FREE</p>
-          <small>Pay for 12, get 14 months</small>
-        </div>
+        <div><span style="font-size: 1.8rem; font-weight: 800;">12 Months</span><p style="color: #00d9ff; font-weight: 700;">+ 2 Months FREE</p><small>Pay for 12, get 14 months</small></div>
       </div>
       <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Semi-Annual%20or%20Annual%20plan%20with%20free%20months!" target="_blank" class="btn-primary" style="margin-top: 24px; display: inline-flex;">Claim Long Term Offer →</a>
     </div>
   </div>
 </section>
 
-<!-- PRICING SECTION -->
+<!-- PRICING -->
 <section id="pricing" style="background: #0f1419;">
   <div class="container">
     <div class="section-header">
       <h2>Simple, Transparent Pricing</h2>
       <p>Choose the perfect package for your business. All plans include free domain for Year 1 + SSL certificate.</p>
     </div>
-
-    <!-- IMPROVED PRICING TOGGLE - Clean 3 Button Design -->
     <div class="pricing-toggle-buttons">
       <button class="toggle-plan-btn active" id="monthlyBtn">Monthly</button>
       <button class="toggle-plan-btn" id="semiBtn">6 Months <span class="save-badge">+1 Month Free</span></button>
       <button class="toggle-plan-btn" id="annualBtn">12 Months <span class="save-badge">+2 Months Free</span></button>
     </div>
-
     <div class="pricing-grid">
-      <!-- Basic -->
       <div class="pricing-card" id="cardBasic">
         <div class="plan-name">Basic</div>
         <div class="setup-price"><strong>₹5,000</strong> setup</div>
         <div class="monthly-price"><strong>₹3,000</strong> /month</div>
         <div class="semi-annual-price"><strong>₹16,200</strong> /6 months <span style="color:#00d9ff;">(+1 month free)</span></div>
         <div class="annual-price"><strong>₹32,400</strong> /year <span style="color:#00d9ff;">(+2 months free)</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> 5 Pages</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li>
-          <li><i class="fas fa-check-circle"></i> Basic SEO</li>
-          <li><i class="fas fa-check-circle"></i> 3 Edits/month</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (Year 1)</li>
-        </ul>
+        <ul class="features"><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> 5 Pages</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Basic SEO</li><li><i class="fas fa-check-circle"></i> 3 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain (Year 1)</li></ul>
         <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Basic%20plan%20(Zingsite)" target="_blank" class="btn-outline" style="display: flex; justify-content: center;">Get Started →</a>
       </div>
-
-      <!-- Standard (Featured) -->
       <div class="pricing-card featured" id="cardStandard">
         <div class="popular-tag">⭐ Most Popular</div>
         <div class="plan-name">Standard</div>
@@ -872,36 +340,60 @@
         <div class="monthly-price"><strong>₹5,000</strong> /month</div>
         <div class="semi-annual-price"><strong>₹27,000</strong> /6 months <span style="color:#00d9ff;">(+1 month free)</span></div>
         <div class="annual-price"><strong>₹54,000</strong> /year <span style="color:#00d9ff;">(+2 months free)</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> Everything in Basic</li>
-          <li><i class="fas fa-check-circle"></i> 10 Pages + Blog</li>
-          <li><i class="fas fa-check-circle"></i> Advanced SEO</li>
-          <li><i class="fas fa-check-circle"></i> Email Support</li>
-          <li><i class="fas fa-check-circle"></i> 5 Edits/month</li>
-        </ul>
+        <ul class="features"><li><i class="fas fa-check-circle"></i> Everything in Basic</li><li><i class="fas fa-check-circle"></i> 10 Pages + Blog</li><li><i class="fas fa-check-circle"></i> Advanced SEO</li><li><i class="fas fa-check-circle"></i> Email Support</li><li><i class="fas fa-check-circle"></i> 5 Edits/month</li></ul>
         <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Standard%20plan%20(Zingsite)" target="_blank" class="btn-primary" style="display: flex; justify-content: center;">Get Started →</a>
       </div>
-
-      <!-- Premium -->
       <div class="pricing-card" id="cardPremium">
         <div class="plan-name">Premium</div>
         <div class="setup-price"><strong>₹12,000</strong> setup</div>
         <div class="monthly-price"><strong>₹6,500</strong> /month</div>
         <div class="semi-annual-price"><strong>₹35,100</strong> /6 months <span style="color:#00d9ff;">(+1 month free)</span></div>
         <div class="annual-price"><strong>₹70,200</strong> /year <span style="color:#00d9ff;">(+2 months free)</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> Everything in Standard</li>
-          <li><i class="fas fa-check-circle"></i> Unlimited Pages</li>
-          <li><i class="fas fa-check-circle"></i> E-commerce Ready</li>
-          <li><i class="fas fa-check-circle"></i> Analytics & Reports</li>
-          <li><i class="fas fa-check-circle"></i> 10 Edits/month</li>
-        </ul>
+        <ul class="features"><li><i class="fas fa-check-circle"></i> Everything in Standard</li><li><i class="fas fa-check-circle"></i> Unlimited Pages</li><li><i class="fas fa-check-circle"></i> E-commerce Ready</li><li><i class="fas fa-check-circle"></i> Analytics & Reports</li><li><i class="fas fa-check-circle"></i> 10 Edits/month</li></ul>
         <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Premium%20plan%20(Zingsite)" target="_blank" class="btn-outline" style="display: flex; justify-content: center;">Get Started →</a>
       </div>
     </div>
 
-    <!-- Reel Add-on with Redirection -->
+    <!-- REEL ADD-ON -->
     <div class="reel-card">
-      <div>
-        <h3><i class="fas fa-film" style="color: #00d9ff;"></i> Reel Editing Add-on</h3>
-        <p style="color: #
+      <div><h3><i class="fas fa-film" style="color: #00d9ff;"></i> Reel Editing Add-on</h3><p style="color: #a0aec0; margin-top: 8px;">You shoot, we edit. Includes SEO captions + custom thumbnails free.</p></div>
+      <div class="reel-prices">
+        <div class="reel-price" onclick="window.open('https://wa.me/918828685342?text=I%27m%20interested%20in%20the%20Reel%20Editing%20Add-on%20(₹2,000%20for%204%20reels)', '_blank')"><div class="reel-amount">₹2,000</div><div>/month · 4 reels</div></div>
+        <div class="reel-price" onclick="window.open('https://wa.me/918828685342?text=I%27m%20interested%20in%20the%20Reel%20Editing%20Add-on%20(₹3,500%20for%208%20reels)', '_blank')"><div class="reel-amount">₹3,500</div><div>/month · 8 reels</div></div>
+      </div>
+    </div>
+
+    <!-- BUNDLE OFFER -->
+    <div class="bundle-card">
+      <i class="fas fa-rocket" style="font-size: 2rem; color: #00d9ff; margin-bottom: 12px; display: inline-block;"></i>
+      <h3 style="margin-bottom: 10px;">🎯 Bundle & Save ₹2,000/month</h3>
+      <p style="color: #a0aec0; margin-bottom: 16px;">Standard Website + 8 Reels = <strong style="color: #00d9ff; font-size: 1.5rem;">₹7,500/month</strong> (was ₹9,500)</p>
+      <a href="https://wa.me/918828685342?text=I%20want%20the%20Website%20%2B%20Reel%20bundle%20(₹7,500/month)!" target="_blank" class="btn-primary" style="display: inline-flex;">Get Bundle →</a>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" style="padding: 80px 0 40px 0;">
+      <div class="section-header"><h2>Our Recent Work</h2><p>Real websites built for Mumbai businesses</p></div>
+      <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;" id="portfolioGrid"></div>
+    </section>
+
+    <div class="terms-banner">
+      <i class="fas fa-file-contract"></i> <strong>📜 Terms & Conditions Apply</strong> — By using Zingsite services, you agree to our payment terms, cancellation policy, and service terms.
+      <a href="https://fernandesbenson876-coder.github.io/Zingsite-T-C/" target="_blank">Read Full Terms & Client Agreement →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 style="text-align: left; margin-top: 0;">About Zingsite</h2>
+        <p>Zingsite is a Mumbai-based web design business built for small businesses. We know that most local shops, restaurants, and services don't have the time or budget for big agencies — so we built something simpler.</p>
+        <p>Fast websites. Clear pricing. WhatsApp support. No tech headaches.</p>
+        <p>We handle everything from design to hosting so you can focus on running your business.</p>
+        <div class="feature-list">
+          <div class="feature"><div class="feature-icon">⚡</div><div><h4>Fast Turnaround</h4><p>live in 5–7 days</p></div></div>
+          <div class="feature"><div class="feature-icon">🌐</div><div><h4>Fully Responsive</h4><p>works on every device</p></div></div>
+          <div class="feature"><div class="feature-icon">🤝</div><div><h4>WhatsApp Support</h4><p>direct access, always</p></div></
