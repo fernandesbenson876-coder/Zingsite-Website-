@@ -3,195 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zingsite — Websites, Reels & Tally Printing for Mumbai Businesses</title>
+  <title>Zingsite — Digital Excellence for Mumbai Businesses</title>
   <meta name="google-site-verification" content="YcsMpIsnHfhnLqgaOy9avE-tV-xHqyZbdn7lDzaz4Kc" />
-  <meta name="description" content="Zingsite offers web design, reel editing, and Tally voucher printing for Mumbai small businesses. Free domain, hosting, SSL included.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Zingsite builds premium digital ecosystems for Mumbai small businesses. Websites, AI-ready platforms, and social media solutions.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a2e; line-height: 1.5; }
+    body { background: #ffffff; font-family: 'Inter', sans-serif; color: #0f172a; overflow-x: hidden; }
     .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 
-    /* Navigation */
-    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; z-index: 1000; padding: 16px 0; }
+    /* Navigation - Clean & Transparent */
+    nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0; z-index: 1000; padding: 16px 0; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
     .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
-    .logo-img { height: 40px; width: auto; }
-    .logo span { font-weight: 800; font-size: 1.3rem; background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { color: #4a5568; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.9rem; }
-    .nav-links a:hover, .nav-links a.active { color: #2563eb; }
-    .btn-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .logo-img { height: 36px; width: auto; }
+    .logo span { font-weight: 800; font-size: 1.2rem; background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { color: #334155; text-decoration: none; font-weight: 500; transition: color 0.2s; font-size: 0.9rem; }
+    .nav-links a:hover { color: #2563eb; }
+    .btn-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
     .btn-wa:hover { background: #128C7E; transform: translateY(-2px); }
-    .hamburger { display: none; background: none; border: none; font-size: 1.6rem; cursor: pointer; }
+    .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
     .mobile-menu { display: none; background: white; padding: 16px 24px; border-top: 1px solid #e2e8f0; }
     .mobile-menu.open { display: block; }
-    .mobile-menu a { display: block; color: #4a5568; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
+    .mobile-menu a { display: block; color: #334155; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
 
-    /* Hero */
-    .hero { padding: 140px 0 60px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); }
-    h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.2; margin-bottom: 20px; color: #0f172a; max-width: 900px; margin-left: auto; margin-right: auto; }
-    .hero-sub { font-size: 1.05rem; color: #475569; max-width: 700px; margin: 0 auto 30px; }
-    .offer-badge { background: linear-gradient(135deg, #f97316, #ea580c); color: white; display: inline-flex; align-items: center; gap: 16px; padding: 12px 28px; border-radius: 60px; font-weight: 700; margin-bottom: 20px; flex-wrap: wrap; justify-content: center; }
-    @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(249,115,22,0.4); } 50% { box-shadow: 0 0 0 15px rgba(249,115,22,0); } }
-    .offer-badge a { background: white; color: #ea580c; padding: 6px 20px; border-radius: 40px; text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: transform 0.2s; display: inline-block; }
-    .offer-badge a:hover { transform: scale(1.02); }
+    /* Hero - Split Screen Style */
+    .hero { min-height: 90vh; display: flex; align-items: center; padding: 120px 0 80px; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .hero-badge { font-size: 0.8rem; font-weight: 600; color: #2563eb; letter-spacing: 1px; margin-bottom: 20px; display: block; }
+    .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+    .hero .gradient-text { background: linear-gradient(135deg, #2563eb, #06b6d4, #8b5cf6); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: #475569; font-size: 1.1rem; margin-bottom: 32px; max-width: 90%; }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-image { background: linear-gradient(135deg, #e0e7ff, #fae8ff); border-radius: 32px; padding: 40px; text-align: center; position: relative; overflow: hidden; }
+    .hero-image i { font-size: 4rem; color: #2563eb; margin-bottom: 20px; }
+    .hero-image h3 { font-size: 1.5rem; margin-bottom: 10px; }
+    .floating-badge { position: absolute; bottom: 20px; right: 20px; background: white; padding: 8px 16px; border-radius: 40px; font-size: 0.7rem; font-weight: 600; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
-    /* Section Headers */
-    .section-header { text-align: center; margin: 50px 0 30px; }
-    .section-header h2 { font-size: 2rem; margin-bottom: 8px; }
-    .section-header p { color: #475569; }
+    /* Marquee (Scrolling Capabilities) */
+    .marquee-section { background: #f8fafc; padding: 40px 0; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; overflow: hidden; }
+    .marquee { display: flex; white-space: nowrap; animation: scroll 25s linear infinite; }
+    .marquee span { font-size: 1rem; font-weight: 500; color: #334155; margin: 0 20px; }
+    .marquee i { margin-right: 8px; color: #2563eb; }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* Service Cards */
-    .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin: 40px 0; }
-    .service-card { background: white; border-radius: 28px; padding: 32px; width: 100%; max-width: 360px; border: 1px solid #e2e8f0; transition: all 0.3s; text-align: center; }
-    .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); border-color: #cbd5e1; }
-    .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
-    .service-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 8px; }
-    .service-desc { color: #64748b; font-size: 0.85rem; margin-bottom: 20px; }
-    .service-price { font-size: 1.5rem; font-weight: 800; color: #2563eb; margin-bottom: 8px; }
-    .service-note { font-size: 0.7rem; color: #22c55e; }
+    /* Vision Section (Numbered Steps) */
+    .vision-section { padding: 80px 0; background: white; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+    .section-header p { color: #475569; max-width: 600px; margin: 0 auto; }
+    .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .vision-card { text-align: center; padding: 20px; }
+    .vision-number { width: 48px; height: 48px; background: #e0e7ff; color: #2563eb; border-radius: 60px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.3rem; margin: 0 auto 20px; }
+    .vision-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .vision-card p { color: #64748b; font-size: 0.9rem; line-height: 1.6; }
 
-    /* TALLY Section */
-    .tally-section { background: #f8fafc; padding: 60px 0; margin: 40px 0; border-radius: 32px; }
-    .tally-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-    .tally-info h2 { font-size: 1.8rem; margin-bottom: 16px; }
-    .tally-info p { color: #475569; margin-bottom: 16px; }
-    .tally-price-card { background: white; border-radius: 24px; padding: 28px; border: 1px solid #e2e8f0; }
-    .base-price { font-size: 2rem; font-weight: 800; color: #f97316; }
-    .volume-pricing { margin: 20px 0; padding: 16px; background: #f1f5f9; border-radius: 16px; }
-    .volume-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; }
-    .volume-item:last-child { border-bottom: none; }
-    .example-box { background: #eef2ff; padding: 16px; border-radius: 16px; margin: 20px 0; font-size: 0.85rem; }
-    .how-it-works { list-style: none; margin: 20px 0; }
-    .how-it-works li { padding: 8px 0; display: flex; align-items: center; gap: 10px; }
-    .how-it-works li i { color: #22c55e; width: 20px; }
-    .warning-note { background: #fef3c7; padding: 12px; border-radius: 12px; font-size: 0.8rem; margin: 16px 0; text-align: center; }
-
-    /* Value Statement */
-    .value-box { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 24px; padding: 28px 32px; margin: 40px 0; text-align: center; }
-    .value-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 16px; }
-    .value-item { display: flex; align-items: center; gap: 10px; background: white; padding: 10px 20px; border-radius: 50px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); font-size: 0.85rem; }
-
-    /* Pricing Toggle */
-    .pricing-toggle { display: flex; justify-content: center; gap: 12px; margin: 40px 0 30px; flex-wrap: wrap; }
-    .toggle-btn { background: #f1f5f9; border: none; padding: 12px 28px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; font-size: 0.9rem; color: #475569; }
-    .toggle-btn.active { background: #2563eb; color: white; box-shadow: 0 4px 12px rgba(37,99,235,0.3); }
-    .toggle-btn:hover:not(.active) { background: #e2e8f0; }
-
-    /* Pricing Cards */
-    .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin: 30px 0 40px; }
-    .pricing-card { background: white; border-radius: 32px; padding: 28px; width: 100%; max-width: 340px; border: 1px solid #e2e8f0; transition: all 0.3s; position: relative; }
-    .pricing-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); border-color: #cbd5e1; }
-    .pricing-card.featured { border: 2px solid #2563eb; box-shadow: 0 10px 25px -5px rgba(37,99,235,0.2); }
-    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #2563eb; color: white; padding: 4px 16px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; white-space: nowrap; }
-    .plan-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 8px; }
-    .setup-price { font-size: 0.85rem; color: #64748b; margin-bottom: 16px; }
-    .setup-price strong { font-size: 1.3rem; color: #0f172a; }
-    .monthly-price, .semi-price, .annual-price { font-size: 0.9rem; color: #64748b; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e2e8f0; }
-    .monthly-price strong, .semi-price strong, .annual-price strong { font-size: 1.9rem; color: #2563eb; font-weight: 800; }
-    .daily-note { font-size: 0.7rem; color: #22c55e; margin-top: 4px; display: block; }
-    .semi-price, .annual-price { display: none; }
-    .pricing-card.show-semi .monthly-price { display: none; }
-    .pricing-card.show-semi .semi-price { display: block; }
-    .pricing-card.show-annual .monthly-price { display: none; }
-    .pricing-card.show-annual .annual-price { display: block; }
-    .features { list-style: none; margin: 20px 0; }
-    .features li { padding: 8px 0; display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: #334155; }
-    .features li i { color: #22c55e; width: 18px; flex-shrink: 0; }
-    .btn-plan { width: 100%; text-align: center; padding: 14px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-block; margin-top: 16px; transition: all 0.2s; font-size: 0.9rem; cursor: pointer; border: none; }
-    .btn-plan-primary { background: #2563eb; color: white; }
-    .btn-plan-primary:hover { background: #1d4ed8; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.3); }
-    .btn-plan-outline { background: transparent; border: 1px solid #cbd5e1; color: #1e293b; }
-    .btn-plan-outline:hover { border-color: #2563eb; color: #2563eb; transform: translateY(-2px); }
-
-    /* One-Time Pricing Cards */
-    .one-time-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin: 30px 0 40px; }
-    .one-time-card { background: white; border-radius: 32px; padding: 28px; width: 100%; max-width: 340px; border: 1px solid #e2e8f0; transition: all 0.3s; position: relative; }
-    .one-time-card:hover { transform: translateY(-8px); box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); border-color: #cbd5e1; }
-    .one-time-card.featured { border: 2px solid #2563eb; background: linear-gradient(135deg, #ffffff, #f8fafc); }
-    .setup-price-one { text-align: center; margin-bottom: 16px; }
-    .setup-price-one .original { font-size: 0.85rem; color: #64748b; text-decoration: line-through; display: block; }
-    .setup-price-one .offer-price { font-size: 2rem; font-weight: 800; color: #f97316; display: block; line-height: 1.2; }
-    .setup-price-one .offer-label { font-size: 0.7rem; color: #22c55e; display: block; margin-top: 4px; font-weight: 600; }
-    .annual-fee { text-align: center; margin: 16px 0; padding: 12px; background: #f1f5f9; border-radius: 20px; }
-    .annual-fee .label { font-size: 0.8rem; color: #64748b; display: block; }
-    .annual-fee .price { font-size: 1.6rem; font-weight: 800; color: #0f172a; }
-    .annual-fee .daily-note { font-size: 0.7rem; color: #22c55e; display: block; margin-top: 4px; }
-
-    /* Trust Banner */
-    .trust-banner { background: #f8fafc; border-radius: 20px; padding: 20px; text-align: center; margin: 30px 0; border: 1px solid #e2e8f0; }
-    .trust-banner i { color: #22c55e; margin-right: 8px; }
-
-    /* Reel Add-on */
-    .reel-addon { background: #f1f5f9; border-radius: 20px; padding: 24px; margin: 30px 0; text-align: center; }
-    .reel-addon h3 { margin-bottom: 8px; }
-    .reel-addon p { color: #475569; margin-bottom: 16px; }
-    .reel-prices { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-    .reel-price-btn { background: white; padding: 8px 20px; border-radius: 30px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; display: inline-block; }
-    .reel-price-btn:hover { background: #2563eb; color: white; transform: scale(1.02); }
-
-    /* FAQ */
-    .faq-section { background: #f8fafc; border-radius: 24px; padding: 32px; margin: 40px 0; text-align: center; }
-    .faq-section h3 { margin-bottom: 16px; }
-    .faq-section p { color: #475569; margin: 12px 0; }
-
-    /* Final CTA */
-    .final-cta { background: linear-gradient(135deg, #0f172a, #1e293b); border-radius: 32px; padding: 48px 32px; text-align: center; margin: 60px 0 40px; color: white; }
-    .final-cta h2 { font-size: 1.8rem; margin-bottom: 16px; }
-    .final-cta p { margin-bottom: 24px; opacity: 0.9; }
-    .btn-orange { background: #f97316; color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; border: none; cursor: pointer; }
-    .btn-orange:hover { background: #ea580c; transform: translateY(-2px); }
-
-    /* Portfolio */
-    .portfolio-section { background: #f8fafc; padding: 60px 0; }
+    /* Evidence of Execution (Portfolio) */
+    .portfolio-section { background: #f8fafc; padding: 80px 0; }
     .portfolio-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
     .portfolio-card { background: white; border-radius: 24px; overflow: hidden; border: 1px solid #e2e8f0; width: 320px; cursor: pointer; transition: all 0.3s; }
     .portfolio-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); }
-    .portfolio-img { width: 100%; height: 190px; object-fit: cover; display: block; }
+    .portfolio-img { width: 100%; height: 220px; object-fit: cover; background: #e2e8f0; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #94a3b8; }
     .portfolio-info { padding: 20px; }
     .portfolio-tag { background: #dbeafe; color: #2563eb; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; display: inline-block; }
     .portfolio-info h3 { margin: 12px 0 6px; font-size: 1.1rem; }
     .portfolio-info p { color: #64748b; font-size: 0.85rem; }
 
-    /* About */
-    .about-section { padding: 60px 0; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-    .about-grid h2 { font-size: 2rem; margin-bottom: 20px; }
-    .about-grid p { color: #475569; margin-bottom: 16px; }
-    .about-card { background: #f1f5f9; padding: 40px; border-radius: 24px; text-align: center; }
-    .about-card i { font-size: 3rem; color: #2563eb; margin-bottom: 16px; display: block; }
+    /* Services Overview */
+    .services-section { padding: 80px 0; background: white; }
+    .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+    .service-card { background: #f8fafc; border-radius: 24px; padding: 32px; width: 100%; max-width: 350px; text-align: center; transition: all 0.3s; border: 1px solid #e2e8f0; }
+    .service-card:hover { transform: translateY(-5px); border-color: #2563eb; }
+    .service-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .service-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+    .service-card p { color: #64748b; font-size: 0.85rem; margin-bottom: 20px; }
 
-    /* Contact */
-    .contact-section { background: #f8fafc; padding: 60px 0; }
-    .contact-header { text-align: center; margin-bottom: 40px; }
-    .contact-header h2 { font-size: 2rem; margin-bottom: 8px; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .contact-form input, .contact-form textarea { width: 100%; padding: 14px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 12px; font-family: inherit; }
-    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #2563eb; }
-    .error-message { color: #ef4444; font-size: 0.75rem; display: none; margin-top: -12px; margin-bottom: 12px; }
-    .contact-info { background: white; padding: 30px; border-radius: 24px; border: 1px solid #e2e8f0; }
-    .contact-info h3 { margin-bottom: 20px; }
-    .contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-    .contact-row i { color: #2563eb; width: 24px; }
-    .contact-row a { color: #1e293b; text-decoration: none; }
-    .contact-row a:hover { color: #2563eb; }
+    /* Pricing Sections (Compact) */
+    .pricing-section { background: #f8fafc; padding: 80px 0; }
+    .pricing-toggle { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
+    .toggle-btn { background: white; border: 1px solid #e2e8f0; padding: 10px 24px; border-radius: 40px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; font-size: 0.85rem; color: #475569; }
+    .toggle-btn.active { background: #2563eb; color: white; border-color: #2563eb; }
+    .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+    .pricing-card { background: white; border-radius: 24px; padding: 24px; width: 100%; max-width: 300px; border: 1px solid #e2e8f0; transition: all 0.3s; }
+    .pricing-card:hover { transform: translateY(-5px); }
+    .pricing-card.featured { border: 2px solid #2563eb; position: relative; }
+    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #2563eb; color: white; padding: 4px 16px; border-radius: 30px; font-size: 0.7rem; }
+    .plan-name { font-size: 1.3rem; font-weight: 800; margin-bottom: 16px; }
+    .price { font-size: 1.8rem; font-weight: 800; color: #2563eb; margin-bottom: 16px; }
+    .price small { font-size: 0.8rem; font-weight: 400; color: #64748b; }
+    .features { list-style: none; margin: 20px 0; }
+    .features li { padding: 6px 0; display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+    .features li i { color: #22c55e; width: 18px; }
+    .btn-plan { width: 100%; text-align: center; padding: 12px; border-radius: 40px; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 16px; transition: all 0.2s; font-size: 0.85rem; cursor: pointer; border: none; }
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-2px); }
+    .btn-outline { background: transparent; border: 1px solid #cbd5e1; color: #1e293b; }
+    .btn-outline:hover { border-color: #2563eb; color: #2563eb; }
+
+    /* Tally Section */
+    .tally-section { background: white; padding: 80px 0; }
+    .tally-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .tally-info h2 { font-size: 1.8rem; margin-bottom: 20px; }
+    .tally-card { background: #f8fafc; padding: 28px; border-radius: 24px; border: 1px solid #e2e8f0; }
+    .base-price { font-size: 1.8rem; font-weight: 800; color: #f97316; }
+    .volume-pricing { margin: 20px 0; padding: 16px; background: white; border-radius: 16px; }
+    .volume-item { display: flex; justify-content: space-between; padding: 8px 0; }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, #0f172a, #1e293b); padding: 80px 0; text-align: center; color: white; }
+    .cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+    .cta-section .btn-wa { background: #f97316; font-size: 1rem; padding: 14px 32px; }
+    .cta-section .btn-wa:hover { background: #ea580c; }
 
     footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; }
     footer a { color: #94a3b8; text-decoration: none; }
-    footer a:hover { color: white; }
 
     @media (max-width: 900px) {
+      .hero-grid, .vision-grid, .tally-grid { grid-template-columns: 1fr; }
       .nav-links, .btn-wa.nav-wa { display: none; }
       .hamburger { display: block; }
-      .about-grid, .contact-grid, .tally-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 700px) {
-      .hero { padding: 120px 0 40px; }
-      .pricing-card, .one-time-card, .service-card { max-width: 100%; }
-      .value-grid { flex-direction: column; align-items: center; }
-      .final-cta h2 { font-size: 1.4rem; }
+      .hero { padding: 100px 0 60px; }
+      .hero p { max-width: 100%; }
     }
   </style>
 </head>
@@ -204,45 +138,116 @@
       <span>Zingsite</span>
     </a>
     <ul class="nav-links">
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#portfolio">Work</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#pricing-monthly">Web Plans</a></li>
-      <li><a href="#pricing-onetime">One-Time</a></li>
-      <li><a href="#tally">Tally Printing</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#tally">Tally</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="https://wa.me/918828685342" target="_blank" class="btn-wa nav-wa">💬 WhatsApp</a>
     <button class="hamburger" onclick="toggleMenu()">☰</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#" onclick="closeMenu(); scrollToTop(); return false;">Home</a>
+    <a href="#vision" onclick="closeMenu()">Vision</a>
+    <a href="#portfolio" onclick="closeMenu()">Work</a>
     <a href="#services" onclick="closeMenu()">Services</a>
-    <a href="#pricing-monthly" onclick="closeMenu()">Web Plans</a>
-    <a href="#pricing-onetime" onclick="closeMenu()">One-Time</a>
-    <a href="#tally" onclick="closeMenu()">Tally Printing</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+    <a href="#pricing" onclick="closeMenu()">Pricing</a>
+    <a href="#tally" onclick="closeMenu()">Tally</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
     <a href="https://wa.me/918828685342" target="_blank" onclick="closeMenu()">💬 WhatsApp</a>
     <a href="https://www.instagram.com/zingsite" target="_blank" onclick="closeMenu()">📸 Instagram</a>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO - Split Screen Dynamic -->
 <section class="hero">
   <div class="container">
-    <div class="offer-badge">
-      🔥 First 5 clients this month get 20% OFF web setup fee
-      <a href="https://wa.me/918828685342?text=I%20want%20the%2020%25%20off%20offer!">Claim Now →</a>
+    <div class="hero-grid">
+      <div>
+        <span class="hero-badge">✨ MUMBAI-BASED DIGITAL AGENCY</span>
+        <h1>Websites That Bring <span class="gradient-text">More Customers</span> – Without the Headache</h1>
+        <p>Modern, fast-loading websites built for Mumbai small businesses. Everything included: free domain, SSL, hosting, and regular updates.</p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/918828685342?text=Hi!%20I%20want%20to%20get%20a%20website%20for%20my%20business" target="_blank" class="btn-wa">💬 Start a Project</a>
+          <a href="#pricing" class="btn-outline" style="padding: 8px 20px; border: 1px solid #cbd5e1; border-radius: 40px; text-decoration: none; color: #334155;">View Pricing →</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <i class="fas fa-chart-line"></i>
+        <h3>20% OFF Setup</h3>
+        <p>First 5 clients only</p>
+        <div class="floating-badge">🔥 Limited Slots</div>
+      </div>
     </div>
-    <h1>Your Business Deserves a Professional Website That Brings More Customers – Without the Headache</h1>
-    <p class="hero-sub">Modern websites, social media reels, and Tally voucher printing – all under one roof for Mumbai small businesses.</p>
+  </div>
+</section>
+
+<!-- MARQUEE - Scrolling Capabilities (Dynamic) -->
+<div class="marquee-section">
+  <div class="marquee">
+    <span><i class="fas fa-code"></i> Web Design</span>
+    <span><i class="fas fa-film"></i> Reel Editing</span>
+    <span><i class="fas fa-print"></i> Tally Printing</span>
+    <span><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+    <span><i class="fas fa-chart-simple"></i> SEO Ready</span>
+    <span><i class="fas fa-cart-shopping"></i> E-commerce</span>
+    <span><i class="fas fa-envelope"></i> Email Support</span>
+    <span><i class="fas fa-shield-alt"></i> SSL Security</span>
+    <!-- Duplicate for seamless scroll -->
+    <span><i class="fas fa-code"></i> Web Design</span>
+    <span><i class="fas fa-film"></i> Reel Editing</span>
+    <span><i class="fas fa-print"></i> Tally Printing</span>
+    <span><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+    <span><i class="fas fa-chart-simple"></i> SEO Ready</span>
+    <span><i class="fas fa-cart-shopping"></i> E-commerce</span>
+    <span><i class="fas fa-envelope"></i> Email Support</span>
+    <span><i class="fas fa-shield-alt"></i> SSL Security</span>
+  </div>
+</div>
+
+<!-- VISION SECTION - Numbered Steps (Dynamic) -->
+<section id="vision" class="vision-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>We don't just build. We research, design, and deliver.</h2>
+      <p>A simple, transparent process for Mumbai small businesses</p>
+    </div>
+    <div class="vision-grid">
+      <div class="vision-card">
+        <div class="vision-number">01</div>
+        <h3>Research & Discuss</h3>
+        <p>We understand your business, goals, and customers before writing a single line of code.</p>
+      </div>
+      <div class="vision-card">
+        <div class="vision-number">02</div>
+        <h3>Design & Develop</h3>
+        <p>Modern, responsive websites built with your brand and customers in mind.</p>
+      </div>
+      <div class="vision-card">
+        <div class="vision-number">03</div>
+        <h3>Launch & Support</h3>
+        <p>We handle hosting, security, updates, and edits – you focus on running your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVIDENCE OF EXECUTION - Portfolio (Dynamic - Your Request) -->
+<section id="portfolio" class="portfolio-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Evidence of Execution</h2>
+      <p>More projects coming up</p>
+    </div>
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- Portfolio items load here -->
+    </div>
   </div>
 </section>
 
 <!-- SERVICES OVERVIEW -->
-<section id="services">
+<section id="services" class="services-section">
   <div class="container">
     <div class="section-header">
       <h2>What We Offer</h2>
@@ -251,199 +256,45 @@
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">🌐</div>
-        <div class="service-title">Website Design</div>
-        <div class="service-desc">Professional websites with free domain, hosting, and SSL. Starting at ₹3,000/month.</div>
-        <a href="#pricing-monthly" class="btn-plan btn-plan-outline" style="display: inline-block; width: auto; padding: 10px 24px;">Explore →</a>
+        <h3>Website Design</h3>
+        <p>Professional websites with free domain, hosting, and SSL. Starting at ₹3,000/month.</p>
+        <a href="#pricing" class="btn-outline" style="display: inline-block; padding: 8px 20px;">Explore →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">🎬</div>
-        <div class="service-title">Reel Editing</div>
-        <div class="service-desc">You shoot, we edit. SEO captions + custom thumbnails included.</div>
-        <div class="service-price">₹2,000 - ₹3,500<span style="font-size: 0.8rem;">/month</span></div>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20Reel%20Editing" target="_blank" class="btn-plan btn-plan-outline" style="display: inline-block; width: auto; padding: 10px 24px;">WhatsApp →</a>
+        <h3>Reel Editing</h3>
+        <p>You shoot, we edit. SEO captions + custom thumbnails included.</p>
+        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20Reel%20Editing" target="_blank" class="btn-outline" style="display: inline-block; padding: 8px 20px;">WhatsApp →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">🖨️</div>
-        <div class="service-title">Tally Voucher Printing</div>
-        <div class="service-desc">Stop struggling with printer settings. We handle your Tally vouchers professionally.</div>
-        <a href="#tally" class="btn-plan btn-plan-outline" style="display: inline-block; width: auto; padding: 10px 24px;">Learn More →</a>
+        <h3>Tally Voucher Printing</h3>
+        <p>Stop struggling with printer settings. We handle your Tally vouchers professionally.</p>
+        <a href="#tally" class="btn-outline" style="display: inline-block; padding: 8px 20px;">Learn More →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VALUE STATEMENT -->
-<div class="container">
-  <div class="value-box">
-    <h3>💡 Why choose Zingsite?</h3>
-    <div class="value-grid">
-      <div class="value-item"><i class="fas fa-check-circle"></i> Mumbai-based, quick support</div>
-      <div class="value-item"><i class="fas fa-check-circle"></i> No hidden fees</div>
-      <div class="value-item"><i class="fas fa-check-circle"></i> WhatsApp support included</div>
-      <div class="value-item"><i class="fas fa-check-circle"></i> Fast turnaround time</div>
-    </div>
-  </div>
-</div>
-
-<!-- MONTHLY PRICING SECTION -->
-<section id="pricing-monthly">
+<!-- PRICING SECTION (Compact) -->
+<section id="pricing" class="pricing-section">
   <div class="container">
     <div class="section-header">
-      <h2>📅 Monthly Subscription Plans</h2>
-      <p>Pay as you go – includes hosting, updates, and support</p>
+      <h2>Simple, Transparent Pricing</h2>
+      <p>Choose the perfect package for your business</p>
     </div>
     <div class="pricing-toggle">
       <button class="toggle-btn active" id="monthlyBtn">Monthly</button>
-      <button class="toggle-btn" id="semiBtn">6 Months <span style="background:#22c55e20; padding:2px 8px; border-radius:20px; margin-left:6px; font-size:0.7rem;">+1 Free</span></button>
-      <button class="toggle-btn" id="annualBtn">12 Months <span style="background:#22c55e20; padding:2px 8px; border-radius:20px; margin-left:6px; font-size:0.7rem;">+2 Free</span></button>
+      <button class="toggle-btn" id="semiBtn">6 Months (+1 Free)</button>
+      <button class="toggle-btn" id="annualBtn">12 Months (+2 Free)</button>
     </div>
-
-    <div class="pricing-grid">
-      <div class="pricing-card" id="cardBasic">
-        <div class="plan-name">Basic</div>
-        <div class="setup-price"><strong>₹4,999</strong> setup</div>
-        <div class="monthly-price"><strong>₹3,000</strong> /month <span class="daily-note">≈ ₹100/day – less than a cup of chai</span></div>
-        <div class="semi-price"><strong>₹16,200</strong> /6 months <span class="daily-note">(+1 free) ≈ ₹90/day</span></div>
-        <div class="annual-price"><strong>₹32,400</strong> /year <span class="daily-note">(+2 free) ≈ ₹80/day</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 3 Pages</li>
-          <li><i class="fas fa-check-circle"></i> 3 Edits/month</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (Year 1)</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li>
-        </ul>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Basic%20monthly%20plan%20(₹4,999%20setup%20+%20₹3,000/month)" target="_blank" class="btn-plan btn-plan-outline">Get Started →</a>
-      </div>
-
-      <div class="pricing-card featured" id="cardStandard">
-        <div class="popular-badge">⭐ Most Popular</div>
-        <div class="plan-name">Standard</div>
-        <div class="setup-price"><strong>₹7,999</strong> setup</div>
-        <div class="monthly-price"><strong>₹5,000</strong> /month <span class="daily-note">≈ ₹167/day – pays for itself with one extra customer</span></div>
-        <div class="semi-price"><strong>₹27,000</strong> /6 months <span class="daily-note">(+1 free) ≈ ₹150/day</span></div>
-        <div class="annual-price"><strong>₹54,000</strong> /year <span class="daily-note">(+2 free) ≈ ₹133/day</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 5 Pages</li>
-          <li><i class="fas fa-check-circle"></i> 5 Edits/month</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (Year 1)</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li>
-          <li><i class="fas fa-check-circle"></i> Email Support</li>
-        </ul>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Standard%20monthly%20plan%20(₹7,999%20setup%20+%20₹5,000/month)" target="_blank" class="btn-plan btn-plan-primary">Claim 20% OFF Setup →</a>
-      </div>
-
-      <div class="pricing-card" id="cardPremium">
-        <div class="plan-name">Professional</div>
-        <div class="setup-price"><strong>₹10,000</strong> setup</div>
-        <div class="monthly-price"><strong>₹8,000</strong> /month <span class="daily-note">≈ ₹267/day – unlimited growth potential</span></div>
-        <div class="semi-price"><strong>₹43,200</strong> /6 months <span class="daily-note">(+1 free) ≈ ₹240/day</span></div>
-        <div class="annual-price"><strong>₹86,400</strong> /year <span class="daily-note">(+2 free) ≈ ₹213/day</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 10 Pages</li>
-          <li><i class="fas fa-check-circle"></i> 10 Edits/month</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (Year 1)</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li>
-          <li><i class="fas fa-check-circle"></i> Email Support</li>
-          <li><i class="fas fa-check-circle"></i> Blog Section</li>
-          <li><i class="fas fa-check-circle"></i> E-commerce Ready</li>
-          <li><i class="fas fa-check-circle"></i> Analytics & Reports</li>
-        </ul>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Professional%20monthly%20plan%20(₹10,000%20setup%20+%20₹8,000/month)" target="_blank" class="btn-plan btn-plan-outline">Get Started →</a>
-      </div>
+    <div class="pricing-grid" id="pricingGrid">
+      <!-- Pricing cards load here -->
     </div>
   </div>
 </section>
 
-<!-- ONE-TIME + ANNUAL MAINTENANCE PRICING SECTION -->
-<section id="pricing-onetime">
-  <div class="container">
-    <div class="section-header">
-      <h2>💰 One-Time Website Build + Annual Maintenance</h2>
-      <p>Pay once, then just ₹7–19/day for security, updates, and peace of mind</p>
-    </div>
-    <div class="one-time-grid">
-      <div class="one-time-card" id="oneTimeBasic">
-        <div class="plan-name">Basic</div>
-        <div class="setup-price-one">
-          <span class="original">₹7,000</span>
-          <span class="offer-price">₹5,600</span>
-          <span class="offer-label">20% OFF for first 5 clients</span>
-        </div>
-        <div class="annual-fee">
-          <span class="label">Annual Maintenance</span>
-          <span class="price">₹2,500</span>
-          <span class="daily-note">≈ ₹7/day – keeps your site secure, updated, and running smoothly all year</span>
-        </div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 3 Pages</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-          <li><i class="fas fa-check-circle"></i> SSL Security</li>
-        </ul>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Basic%20One-Time%20plan%20(₹5,600%20setup%20+%20₹2,500/year%20maintenance)" target="_blank" class="btn-plan btn-plan-outline">Get Started →</a>
-      </div>
-
-      <div class="one-time-card featured" id="oneTimeStandard">
-        <div class="popular-badge">⭐ Most Popular</div>
-        <div class="plan-name">Standard</div>
-        <div class="setup-price-one">
-          <span class="original">₹12,000</span>
-          <span class="offer-price">₹9,600</span>
-          <span class="offer-label">20% OFF for first 5 clients</span>
-        </div>
-        <div class="annual-fee">
-          <span class="label">Annual Maintenance</span>
-          <span class="price">₹5,000</span>
-          <span class="daily-note">≈ ₹14/day – keeps your site secure, updated, and running smoothly all year</span>
-        </div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 5 Pages</li>
-          <li><i class="fas fa-check-circle"></i> Email Support</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-          <li><i class="fas fa-check-circle"></i> SSL Security</li>
-        </ul>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Standard%20One-Time%20plan%20(₹9,600%20setup%20+%20₹5,000/year%20maintenance)" target="_blank" class="btn-plan btn-plan-primary">Get Started →</a>
-      </div>
-
-      <div class="one-time-card" id="oneTimePremium">
-        <div class="plan-name">Premium</div>
-        <div class="setup-price-one">
-          <span class="original">₹20,000</span>
-          <span class="offer-price">₹16,000</span>
-          <span class="offer-label">20% OFF for first 5 clients</span>
-        </div>
-        <div class="annual-fee">
-          <span class="label">Annual Maintenance</span>
-          <span class="price">₹7,000</span>
-          <span class="daily-note">≈ ₹19/day – keeps your site secure, updated, and running smoothly all year</span>
-        </div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 10 Pages</li>
-          <li><i class="fas fa-check-circle"></i> Blog Section</li>
-          <li><i class="fas fa-check-circle"></i> E-commerce Ready</li>
-          <li><i class="fas fa-check-circle"></i> Analytics & Reports</li>
-          <li><i class="fas fa-check-circle"></i> Email Support</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-          <li><i class="fas fa-check-circle"></i> SSL Security</li>
-        </ul>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Premium%20One-Time%20plan%20(₹16,000%20setup%20+%20₹7,000/year%20maintenance)" target="_blank" class="btn-plan btn-plan-outline">Get Started →</a>
-      </div>
-    </div>
-
-    <div class="trust-banner">
-      <i class="fas fa-gift"></i> <strong>Free domain and SSL included in all plans for the first year.</strong>
-    </div>
-  </div>
-</section>
-
-<!-- TALLY VOUCHER PRINTING SERVICE -->
+<!-- TALLY VOUCHER PRINTING -->
 <section id="tally" class="tally-section">
   <div class="container">
     <div class="section-header">
@@ -453,137 +304,74 @@
     <div class="tally-grid">
       <div class="tally-info">
         <h2>How It Works</h2>
-        <ul class="how-it-works">
-          <li><i class="fas fa-folder-open"></i> Copy your Tally data folder (TallyPrime\Data\Company.900)</li>
-          <li><i class="fas fa-paper-plane"></i> Send via USB, WhatsApp, or email</li>
-          <li><i class="fas fa-cog"></i> We configure, print, and organize</li>
-          <li><i class="fas fa-truck"></i> Collect or get delivery</li>
+        <ul style="list-style: none; margin: 20px 0;">
+          <li style="margin-bottom: 12px;"><i class="fas fa-folder-open" style="color:#2563eb; width: 24px;"></i> Copy your Tally data folder (TallyPrime\Data\Company.900)</li>
+          <li style="margin-bottom: 12px;"><i class="fas fa-paper-plane" style="color:#2563eb; width: 24px;"></i> Send via USB, WhatsApp, or email</li>
+          <li style="margin-bottom: 12px;"><i class="fas fa-cog" style="color:#2563eb; width: 24px;"></i> We configure, print, and organize</li>
+          <li style="margin-bottom: 12px;"><i class="fas fa-truck" style="color:#2563eb; width: 24px;"></i> Collect or get delivery</li>
         </ul>
-        <div class="warning-note">
+        <div style="background: #fef3c7; padding: 12px; border-radius: 12px; font-size: 0.8rem; margin: 20px 0;">
           <i class="fas fa-exclamation-triangle"></i> We don't modify your accounting entries. We only print what exists.
         </div>
-        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20service" target="_blank" class="btn-wa" style="display: inline-flex; margin-top: 20px;">📩 WhatsApp for Tally Printing →</a>
+        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20service" target="_blank" class="btn-wa" style="display: inline-flex;">📩 WhatsApp for Tally Printing →</a>
       </div>
-      <div class="tally-price-card">
-        <h3 style="margin-bottom: 16px;">💰 Pricing</h3>
+      <div class="tally-card">
+        <h3>💰 Pricing</h3>
         <div class="base-price">BASE PACKAGE — ₹2,500</div>
         <p style="margin: 12px 0; color: #475569;">• 200 printed copies (any voucher type)<br>• PDF + Excel soft copies<br>• GST invoice formats<br>• Delivery next day</p>
-        
         <div class="volume-pricing">
           <h4 style="margin-bottom: 12px;">📊 Volume Pricing</h4>
           <div class="volume-item"><span>Tier 1 (201–500 pages)</span><span>₹9/page</span></div>
           <div class="volume-item"><span>Tier 2 (501–1000 pages)</span><span>₹8/page</span></div>
           <div class="volume-item"><span>Tier 3 (1000+ pages)</span><span>₹6/page</span></div>
         </div>
-        
-        <div class="example-box">
-          <strong>📝 Example Calculation:</strong><br>
-          600 pages = ₹2,500 (base) + (300 × ₹9) + (100 × ₹8) = ₹2,500 + ₹2,700 + ₹800 = <strong>₹6,000</strong>
+        <div style="background: #eef2ff; padding: 12px; border-radius: 12px; margin: 16px 0;">
+          <strong>📝 Example:</strong> 600 pages = ₹2,500 + ₹2,700 + ₹800 = <strong>₹6,000</strong>
         </div>
-        
-        <div class="volume-pricing">
-          <h4 style="margin-bottom: 12px;">👥 Who Is This For</h4>
-          <p>• Monthly record keeping<br>• Audit preparation<br>• Bank loan documentation<br>• GST filing backup</p>
-        </div>
-        
-        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20service%20for%20my%20business" target="_blank" class="btn-plan btn-plan-primary" style="display: block; text-align: center;">Get Tally Printing Quote →</a>
+        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20for%20my%20business" target="_blank" class="btn-primary" style="display: block; text-align: center; padding: 12px; border-radius: 40px; text-decoration: none;">Get Quote →</a>
       </div>
     </div>
   </div>
 </section>
-
-<!-- REEL ADD-ON with WhatsApp Integration -->
-<div class="container">
-  <div class="reel-addon">
-    <h3>🎬 Need Social Media Reels?</h3>
-    <p>Add reel editing to any plan – you shoot, we edit with SEO captions & thumbnails</p>
-    <div class="reel-prices">
-      <span class="reel-price-btn" onclick="window.open('https://wa.me/918828685342?text=I%27m%20interested%20in%20the%20Reel%20Add-on%3A%20₹2,000%2Fmonth%20for%204%20reels', '_blank')">₹2,000/month · 4 reels</span>
-      <span class="reel-price-btn" onclick="window.open('https://wa.me/918828685342?text=I%27m%20interested%20in%20the%20Reel%20Add-on%3A%20₹3,500%2Fmonth%20for%208%20reels', '_blank')">₹3,500/month · 8 reels</span>
-    </div>
-  </div>
-</div>
-
-<!-- FAQ -->
-<div class="container">
-  <div class="faq-section">
-    <h3>❓ Frequently Asked Questions</h3>
-    <p><strong>Can I cancel web plans anytime?</strong> Yes – 15 days notice. No long-term lock-in.</p>
-    <p><strong>How do I send Tally data?</strong> You can send via USB drive, WhatsApp, or email. We'll guide you.</p>
-    <p><strong>What if I need more than 10 pages?</strong> Custom web plans available. Just WhatsApp us.</p>
-    <p><strong>Do you modify Tally entries?</strong> No. We only print what exists in your Tally data.</p>
-  </div>
-</div>
 
 <!-- FINAL CTA -->
-<div class="container">
-  <div class="final-cta">
+<section class="cta-section">
+  <div class="container">
     <h2>Ready to grow your business?</h2>
     <p>Get a website, reels, or Tally printing – all at affordable prices. WhatsApp us today!</p>
-    <a href="https://wa.me/918828685342?text=I%20want%20to%20know%20more%20about%20Zingsite%20services" target="_blank" class="btn-orange">🚀 WhatsApp Now →</a>
-  </div>
-</div>
-
-<!-- PORTFOLIO -->
-<section id="portfolio" class="portfolio-section">
-  <div class="container">
-    <div class="section-header">
-      <h2>Evidence of Execution</h2>
-      <p>More projects coming up</p>
-    </div>
-    <div class="portfolio-grid" id="portfolioGrid"></div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="about-section">
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <h2>About Zingsite</h2>
-        <p>Zingsite is a Mumbai-based service provider built for small businesses. We know that most local shops, restaurants, and services don't have the time or budget for big agencies — so we built something simpler.</p>
-        <p>Fast websites. Clear pricing. WhatsApp support. No tech headaches.</p>
-        <p>We handle everything from design to hosting so you can focus on running your business.</p>
-      </div>
-      <div class="about-card">
-        <i class="fas fa-chart-line"></i>
-        <p style="font-weight: 500;">Simple, transparent, and built for you.</p>
-        <p style="font-size: 0.85rem; margin-top: 8px;">No hidden fees. No confusing packages. Just good services at fair prices — with real support from a real person in Mumbai.</p>
-      </div>
-    </div>
+    <a href="https://wa.me/918828685342?text=I%20want%20to%20know%20more%20about%20Zingsite%20services" target="_blank" class="btn-wa" style="background: #f97316; font-size: 1rem; padding: 14px 32px;">🚀 Start Your Project →</a>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact-section">
+<section id="contact" style="background: #f8fafc; padding: 60px 0;">
   <div class="container">
-    <div class="contact-header">
-      <h2>Ready to Get Started?</h2>
-      <p>Let's talk about your project. <a href="terms.html" style="color: #2563eb;">Terms & Client Agreement</a></p>
+    <div class="section-header">
+      <h2>Let's Talk</h2>
+      <p>Have a question or ready to start? Reach out to us.</p>
     </div>
-    <div class="contact-grid">
-      <div class="contact-form">
-        <input type="text" id="name" placeholder="Your Name *">
-        <div class="error-message" id="nameError">Please enter your name</div>
-        <input type="email" id="email" placeholder="Your Email">
-        <input type="tel" id="phone" placeholder="Your WhatsApp Number *">
-        <div class="error-message" id="phoneError">Please enter your WhatsApp number</div>
-        <textarea id="message" rows="5" placeholder="Tell us about your project... *"></textarea>
-        <div class="error-message" id="messageError">Please describe your project</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 900px; margin: 0 auto;">
+      <div>
+        <input type="text" id="name" placeholder="Your Name *" style="width: 100%; padding: 14px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 12px;">
+        <div class="error-message" id="nameError" style="color: #ef4444; font-size: 0.75rem; display: none;">Please enter your name</div>
+        <input type="email" id="email" placeholder="Your Email" style="width: 100%; padding: 14px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 12px;">
+        <input type="tel" id="phone" placeholder="Your WhatsApp Number *" style="width: 100%; padding: 14px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 12px;">
+        <div class="error-message" id="phoneError" style="color: #ef4444; font-size: 0.75rem; display: none;">Please enter your WhatsApp number</div>
+        <textarea id="message" rows="4" placeholder="Tell us about your project... *" style="width: 100%; padding: 14px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 12px;"></textarea>
+        <div class="error-message" id="messageError" style="color: #ef4444; font-size: 0.75rem; display: none;">Please describe your project</div>
         <button onclick="validateAndSend()" class="btn-wa" style="width:100%; justify-content:center;">📩 Send via WhatsApp</button>
       </div>
-      <div class="contact-info">
-        <h3>Get in Touch</h3>
-        <div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>Mumbai, Maharashtra, India</span></div>
-        <div class="contact-row"><i class="fab fa-whatsapp"></i><a href="https://wa.me/918828685342">+91 88286 85342</a></div>
-        <div class="contact-row"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/zingsite" target="_blank">@zingsite</a></div>
+      <div style="background: white; padding: 30px; border-radius: 24px;">
+        <h3 style="margin-bottom: 20px;">Get in Touch</h3>
+        <p style="margin-bottom: 16px;"><i class="fas fa-map-marker-alt" style="color: #2563eb; width: 30px;"></i> Mumbai, Maharashtra, India</p>
+        <p style="margin-bottom: 16px;"><i class="fab fa-whatsapp" style="color: #2563eb; width: 30px;"></i> <a href="https://wa.me/918828685342" style="color: #1e293b; text-decoration: none;">+91 88286 85342</a></p>
+        <p style="margin-bottom: 16px;"><i class="fab fa-instagram" style="color: #2563eb; width: 30px;"></i> <a href="https://www.instagram.com/zingsite" target="_blank" style="color: #1e293b; text-decoration: none;">@zingsite</a></p>
         <a href="https://wa.me/918828685342" target="_blank" class="btn-wa" style="display: block; text-align: center; margin-top: 20px;">💬 Chat on WhatsApp</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <p>© 2026 Zingsite. All rights reserved. Mumbai, India</p>
@@ -592,35 +380,100 @@
 </footer>
 
 <script>
+  // Navigation
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
   function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
-  // Monthly Pricing Toggle
+  // Pricing Data
+  const plans = {
+    monthly: {
+      basic: { setup: "₹4,999", price: "₹3,000", semi: "₹16,200", annual: "₹32,400" },
+      standard: { setup: "₹7,999", price: "₹5,000", semi: "₹27,000", annual: "₹54,000" },
+      professional: { setup: "₹10,000", price: "₹8,000", semi: "₹43,200", annual: "₹86,400" }
+    }
+  };
+
   let billingMode = 'monthly';
   const monthlyBtn = document.getElementById('monthlyBtn');
   const semiBtn = document.getElementById('semiBtn');
   const annualBtn = document.getElementById('annualBtn');
-  const cards = ['cardBasic', 'cardStandard', 'cardPremium'];
+  const pricingGrid = document.getElementById('pricingGrid');
 
+  function renderPricing() {
+    const data = plans.monthly;
+    let priceText = '', semiText = '', annualText = '';
+    
+    if (billingMode === 'monthly') {
+      priceText = (p) => `${p.price}/month <span class="daily-note" style="font-size:0.7rem; color:#22c55e; display:block;">≈ ₹${Math.round(parseInt(p.price.replace(/[^0-9]/g,''))/30)}/day</span>`;
+      semiText = () => '';
+      annualText = () => '';
+    } else if (billingMode === 'semi') {
+      priceText = () => '';
+      semiText = (p) => `${p.semi}/6 months <span style="font-size:0.7rem; color:#22c55e; display:block;">(+1 month free)</span>`;
+      annualText = () => '';
+    } else {
+      priceText = () => '';
+      semiText = () => '';
+      annualText = (p) => `${p.annual}/year <span style="font-size:0.7rem; color:#22c55e; display:block;">(+2 months free)</span>`;
+    }
+
+    pricingGrid.innerHTML = `
+      <div class="pricing-card">
+        <div class="plan-name">Basic</div>
+        <div class="setup-price" style="font-size:0.8rem; color:#64748b; margin-bottom:12px;"><strong style="font-size:1.2rem;">${data.basic.setup}</strong> setup</div>
+        <div class="monthly-price" style="${billingMode !== 'monthly' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.basic.price}</strong> /month</div>
+        <div class="semi-price" style="${billingMode !== 'semi' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.basic.semi}</strong> /6 months</div>
+        <div class="annual-price" style="${billingMode !== 'annual' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.basic.annual}</strong> /year</div>
+        <ul class="features"><li><i class="fas fa-check-circle"></i> 3 Pages</li><li><i class="fas fa-check-circle"></i> 3 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li></ul>
+        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Basic%20plan" target="_blank" class="btn-outline" style="display:block; text-align:center; padding:10px;">Get Started →</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="popular-badge">⭐ Most Popular</div>
+        <div class="plan-name">Standard</div>
+        <div class="setup-price" style="font-size:0.8rem; color:#64748b; margin-bottom:12px;"><strong style="font-size:1.2rem;">${data.standard.setup}</strong> setup</div>
+        <div class="monthly-price" style="${billingMode !== 'monthly' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.standard.price}</strong> /month</div>
+        <div class="semi-price" style="${billingMode !== 'semi' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.standard.semi}</strong> /6 months</div>
+        <div class="annual-price" style="${billingMode !== 'annual' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.standard.annual}</strong> /year</div>
+        <ul class="features"><li><i class="fas fa-check-circle"></i> 5 Pages</li><li><i class="fas fa-check-circle"></i> 5 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Email Support</li></ul>
+        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Standard%20plan" target="_blank" class="btn-primary" style="display:block; text-align:center; padding:10px;">Get Started →</a>
+      </div>
+      <div class="pricing-card">
+        <div class="plan-name">Professional</div>
+        <div class="setup-price" style="font-size:0.8rem; color:#64748b; margin-bottom:12px;"><strong style="font-size:1.2rem;">${data.professional.setup}</strong> setup</div>
+        <div class="monthly-price" style="${billingMode !== 'monthly' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.professional.price}</strong> /month</div>
+        <div class="semi-price" style="${billingMode !== 'semi' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.professional.semi}</strong> /6 months</div>
+        <div class="annual-price" style="${billingMode !== 'annual' ? 'display:none' : ''}"><strong style="font-size:1.5rem;">${data.professional.annual}</strong> /year</div>
+        <ul class="features"><li><i class="fas fa-check-circle"></i> 10 Pages</li><li><i class="fas fa-check-circle"></i> 10 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Email Support</li><li><i class="fas fa-check-circle"></i> Blog Section</li><li><i class="fas fa-check-circle"></i> E-commerce Ready</li><li><i class="fas fa-check-circle"></i> Analytics & Reports</li></ul>
+        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Professional%20plan" target="_blank" class="btn-outline" style="display:block; text-align:center; padding:10px;">Get Started →</a>
+      </div>
+    `;
+  }
+
+  monthlyBtn.onclick = () => { billingMode = 'monthly'; updateBilling(); };
+  semiBtn.onclick = () => { billingMode = 'semi'; updateBilling(); };
+  annualBtn.onclick = () => { billingMode = 'annual'; updateBilling(); };
+  
   function updateBilling() {
-    cards.forEach(id => {
-      const card = document.getElementById(id);
-      if (card) {
-        card.classList.remove('show-semi', 'show-annual');
-        if (billingMode === 'semi') card.classList.add('show-semi');
-        if (billingMode === 'annual') card.classList.add('show-annual');
-      }
-    });
     monthlyBtn.classList.toggle('active', billingMode === 'monthly');
     semiBtn.classList.toggle('active', billingMode === 'semi');
     annualBtn.classList.toggle('active', billingMode === 'annual');
+    renderPricing();
   }
-  if (monthlyBtn) monthlyBtn.onclick = () => { billingMode = 'monthly'; updateBilling(); };
-  if (semiBtn) semiBtn.onclick = () => { billingMode = 'semi'; updateBilling(); };
-  if (annualBtn) annualBtn.onclick = () => { billingMode = 'annual'; updateBilling(); };
-  updateBilling();
+  renderPricing();
 
+  // Portfolio
+  const portfolioItems = [{ name: "Badnaam Cafe", type: "Restaurant Website", image: "https://raw.githubusercontent.com/fernandesbenson876-coder/Zingsite-Website-/main/IMG_20260408_084228.jpg", link: "https://fernandesbenson876-coder.github.io/Badnaam-Cafe-/" }];
+  const grid = document.getElementById('portfolioGrid');
+  if (grid) portfolioItems.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'portfolio-card';
+    card.onclick = () => window.open(item.link, '_blank');
+    card.innerHTML = `<div class="portfolio-img"><img src="${item.image}" alt="${item.name}" style="width:100%; height:100%; object-fit:cover;" onerror="this.parentElement.innerHTML='<i class=\'fas fa-image\'></i>'"></div><div class="portfolio-info"><span class="portfolio-tag">${item.type}</span><h3>${item.name}</h3><p>View Live Site →</p></div>`;
+    grid.appendChild(card);
+  });
+
+  // Contact Form
   function validateAndSend() {
     const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
@@ -637,16 +490,6 @@
     const text = `Hi Zingsite!%0A%0A📋 New Inquiry:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email || 'Not provided')}%0AMessage: ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/918828685342?text=${text}`, '_blank');
   }
-
-  const portfolioItems = [{ name: "Badnaam Cafe", type: "Restaurant Website", image: "https://raw.githubusercontent.com/fernandesbenson876-coder/Zingsite-Website-/main/IMG_20260408_084228.jpg", link: "https://fernandesbenson876-coder.github.io/Badnaam-Cafe-/" }];
-  const grid = document.getElementById('portfolioGrid');
-  if (grid) portfolioItems.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'portfolio-card';
-    card.onclick = () => window.open(item.link, '_blank');
-    card.innerHTML = `<img src="${item.image}" alt="${item.name}" class="portfolio-img" onerror="this.src='https://placehold.co/600x400/e2e8f0/2563eb?text=${encodeURIComponent(item.name)}'"><div class="portfolio-info"><span class="portfolio-tag">${item.type}</span><h3>${item.name}</h3><p>View Live Site →</p></div>`;
-    grid.appendChild(card);
-  });
 </script>
 </body>
 </html>
