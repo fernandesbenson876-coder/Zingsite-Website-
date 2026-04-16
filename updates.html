@@ -3,92 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zingsite — Updates & Offers</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Zingsite — Updates & Offers | Websites, Reels & Tally Printing</title>
+  <meta name="description" content="Latest updates, offers, and announcements from Zingsite — web design, reel editing, and Tally voucher printing for Mumbai businesses.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { overflow-x: hidden; }
-    body { background: #0a0e17; color: #fff; font-family: 'DM Sans', sans-serif; line-height: 1.6; overflow-x: hidden; width: 100%; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; width: 100%; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.5; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
-    nav { position: sticky; top: 0; background: rgba(10,14,23,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,217,255,0.2); z-index: 1000; width: 100%; }
-    .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; max-width: 1200px; margin: 0 auto; width: 100%; }
-    .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; }
-    .logo-img { height: 42px; width: auto; display: block; border-radius: 10px; }
-    .logo span { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem; background: linear-gradient(135deg, #fff, #00d9ff); background-clip: text; -webkit-background-clip: text; color: transparent; }
-    .nav-links { display: flex; gap: 20px; list-style: none; }
-    .nav-links a { color: #a0aec0; text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: color 0.2s; }
-    .nav-links a:hover, .nav-links a.active { color: #00d9ff; }
-    .btn-primary { background: linear-gradient(135deg, #00d9ff, #0099cc); color: #000; padding: 9px 20px; border-radius: 30px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s; border: none; cursor: pointer; white-space: nowrap; font-size: 0.88rem; font-family: inherit; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(0,217,255,0.4); }
-    .btn-outline { border: 1px solid #2d3748; background: transparent; color: #fff; padding: 9px 20px; border-radius: 30px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s; cursor: pointer; font-family: inherit; font-size: 0.88rem; }
-    .btn-outline:hover { border-color: #00d9ff; background: rgba(0,217,255,0.1); }
-    .hamburger { display: none; background: none; border: none; color: #fff; font-size: 1.6rem; cursor: pointer; flex-shrink: 0; }
-    .mobile-menu { display: none; background: rgba(10,14,23,0.98); padding: 16px 20px; border-top: 1px solid rgba(0,217,255,0.2); }
+    /* Navigation */
+    nav { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); background: rgba(255,255,255,0.96); padding: 16px 0; }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .logo-img { height: 36px; width: auto; }
+    .logo span { font-weight: 800; font-size: 1.2rem; background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: #4a5568; text-decoration: none; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: #2563eb; }
+    .btn-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-wa:hover { background: #128C7E; transform: translateY(-2px); }
+    .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+    .mobile-menu { display: none; background: white; padding: 16px 24px; border-top: 1px solid #e2e8f0; }
     .mobile-menu.open { display: block; }
-    .mobile-menu a { display: block; color: #a0aec0; text-decoration: none; padding: 11px 0; border-bottom: 1px solid #2d3748; transition: color 0.2s; }
-    .mobile-menu a:hover { color: #00d9ff; }
+    .mobile-menu a { display: block; color: #4a5568; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
 
-    /* PAGE HEADER */
-    .page-header { padding: 56px 0 32px; text-align: center; }
-    .page-header h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; margin-bottom: 12px; }
-    .page-header p { color: #a0aec0; font-size: 1rem; }
+    /* Page Header */
+    .page-header { padding: 60px 0 30px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); margin-bottom: 40px; }
+    .page-header h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 12px; }
+    .page-header p { color: #475569; }
 
-    /* FILTER TABS */
-    .filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 36px; }
-    .filter-tab { background: #121826; border: 1px solid #2d3748; color: #a0aec0; padding: 8px 18px; border-radius: 30px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit; }
-    .filter-tab.active { background: #00d9ff; color: #000; border-color: #00d9ff; }
-    .filter-tab:hover:not(.active) { border-color: #00d9ff; color: #00d9ff; }
+    /* Notice Cards */
+    .notice-card { background: white; border-radius: 24px; padding: 28px; margin-bottom: 24px; border-left: 4px solid #2563eb; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all 0.3s; }
+    .notice-card:hover { transform: translateX(5px); box-shadow: 0 8px 25px -8px rgba(0,0,0,0.1); }
+    .notice-date { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 0.8rem; color: #64748b; }
+    .notice-badge { background: #dbeafe; color: #2563eb; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+    .notice-badge.tally { background: #fef3c7; color: #d97706; }
+    .notice-badge.reel { background: #fce7f3; color: #db2777; }
+    .notice-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
+    .notice-content { color: #334155; margin-bottom: 16px; line-height: 1.6; }
+    .notice-link { color: #2563eb; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+    .notice-link:hover { text-decoration: underline; }
 
-    /* NOTICE CARDS */
-    .notice-card { background: #121826; border-radius: 22px; padding: 24px 26px; margin-bottom: 20px; border-left: 4px solid #00d9ff; transition: transform 0.2s, opacity 0.3s; }
-    .notice-card:hover { transform: translateX(4px); }
-    .notice-card.offer { border-left-color: #f97316; }
-    .notice-card.update { border-left-color: #00d9ff; }
-    .notice-card.launch { border-left-color: #a855f7; }
-    .notice-card.hidden { display: none; }
-
-    .notice-date { color: #00d9ff; font-size: 0.78rem; font-weight: 600; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-    .notice-card.offer .notice-date { color: #f97316; }
-    .notice-card.launch .notice-date { color: #a855f7; }
-
-    .notice-badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-    .badge-new { background: rgba(0,217,255,0.15); color: #00d9ff; }
-    .badge-offer { background: rgba(249,115,22,0.15); color: #f97316; }
-    .badge-hot { background: rgba(239,68,68,0.2); color: #f87171; }
-    .badge-launch { background: rgba(168,85,247,0.15); color: #a855f7; }
-    .badge-bundle { background: rgba(34,197,94,0.15); color: #4ade80; }
-
-    .notice-title { font-family: 'Outfit', sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 10px; }
-    .notice-content { color: #a0aec0; margin-bottom: 16px; font-size: 0.92rem; line-height: 1.7; }
-    .notice-content a { color: #00d9ff; text-decoration: none; }
-    .notice-content a:hover { text-decoration: underline; }
-    .notice-content strong { color: #fff; }
-
-    /* OFFER HIGHLIGHT BOX */
-    .offer-highlight { background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.3); border-radius: 14px; padding: 16px 18px; margin: 14px 0; }
-    .offer-highlight .offer-price { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: #f97316; }
-    .offer-highlight .offer-desc { color: #a0aec0; font-size: 0.85rem; margin-top: 4px; }
-    .offer-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
-
-    /* EXPIRY BADGE */
-    .expiry { display: inline-flex; align-items: center; gap: 6px; background: rgba(239,68,68,0.1); color: #f87171; border: 1px solid rgba(239,68,68,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-top: 10px; }
-
-    /* BACK LINK */
-    .back-link { display: inline-flex; align-items: center; gap: 8px; margin: 36px 0; color: #00d9ff; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    /* Back Link */
+    .back-link { display: inline-flex; align-items: center; gap: 8px; margin: 20px 0 40px; color: #2563eb; text-decoration: none; }
     .back-link:hover { text-decoration: underline; }
 
-    /* FOOTER */
-    footer { background: #0a0e17; border-top: 1px solid #2d3748; padding: 36px 0; margin-top: 40px; text-align: center; }
-    footer p { color: #a0aec0; font-size: 0.85rem; }
-    footer a { color: #00d9ff; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
+    footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; margin-top: 60px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
 
-    @media (max-width: 700px) {
-      .nav-links, .btn-primary.nav-wa { display: none; }
+    @media (max-width: 768px) {
+      .nav-links, .btn-wa.nav-wa { display: none; }
       .hamburger { display: block; }
-      .offer-row { flex-direction: column; align-items: flex-start; }
+      .page-header h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -101,203 +69,136 @@
       <span>Zingsite</span>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html#pricing">Pricing</a></li>
-      <li><a href="index.html#offers">Offers</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#pricing-monthly">Pricing</a></li>
+      <li><a href="index.html#tally">Tally Printing</a></li>
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#contact">Contact</a></li>
-      <li><a href="updates.html" class="active">📢 Updates</a></li>
+      <li><a href="updates.html" style="color:#2563eb;">Updates</a></li>
     </ul>
-    <a href="https://wa.me/918828685342" target="_blank" class="btn-primary nav-wa">💬 WhatsApp</a>
+    <a href="https://wa.me/918828685342" target="_blank" class="btn-wa nav-wa">💬 WhatsApp</a>
     <button class="hamburger" onclick="toggleMenu()">☰</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html#pricing" onclick="closeMenu()">💰 Pricing</a>
-    <a href="index.html#offers" onclick="closeMenu()">🎁 Offers</a>
-    <a href="index.html#about" onclick="closeMenu()">📌 About</a>
-    <a href="index.html#contact" onclick="closeMenu()">📞 Contact</a>
-    <a href="updates.html" onclick="closeMenu()">📢 Updates</a>
+    <a href="index.html#services" onclick="closeMenu()">Services</a>
+    <a href="index.html#pricing-monthly" onclick="closeMenu()">Pricing</a>
+    <a href="index.html#tally" onclick="closeMenu()">Tally Printing</a>
+    <a href="index.html#about" onclick="closeMenu()">About</a>
+    <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+    <a href="updates.html" onclick="closeMenu()" style="color:#2563eb;">Updates</a>
     <a href="https://wa.me/918828685342" target="_blank" onclick="closeMenu()">💬 WhatsApp</a>
+    <a href="https://www.instagram.com/zingsite" target="_blank" onclick="closeMenu()">📸 Instagram</a>
   </div>
 </nav>
 
-<div class="container">
-  <div class="page-header">
+<div class="page-header">
+  <div class="container">
     <h1>📢 Updates & Offers</h1>
     <p>Latest news, exclusive deals, and announcements from Zingsite</p>
   </div>
+</div>
 
-  <!-- FILTER TABS -->
-  <div class="filter-tabs">
-    <button class="filter-tab active" onclick="filterCards('all', this)">All</button>
-    <button class="filter-tab" onclick="filterCards('offer', this)">🎁 Offers</button>
-    <button class="filter-tab" onclick="filterCards('update', this)">📰 Updates</button>
-    <button class="filter-tab" onclick="filterCards('launch', this)">🚀 Launches</button>
+<div class="container">
+  <!-- NEW OFFER: Tally Printing Launch -->
+  <div class="notice-card">
+    <div class="notice-date">
+      <i class="far fa-calendar-alt"></i> April 16, 2026
+      <span class="notice-badge tally">🖨️ New Service</span>
+    </div>
+    <div class="notice-title">Tally Voucher Printing Service — Now Live!</div>
+    <div class="notice-content">
+      Stop struggling with printer settings. We now professionally print your Tally vouchers. 
+      <strong>Base package: ₹2,500 for 200 copies</strong> including PDF + Excel soft copies, GST invoice formats, and next-day delivery.
+      Volume discounts available for larger orders.
+    </div>
+    <a href="index.html#tally" class="notice-link">Learn More →</a>
   </div>
 
-  <!-- ========== OFFERS ========== -->
-
-  <div class="notice-card offer">
+  <!-- LIMITED OFFER: 20% OFF Web Setup -->
+  <div class="notice-card">
     <div class="notice-date">
-      <i class="far fa-calendar-alt"></i> April 2026 &nbsp;
-      <span class="notice-badge badge-hot">🔥 Limited</span>
+      <i class="far fa-calendar-alt"></i> April 15, 2026
+      <span class="notice-badge">🔥 Limited</span>
     </div>
     <div class="notice-title">20% OFF Setup Fee — First 5 Clients Only</div>
     <div class="notice-content">
-      We're offering <strong>20% off the setup fee</strong> for our first 5 clients. This won't last long — slots are filling up fast.
-      <div class="offer-highlight">
-        <div class="offer-row">
-          <div>
-            <div class="offer-price">20% OFF</div>
-            <div class="offer-desc">On Basic (save ₹1,000) · Standard (save ₹1,600) · Professional (save ₹2,000)</div>
-          </div>
-          <a href="https://wa.me/918828685342?text=Hi!%20I%20want%20to%20claim%20the%2020%25%20off%20setup%20offer!" target="_blank" class="btn-primary">Claim Now →</a>
-        </div>
-      </div>
-      <div class="expiry"><i class="fas fa-clock"></i> Limited to first 5 clients only</div>
+      We're offering 20% off the setup fee for our first 5 web design clients. This won't last long — slots are filling up fast.
+      <br><br>
+      <strong>Save on:</strong> Basic (₹5,600), Standard (₹9,600), Professional (₹16,000)
     </div>
+    <a href="https://wa.me/918828685342?text=I%20want%20the%2020%25%20off%20web%20setup%20offer!" target="_blank" class="notice-link">Claim Offer →</a>
   </div>
 
-  <div class="notice-card offer">
+  <!-- BUNDLE OFFER: Website + Reels -->
+  <div class="notice-card">
     <div class="notice-date">
-      <i class="far fa-calendar-alt"></i> April 2026 &nbsp;
-      <span class="notice-badge badge-bundle">📦 Bundle</span>
+      <i class="far fa-calendar-alt"></i> April 10, 2026
+      <span class="notice-badge reel">🎬 Bundle</span>
     </div>
     <div class="notice-title">Website + 8 Reels Bundle — Save ₹2,000/month</div>
     <div class="notice-content">
-      Get the <strong>Standard plan + 8 reels/month</strong> bundled together at a special price — saving you ₹2,000 every month compared to buying separately.
-      <div class="offer-highlight">
-        <div class="offer-row">
-          <div>
-            <div class="offer-price">₹7,500/month</div>
-            <div class="offer-desc">Standard website + 8 reels (was ₹9,500/month) · Save ₹2,000/month</div>
-          </div>
-          <a href="https://wa.me/918828685342?text=I%20want%20the%20Website%20%2B%20Reel%20bundle%20at%20%E2%82%B97%2C500!" target="_blank" class="btn-primary">Grab Bundle →</a>
-        </div>
-      </div>
+      Get the Standard website plan + 8 reels/month bundled together at a special price — saving you ₹2,000 every month.
+      <br><br>
+      <strong>₹7,500/month</strong> (was ₹9,500/month)
     </div>
+    <a href="https://wa.me/918828685342?text=I%20want%20the%20Website%20%2B%20Reel%20bundle%20offer!" target="_blank" class="notice-link">Grab Bundle →</a>
   </div>
 
-  <div class="notice-card offer">
+  <!-- REFER & EARN -->
+  <div class="notice-card">
     <div class="notice-date">
-      <i class="far fa-calendar-alt"></i> April 2026 &nbsp;
-      <span class="notice-badge badge-offer">👥 Refer</span>
+      <i class="far fa-calendar-alt"></i> April 8, 2026
+      <span class="notice-badge">👥 Referral</span>
     </div>
     <div class="notice-title">Refer a Friend — Both Get 1 Month FREE</div>
     <div class="notice-content">
-      Know another small business that needs a website? Refer them to Zingsite and <strong>both of you get 1 month free</strong> on your next billing cycle. No limit on how many times you can refer.
-      <div class="offer-highlight">
-        <div class="offer-row">
-          <div>
-            <div class="offer-price">1 Month FREE</div>
-            <div class="offer-desc">For you + your referral. Credited on the next billing cycle after referral confirms.</div>
-          </div>
-          <a href="https://wa.me/918828685342?text=I%20want%20to%20refer%20a%20friend%20to%20Zingsite!" target="_blank" class="btn-primary">Refer Now →</a>
-        </div>
-      </div>
+      Know another small business that needs a website, reels, or Tally printing? Refer them to Zingsite and both of you get 1 month free on your next billing cycle. No limit on how many times you can refer.
     </div>
+    <a href="https://wa.me/918828685342?text=I%20want%20to%20refer%20someone%20to%20Zingsite!" target="_blank" class="notice-link">Refer Now →</a>
   </div>
 
-  <div class="notice-card offer">
+  <!-- LONG TERM SAVINGS -->
+  <div class="notice-card">
     <div class="notice-date">
-      <i class="far fa-calendar-alt"></i> April 2026 &nbsp;
-      <span class="notice-badge badge-offer">📅 Long Term</span>
+      <i class="far fa-calendar-alt"></i> April 5, 2026
+      <span class="notice-badge">📅 Ongoing</span>
     </div>
     <div class="notice-title">Long Term Plans — Get Extra Months Free</div>
     <div class="notice-content">
-      Commit to a longer plan and get extra months absolutely free. The longer you stay, the more you save — and you never have to worry about monthly payments.
-      <div class="offer-highlight">
-        <div style="display:flex; flex-wrap:wrap; gap:24px; margin-bottom:12px;">
-          <div>
-            <div class="offer-price" style="font-size:1.3rem;">6 Months</div>
-            <div class="offer-desc">Pay for 6, get <strong style="color:#4ade80;">7 months</strong> (+1 free)</div>
-          </div>
-          <div style="color:#a0aec0; font-size:1.5rem; align-self:center;">→</div>
-          <div>
-            <div class="offer-price" style="font-size:1.3rem;">12 Months</div>
-            <div class="offer-desc">Pay for 12, get <strong style="color:#4ade80;">14 months</strong> (+2 free)</div>
-          </div>
-        </div>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20long%20term%20plan!" target="_blank" class="btn-primary" style="display:inline-flex;">Claim Offer →</a>
-      </div>
-      <div class="expiry"><i class="fas fa-clock"></i> Ongoing offer — available with any plan</div>
+      Commit to a longer web plan and get extra months absolutely free.
+      <br><br>
+      • <strong>6 Months</strong> — Pay for 6, get 7 months (+1 free)<br>
+      • <strong>12 Months</strong> — Pay for 12, get 14 months (+2 free)
     </div>
+    <a href="index.html#pricing-monthly" class="notice-link">View Plans →</a>
   </div>
 
-  <!-- ========== UPDATES ========== -->
-
-  <div class="notice-card update">
+  <!-- PORTFOLIO LAUNCH -->
+  <div class="notice-card">
     <div class="notice-date">
-      <i class="far fa-calendar-alt"></i> April 8, 2026 &nbsp;
-      <span class="notice-badge badge-new">New</span>
+      <i class="far fa-calendar-alt"></i> April 1, 2026
+      <span class="notice-badge">🚀 Launch</span>
     </div>
     <div class="notice-title">Badnaam Cafe — Live on Our Portfolio</div>
     <div class="notice-content">
-      We just launched a stunning website for <strong>Badnaam Cafe</strong> in Marol, Andheri East. Legendary vibe, budget-friendly menu, and a modern site to match. Check it out live.
-      <br><br>
-      <a href="https://fernandesbenson876-coder.github.io/Badnaam-Cafe-/" target="_blank" class="btn-outline" style="display:inline-flex; margin-top:4px;">View Live Site →</a>
+      We just launched a stunning website for Badnaam Cafe in Marol, Andheri East. Legendary vibe, budget-friendly menu, and a modern site to match. Check it out live.
     </div>
+    <a href="https://fernandesbenson876-coder.github.io/Badnaam-Cafe-/" target="_blank" class="notice-link">View Live Site →</a>
   </div>
-
-  <!-- ========== LAUNCHES ========== -->
-
-  <div class="notice-card launch">
-    <div class="notice-date">
-      <i class="far fa-calendar-alt"></i> April 1, 2026 &nbsp;
-      <span class="notice-badge badge-launch">🚀 Launch</span>
-    </div>
-    <div class="notice-title">🎉 Zingsite Is Officially Open!</div>
-    <div class="notice-content">
-      We're live! Mumbai small businesses can now get fast, affordable, professional websites starting at <strong>₹3,000/month</strong>. No tech headaches, no hidden fees — just a great website with WhatsApp support.
-      <br><br>
-      First 5 clients get <strong>20% off the setup fee</strong>. WhatsApp us to claim your slot before it's gone.
-      <br><br>
-      <a href="https://wa.me/918828685342?text=Hi%20Zingsite!%20I%20want%20to%20get%20started!" target="_blank" class="btn-primary" style="display:inline-flex; margin-top:4px;">Get Started →</a>
-    </div>
-  </div>
-
-  <!-- TEMPLATE (hidden, for adding new notices) -->
-  <!--
-  <div class="notice-card [offer/update/launch]">
-    <div class="notice-date">
-      <i class="far fa-calendar-alt"></i> [DATE]
-      <span class="notice-badge [badge-new/badge-offer/badge-hot/badge-launch/badge-bundle]">[LABEL]</span>
-    </div>
-    <div class="notice-title">[TITLE]</div>
-    <div class="notice-content">[CONTENT]</div>
-  </div>
-  -->
 
   <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
 </div>
 
 <footer>
   <div class="container">
-    <p>© 2026 Zingsite — Mumbai's trusted web design agency</p>
-    <p style="margin-top:10px;">
-      <a href="index.html">Home</a> &nbsp;|&nbsp;
-      <a href="terms.html">Terms</a> &nbsp;|&nbsp;
-      <a href="https://wa.me/918828685342">WhatsApp</a> &nbsp;|&nbsp;
-      <a href="https://www.instagram.com/zingsite" target="_blank">Instagram</a>
-    </p>
+    <p>© 2026 Zingsite. All rights reserved. Mumbai, India</p>
+    <p style="margin-top: 12px;"><a href="terms.html">📜 View Full Terms & Client Agreement</a></p>
   </div>
 </footer>
 
 <script>
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
-
-  function filterCards(type, btn) {
-    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.notice-card').forEach(card => {
-      if (type === 'all' || card.classList.contains(type)) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  }
 </script>
-
 </body>
 </html>
