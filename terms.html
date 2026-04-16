@@ -2,464 +2,288 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>Zingsite — Client Agreement & Terms | Web Design Mumbai</title>
-  <meta name="description" content="Professional web design for Mumbai small businesses. Transparent pricing, modern terms, and client agreement.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zingsite — Terms & Client Agreement | Web Design, Reels & Tally Printing</title>
+  <meta name="description" content="Professional web design, reel editing, and Tally voucher printing for Mumbai small businesses. Transparent terms and client agreement.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { overflow-x: hidden; }
-    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.5; scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; width: 100%; }
-    .navbar { background: rgba(255,255,255,0.96); border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
-    .nav-inner { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
-    .logo { font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 1.5rem; background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; text-decoration: none; }
-    .nav-links a { margin-left: 1.5rem; text-decoration: none; color: #334155; font-weight: 500; transition: 0.2s; font-size: 0.9rem; }
+    body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; line-height: 1.5; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    nav { background: white; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); background: rgba(255,255,255,0.96); padding: 16px 0; }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .logo-img { height: 36px; width: auto; }
+    .logo span { font-weight: 800; font-size: 1.2rem; background: linear-gradient(135deg, #2563eb, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .nav-links { display: flex; gap: 24px; list-style: none; }
+    .nav-links a { color: #4a5568; text-decoration: none; font-weight: 500; transition: color 0.2s; }
     .nav-links a:hover { color: #2563eb; }
-    .btn-primary { background: #2563eb; color: white; padding: 10px 22px; border-radius: 40px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 0.88rem; text-decoration: none; transition: all 0.2s; font-family: inherit; }
-    .btn-primary:hover { background: #1d4ed8; transform: translateY(-1px); }
-    .btn-outline { background: transparent; border: 1px solid #cbd5e1; padding: 10px 20px; border-radius: 40px; font-weight: 500; transition: 0.2s; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; color: #0f172a; font-family: inherit; }
-    .btn-outline:hover { border-color: #2563eb; background: #eff6ff; }
-    .section { padding: 4rem 0; }
-    .badge { background: #e0f2fe; color: #0284c7; display: inline-block; padding: 4px 12px; border-radius: 40px; font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem; }
-    h1, h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
-    h1 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 0.75rem; }
-    h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 1.5rem; }
+    .btn-wa { background: #25D366; color: white; padding: 8px 20px; border-radius: 40px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn-wa:hover { background: #128C7E; transform: translateY(-2px); }
+    .hamburger { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; }
+    .mobile-menu { display: none; background: white; padding: 16px 24px; border-top: 1px solid #e2e8f0; }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; color: #4a5568; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
 
-    /* PRICING */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-    .price-card { background: #fff; border-radius: 28px; padding: 1.6rem; border: 1px solid #e2e8f0; transition: 0.2s; }
-    .price-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.07); }
-    .price-card.featured { border-top: 4px solid #2563eb; box-shadow: 0 20px 25px -12px rgba(0,0,0,0.07); }
-    .plan-name { font-size: 1.4rem; font-weight: 800; font-family: 'Space Grotesk', sans-serif; }
-    .plan-price { font-size: 1.1rem; font-weight: 700; margin: 0.75rem 0 0.25rem; line-height: 1.8; }
-    .plan-price small { font-size: 0.85rem; font-weight: 400; color: #475569; }
-    .feature-list { margin: 1.2rem 0; list-style: none; }
-    .feature-list li { margin: 0.5rem 0; display: flex; gap: 8px; align-items: center; font-size: 0.88rem; }
+    /* Page Header */
+    .page-header { padding: 60px 0 30px; text-align: center; background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%); margin-bottom: 40px; }
+    .page-header h1 { font-size: 2rem; font-weight: 800; margin-bottom: 12px; }
+    .page-header p { color: #475569; }
 
-    /* COMPARE TABLE */
-    .compare-table { overflow-x: auto; margin: 2rem 0; }
-    table { width: 100%; border-collapse: collapse; background: white; border-radius: 20px; overflow: hidden; min-width: 500px; }
-    th, td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; font-size: 0.88rem; }
-    th { background: #f1f5f9; font-weight: 700; }
-
-    /* LEGAL */
-    .legal-card { background: #ffffff; border-radius: 28px; padding: 2rem; border: 1px solid #e2e8f0; margin: 2rem 0; }
-    .terms-list { display: flex; flex-direction: column; gap: 1.5rem; }
-    .term-item { border-bottom: 1px solid #f1f5f9; padding-bottom: 1.25rem; }
+    /* Terms Sections */
+    .terms-card { background: white; border-radius: 24px; padding: 32px; margin: 24px 0; border: 1px solid #e2e8f0; }
+    .terms-card h2 { font-size: 1.3rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .terms-card h2 i { color: #2563eb; }
+    .terms-list { display: flex; flex-direction: column; gap: 20px; }
+    .term-item { border-bottom: 1px solid #f1f5f9; padding-bottom: 16px; }
     .term-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .term-title { font-weight: 800; font-size: 1rem; margin-bottom: 0.5rem; color: #0f172a; }
-    .term-item ul { margin-left: 16px; line-height: 2; font-size: 0.9rem; color: #334155; }
-    .refund-warning { background: #fef9c3; border-left: 3px solid #ca8a04; padding: 10px 14px; border-radius: 8px; font-size: 0.85rem; margin-top: 10px; color: #713f12; }
-    .upfront-box { background: #eff6ff; border-left: 3px solid #2563eb; padding: 12px 16px; border-radius: 8px; font-size: 0.88rem; margin-top: 10px; color: #1e3a5f; }
+    .term-title { font-weight: 700; font-size: 1rem; margin-bottom: 8px; color: #0f172a; }
+    .term-desc { color: #475569; font-size: 0.9rem; line-height: 1.6; }
 
-    /* AGREEMENT FORM */
-    .agreement-card { background: #ffffff; border-radius: 28px; padding: 2rem; margin: 2rem 0; box-shadow: 0 8px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; }
-    .form-row { display: flex; flex-wrap: wrap; gap: 1.25rem; margin-bottom: 1.25rem; }
-    .form-group { flex: 1; min-width: 200px; }
-    label { font-weight: 600; font-size: 0.78rem; color: #334155; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
-    input, select { width: 100%; padding: 11px 14px; border-radius: 16px; border: 1px solid #cbd5e1; font-family: 'Inter', sans-serif; background: white; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
-    input:focus, select:focus { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
-    .checkbox-group { display: flex; align-items: flex-start; gap: 12px; margin: 1rem 0; }
-    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; margin: 0; cursor: pointer; flex-shrink: 0; margin-top: 2px; accent-color: #2563eb; }
-    .checkbox-group label { margin: 0; cursor: pointer; font-size: 0.88rem; font-weight: 400; text-transform: none; letter-spacing: 0; color: #334155; }
+    /* Service Highlights */
+    .service-highlights { display: flex; flex-wrap: wrap; gap: 20px; margin: 30px 0; }
+    .highlight-card { background: #f1f5f9; border-radius: 20px; padding: 20px; flex: 1; min-width: 200px; text-align: center; }
+    .highlight-card i { font-size: 2rem; color: #2563eb; margin-bottom: 12px; display: block; }
+    .highlight-card h3 { font-size: 1rem; margin-bottom: 8px; }
+    .highlight-card p { font-size: 0.8rem; color: #475569; }
 
-    /* FAQ */
-    details { background: #f8fafc; padding: 1rem; border-radius: 16px; margin-bottom: 0.75rem; border: 1px solid #e2e8f0; }
-    summary { font-weight: 700; cursor: pointer; font-size: 0.92rem; }
-    details p { margin-top: 0.75rem; color: #475569; font-size: 0.88rem; line-height: 1.7; }
+    /* Agreement Form */
+    .agreement-card { background: white; border-radius: 24px; padding: 32px; margin: 40px 0; border: 2px solid #2563eb; }
+    .agreement-card h2 { font-size: 1.5rem; margin-bottom: 20px; }
+    .form-row { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; }
+    .form-group { flex: 1; min-width: 180px; }
+    .form-group label { font-weight: 600; font-size: 0.8rem; display: block; margin-bottom: 6px; color: #334155; }
+    .form-group input, .form-group select { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #cbd5e1; font-family: inherit; }
+    .checkbox-group { display: flex; align-items: center; gap: 12px; margin: 16px 0; }
+    .checkbox-group input { width: 18px; height: 18px; }
+    .btn-submit { background: #25D366; color: white; padding: 14px; border-radius: 50px; font-weight: 700; border: none; width: 100%; cursor: pointer; font-size: 1rem; transition: all 0.2s; }
+    .btn-submit:hover { background: #128C7E; transform: translateY(-2px); }
+    .feedback-msg { margin-top: 16px; padding: 12px; border-radius: 12px; display: none; }
 
-    /* REEL BOX */
-    .reel-box { background: #eef2ff; border-radius: 24px; padding: 1.25rem 1.5rem; margin-top: 1rem; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
-    .reel-box div:last-child { font-size: 0.9rem; }
-
-    /* FEEDBACK */
-    .feedback-msg { margin-top: 1rem; font-size: 0.85rem; padding: 12px 16px; border-radius: 12px; display: none; }
-    .feedback-msg.success { background: #dcfce7; color: #166534; display: block; }
-    .feedback-msg.error { background: #fee2e2; color: #991b1b; display: block; }
-
-    /* FOOTER */
-    .footer { background: #0f172a; color: #cbd5e1; padding: 2rem 0; margin-top: 3rem; border-radius: 28px 28px 0 0; }
-    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1.5rem; font-size: 0.88rem; }
-    .footer a { color: #94a3b8; text-decoration: none; }
-    .footer a:hover { color: #00d9ff; }
-
-    /* FLOAT */
-    .wa-float { position: fixed; bottom: 24px; right: 24px; background: #25D366; width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; color: white; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 99; text-decoration: none; transition: transform 0.2s; }
-    .wa-float:hover { transform: scale(1.07); }
-
-    /* BACK LINK */
-    .back-link { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; color: #2563eb; text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; margin: 20px 0; color: #2563eb; text-decoration: none; }
     .back-link:hover { text-decoration: underline; }
 
-    @media (max-width: 780px) { .nav-links { display: none; } }
-    @media (max-width: 500px) {
-      .legal-card, .agreement-card { padding: 1.25rem; }
-      .form-group { min-width: 100%; }
+    footer { background: #0f172a; color: #94a3b8; padding: 40px 0; text-align: center; margin-top: 60px; }
+    footer a { color: #94a3b8; text-decoration: none; }
+    footer a:hover { color: white; }
+
+    @media (max-width: 768px) {
+      .nav-links, .btn-wa.nav-wa { display: none; }
+      .hamburger { display: block; }
     }
   </style>
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">⚡ ZINGSITE</a>
-      <div class="nav-links">
-        <a href="#pricing">Pricing</a>
-        <a href="#terms">Terms</a>
-        <a href="#agreement">Agreement</a>
-        <a href="#faq">FAQ</a>
-        <a href="index.html">← Back to Site</a>
-      </div>
-      <a href="https://wa.me/918828685342?text=Hi%20Zingsite!%20I%20want%20to%20sign%20the%20agreement" class="btn-primary"><i class="fab fa-whatsapp"></i> Support</a>
-    </div>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="Zingsite" class="logo-img" onerror="this.style.display='none'">
+      <span>Zingsite</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#pricing-monthly">Pricing</a></li>
+      <li><a href="index.html#tally">Tally Printing</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="updates.html">Updates</a></li>
+    </ul>
+    <a href="https://wa.me/918828685342" target="_blank" class="btn-wa nav-wa">💬 WhatsApp</a>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#services" onclick="closeMenu()">Services</a>
+    <a href="index.html#pricing-monthly" onclick="closeMenu()">Pricing</a>
+    <a href="index.html#tally" onclick="closeMenu()">Tally Printing</a>
+    <a href="index.html#about" onclick="closeMenu()">About</a>
+    <a href="index.html#contact" onclick="closeMenu()">Contact</a>
+    <a href="updates.html" onclick="closeMenu()">Updates</a>
+    <a href="https://wa.me/918828685342" target="_blank" onclick="closeMenu()">💬 WhatsApp</a>
+    <a href="https://www.instagram.com/zingsite" target="_blank" onclick="closeMenu()">📸 Instagram</a>
   </div>
 </nav>
 
-<main class="container">
-  <div style="padding-top: 2rem;">
-    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Zingsite Home</a>
-  </div>
-
-  <!-- PRICING -->
-  <section id="pricing" class="section">
-    <span class="badge">Simple & transparent</span>
-    <h1>Our Packages — for Mumbai small businesses</h1>
-    <p style="color:#334155; margin-bottom:2rem;">No hidden fees, no tech jargon. Free domain (Year 1) + SSL included for all plans. All payments are upfront.</p>
-
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="plan-name">Basic</div>
-        <div class="plan-price">₹4,999 <small>setup (upfront)</small><br>₹3,000 <small>/month (upfront)</small></div>
-        <ul class="feature-list">
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> 3 Pages</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> 3 Edits/month</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Free Domain (Year 1)</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Contact Form + WhatsApp</li>
-        </ul>
-        <a href="#agreement" class="btn-outline" style="width:100%;">Select Basic</a>
-      </div>
-
-      <div class="price-card featured">
-        <div class="plan-name">Standard ⭐</div>
-        <div class="plan-price">₹7,999 <small>setup (upfront)</small><br>₹5,000 <small>/month (upfront)</small></div>
-        <ul class="feature-list">
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> 5 Pages</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> 5 Edits/month</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Free Domain (Year 1)</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Contact Form + WhatsApp</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Email Support</li>
-        </ul>
-        <a href="#agreement" class="btn-primary" style="width:100%; justify-content:center;">Select Standard</a>
-      </div>
-
-      <div class="price-card">
-        <div class="plan-name">Professional</div>
-        <div class="plan-price">₹10,000 <small>setup (upfront)</small><br>₹8,000 <small>/month (upfront)</small></div>
-        <ul class="feature-list">
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> 10 Pages</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> 10 Edits/month</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Free Domain (Year 1)</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Contact Form + WhatsApp</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Email Support</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Blog Section</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> E-commerce Ready</li>
-          <li><i class="fas fa-check-circle" style="color:#2563eb"></i> Analytics & Reports</li>
-        </ul>
-        <a href="#agreement" class="btn-outline" style="width:100%;">Select Professional</a>
-      </div>
-    </div>
-
-    <div class="reel-box">
-      <div><strong><i class="fas fa-film"></i> Reel Editing Add-on</strong><br><span style="font-size:0.85rem; color:#475569;">You shoot, we edit — SEO captions + thumbnails included. Paid upfront monthly.</span></div>
-      <div><strong>₹2,000/mo</strong> (4 reels) &nbsp;|&nbsp; <strong>₹3,500/mo</strong> (8 reels)</div>
-    </div>
-  </section>
-
-  <!-- COMPARISON TABLE -->
-  <div class="compare-table">
-    <h2>Quick Comparison</h2>
-    <table>
-      <thead>
-        <tr><th>Feature</th><th>Basic</th><th>Standard</th><th>Professional</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Setup Fee (upfront)</td><td>₹4,999</td><td>₹7,999</td><td>₹10,000</td></tr>
-        <tr><td>Monthly (upfront)</td><td>₹3,000</td><td>₹5,000</td><td>₹8,000</td></tr>
-        <tr><td>Semi-Annual — 6+1 month free (upfront)</td><td>₹16,200</td><td>₹27,000</td><td>₹43,200</td></tr>
-        <tr><td>Annual — 12+2 months free (upfront)</td><td>₹32,400</td><td>₹54,000</td><td>₹86,400</td></tr>
-        <tr><td>Pages</td><td>3</td><td>5</td><td>10</td></tr>
-        <tr><td>Edits/month</td><td>3</td><td>5</td><td>10</td></tr>
-        <tr><td>Free Domain (Year 1)</td><td>✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Email Support</td><td>—</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Blog</td><td>—</td><td>—</td><td>✓</td></tr>
-        <tr><td>E-commerce Ready</td><td>—</td><td>—</td><td>✓</td></tr>
-        <tr><td>Analytics & Reports</td><td>—</td><td>—</td><td>✓</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <!-- TERMS & CONDITIONS -->
-  <section id="terms">
-    <div class="legal-card">
-      <h2><i class="fas fa-file-contract"></i> Terms & Conditions</h2>
-      <div class="terms-list">
-
-        <div class="term-item">
-          <div class="term-title">1. Services</div>
-          <div>Zingsite provides website design, hosting, content editing, and reel editing for small businesses. Specific services delivered are as agreed per plan selected.</div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">2. Payment Terms — All Payments Are Upfront</div>
-          <div>
-            All fees must be paid in full before work or service begins:
-            <ul style="margin-top:8px;">
-              <li><strong>Setup fee</strong> — paid upfront before project starts, no exceptions</li>
-              <li><strong>Monthly retainer</strong> — paid upfront on or before the 1st of each month</li>
-              <li><strong>Semi-annual plan</strong> — full 6-month amount paid upfront before work begins</li>
-              <li><strong>Annual plan</strong> — full 12-month amount paid upfront before work begins</li>
-            </ul>
-            <div class="upfront-box" style="margin-top:12px;">
-              💳 Accepted payment methods: UPI / GPay / PhonePe — UPI ID: <strong>8828685342</strong><br>
-              ⚠️ <strong>Work will pause if payment is delayed beyond 3 days.</strong>
-            </div>
-          </div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">3. Refund Policy</div>
-          <div>
-            Please review carefully before making payment:
-            <ul style="margin-top:8px;">
-              <li><strong>Setup fee</strong> — Non-refundable once work has begun</li>
-              <li><strong>Monthly retainer</strong> — Non-refundable. No partial refunds for unused days in the month</li>
-              <li><strong>Semi-annual plan</strong> — Non-refundable after 15 days from the plan start date</li>
-              <li><strong>Annual plan</strong> — Non-refundable after 30 days (1 month) of service</li>
-            </ul>
-            <div class="refund-warning">
-              ⚠️ We strongly recommend reviewing all terms before making any payment. Refund requests outside the above windows will not be processed under any circumstances.
-            </div>
-          </div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">4. Content Edits</div>
-          <div>Basic: 3, Standard: 5, Professional: 10 edits/month. Extra edits charged at ₹300 each. Unused edits do not carry over to the next month. One edit = one change (text, image, or price update).</div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">5. Turnaround Time</div>
-          <div>New website: 5–7 working days from setup payment and content receipt. Content edits: within 48 hours. Reel delivery: within 3 working days of receiving footage.</div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">6. Client Responsibilities</div>
-          <div>Provide all content (text, images, logo, contact details) within 3 days of setup payment. Delays in content may delay delivery. All communication via WhatsApp.</div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">7. Hosting & Ownership</div>
-          <div>Website is hosted on Zingsite's infrastructure as part of the monthly retainer. If the retainer is cancelled, the site goes offline. All client-provided content (text, images, logo) remains the client's property. The domain can be transferred to the client upon request after cancellation.</div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">8. Cancellation Policy</div>
-          <div>Cancellation requests must be sent via WhatsApp at least 15 days before the next renewal date. Setup fee is non-refundable after work begins. No partial refunds for unused months. Clients who return after cancellation will not be charged the setup fee again.</div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">9. Plan Upgrades</div>
-          <div>Upgrading from one plan to another requires a one-time upgrade fee: Basic → Standard: ₹2,500 | Basic → Professional: ₹5,000 | Standard → Professional: ₹2,500. New monthly retainer applies from the next billing cycle.</div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">10. Limitation of Liability & Confidentiality</div>
-          <div>Zingsite is not liable for loss of business, revenue, or data due to downtime or third-party issues. We will never share your business information, content, or contact details with any third party without your consent.</div>
-        </div>
-
-        <div class="term-item">
-          <div class="term-title">11. Portfolio Rights</div>
-          <div>Zingsite reserves the right to showcase your website as part of our portfolio unless you request otherwise in writing via WhatsApp.</div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CLIENT AGREEMENT -->
-  <section id="agreement">
-    <div class="agreement-card">
-      <h2>📄 Client Agreement</h2>
-      <p style="margin-bottom:1.5rem; color:#334155; font-size:0.92rem;">Fill in the details below to confirm your plan and accept Zingsite's terms. <strong>You will receive a WhatsApp confirmation — save it as a screenshot or PDF as your proof of agreement.</strong></p>
-
-      <form id="clientAgreementForm">
-        <div class="form-row">
-          <div class="form-group"><label>Full Name *</label><input type="text" id="fullName" placeholder="e.g. Ramesh Sharma" required></div>
-          <div class="form-group"><label>Business / Brand Name *</label><input type="text" id="businessName" placeholder="Your cafe, shop or brand" required></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group"><label>WhatsApp Number *</label><input type="tel" id="whatsappNum" placeholder="+91 98765 43210" required></div>
-          <div class="form-group"><label>Email Address</label><input type="email" id="emailAgree" placeholder="hello@yourbusiness.com"></div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Select Your Plan *</label>
-            <select id="planSelect" required>
-              <option value="">-- Choose package --</option>
-              <option value="Basic: ₹4,999 setup + ₹3,000/month">Basic — ₹4,999 setup + ₹3,000/month</option>
-              <option value="Standard: ₹7,999 setup + ₹5,000/month">Standard ⭐ — ₹7,999 setup + ₹5,000/month</option>
-              <option value="Professional: ₹10,000 setup + ₹8,000/month">Professional — ₹10,000 setup + ₹8,000/month</option>
-              <option value="Reel Add-on: 4 reels +₹2,000/month">➕ Reel Add-on: 4 reels +₹2,000/month</option>
-              <option value="Reel Add-on: 8 reels +₹3,500/month">➕ Reel Add-on: 8 reels +₹3,500/month</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Billing Cycle</label>
-            <select id="billingCycle">
-              <option value="Monthly (upfront)">Monthly (paid upfront)</option>
-              <option value="Semi-Annual — 6+1 month free (upfront)">Semi-Annual — 6+1 month free (upfront)</option>
-              <option value="Annual — 12+2 months free (upfront)">Annual — 12+2 months free (upfront)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="checkbox-group">
-          <input type="checkbox" id="termsCheckbox" required>
-          <label for="termsCheckbox">I confirm that I have read, understood, and agree to the <strong>Terms & Conditions, Payment Terms, and Cancellation Policy</strong> listed above.</label>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="upfrontCheckbox" required>
-          <label for="upfrontCheckbox">I understand that <strong>all payments are upfront</strong> — setup fee before work begins, monthly retainer on or before the 1st of each month, and long-term plans paid in full before service starts.</label>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="refundCheckbox" required>
-          <label for="refundCheckbox">I acknowledge the <strong>refund policy</strong>: Setup fee is non-refundable once work begins. Monthly fee is non-refundable. Semi-annual plan is non-refundable after 15 days. Annual plan is non-refundable after 30 days of service.</label>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="paymentCheckbox" required>
-          <label for="paymentCheckbox">I understand that <strong>work will pause if payment is delayed beyond 3 days</strong> and the website may be temporarily suspended.</label>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="confirmationCheckbox" required>
-          <label for="confirmationCheckbox">I agree that this WhatsApp confirmation serves as my <strong>digital agreement</strong> and I will save it as proof.</label>
-        </div>
-
-        <button type="submit" class="btn-primary" style="width:100%; justify-content:center; margin-top:1.25rem; padding:14px;"><i class="fab fa-whatsapp"></i> Confirm & Send Agreement on WhatsApp</button>
-      </form>
-      <div id="formFeedback" class="feedback-msg"></div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" style="margin: 1rem 0 4rem;">
-    <h2>❓ Frequently Asked Questions</h2>
-    <div style="margin-top:1.25rem;">
-      <details><summary>What happens if I don't pay on time?</summary><p>Work pauses after 3 days of delayed payment. Website may be temporarily suspended until payment is received. No extra penalty for reactivation.</p></details>
-      <details><summary>Can I get a refund?</summary><p>Setup fee: non-refundable once work begins. Monthly: non-refundable. Semi-annual: non-refundable after 15 days from start. Annual: non-refundable after 30 days of service. Please review all terms before paying.</p></details>
-      <details><summary>Why are all payments upfront?</summary><p>Upfront payments ensure we can allocate dedicated time and resources to your project. It also protects both parties — we start work with confidence, and you're committed to the service.</p></details>
-      <details><summary>Can I cancel anytime?</summary><p>Yes, with 15 days notice before your next renewal date. Setup fee is non-refundable after work starts. No further charges after cancellation is confirmed.</p></details>
-      <details><summary>Do I own the website?</summary><p>You own your content (text, images, logo). Hosting is part of the monthly retainer — if cancelled, the live site goes offline. You can get your content and transfer your domain anytime.</p></details>
-      <details><summary>How many edits do I get per month?</summary><p>Basic: 3, Standard: 5, Professional: 10 edits/month. Extra edits are ₹300 each. Unused edits don't roll over.</p></details>
-      <details><summary>How do I get proof of agreement?</summary><p>After submitting, you'll receive a detailed confirmation on WhatsApp. Take a screenshot or use WhatsApp's export chat feature to save it as PDF proof.</p></details>
-    </div>
-  </section>
-</main>
-
-<footer class="footer">
+<div class="page-header">
   <div class="container">
-    <div class="footer-inner">
-      <div>⚡ Zingsite — Websites for Small Businesses<br>Mumbai, India</div>
-      <div><i class="fab fa-whatsapp"></i> <a href="https://wa.me/918828685342">+91 88286 85342</a><br>© 2026 Zingsite. All rights reserved.</div>
+    <h1>📜 Terms & Client Agreement</h1>
+    <p>Clear, transparent terms for web design, reel editing, and Tally printing services</p>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Service Highlights -->
+  <div class="service-highlights">
+    <div class="highlight-card">
+      <i class="fas fa-globe"></i>
+      <h3>Web Design</h3>
+      <p>Monthly subscription or one-time build with annual maintenance</p>
     </div>
+    <div class="highlight-card">
+      <i class="fas fa-film"></i>
+      <h3>Reel Editing</h3>
+      <p>₹2,000 (4 reels) or ₹3,500 (8 reels) per month</p>
+    </div>
+    <div class="highlight-card">
+      <i class="fas fa-print"></i>
+      <h3>Tally Printing</h3>
+      <p>Base ₹2,500 for 200 copies + volume pricing</p>
+    </div>
+  </div>
+
+  <!-- Terms Section -->
+  <div class="terms-card">
+    <h2><i class="fas fa-file-contract"></i> Terms & Conditions</h2>
+    <div class="terms-list">
+      <div class="term-item"><div class="term-title">1. Web Design Services</div><div class="term-desc">Zingsite provides website design, hosting, content editing, and maintenance as per selected plan. Delivery within 5–7 working days after receiving all content.</div></div>
+      <div class="term-item"><div class="term-title">2. Reel Editing Services</div><div class="term-desc">You shoot raw footage, we edit including captions and thumbnails. Delivery within 3 working days. Reels are delivered via WhatsApp or Google Drive.</div></div>
+      <div class="term-item"><div class="term-title">3. Tally Voucher Printing</div><div class="term-desc">We print vouchers exactly as they appear in your Tally data. We do not modify accounting entries. Delivery within 1-2 working days after receiving data.</div></div>
+      <div class="term-item"><div class="term-title">4. Payment Terms</div><div class="term-desc">Web setup fees due before work begins. Monthly retainer due by 1st of each month. Work will pause if payment delayed >3 days. Tally printing: full payment before dispatch. Reel editing: monthly advance payment.</div></div>
+      <div class="term-item"><div class="term-title">5. Content & Data Responsibility</div><div class="term-desc">Client is responsible for providing accurate content (text, images, logo) for websites. For Tally printing, client is responsible for data accuracy before sending.</div></div>
+      <div class="term-item"><div class="term-title">6. Cancellation Policy</div><div class="term-desc">Web plans: 15 days notice before renewal. Setup fee non-refundable after work begins. Reel editing: cancel anytime with 7 days notice. Tally printing: no refunds after printing starts.</div></div>
+      <div class="term-item"><div class="term-title">7. Hosting & Ownership</div><div class="term-desc">Websites hosted on Zingsite infrastructure. If retainer cancelled, site goes offline. Content belongs to client. Domain can be transferred.</div></div>
+      <div class="term-item"><div class="term-title">8. Limitation of Liability</div><div class="term-desc">Zingsite is not liable for business loss due to downtime, printing errors from client data, or third-party issues.</div></div>
+      <div class="term-item"><div class="term-title">9. Confidentiality</div><div class="term-desc">We never share your business data, Tally files, or website content with third parties.</div></div>
+      <div class="term-item"><div class="term-title">10. Portfolio Rights</div><div class="term-desc">We may showcase your website and sample work unless you opt out in writing.</div></div>
+    </div>
+  </div>
+
+  <!-- Client Agreement Form -->
+  <div class="agreement-card">
+    <h2>📄 Client Agreement</h2>
+    <p style="margin-bottom: 20px;">Fill in the details below to confirm your service and accept Zingsite's terms.</p>
+    
+    <form id="clientAgreementForm">
+      <div class="form-row">
+        <div class="form-group"><label>Full Name *</label><input type="text" id="fullName" placeholder="e.g. Ramesh Sharma" required></div>
+        <div class="form-group"><label>Business / Brand Name *</label><input type="text" id="businessName" placeholder="Your business name" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>WhatsApp Number *</label><input type="tel" id="whatsappNum" placeholder="+91 98765 43210" required></div>
+        <div class="form-group"><label>Email Address</label><input type="email" id="emailAgree" placeholder="hello@yourbusiness.com"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Select Service *</label>
+          <select id="serviceSelect" required>
+            <option value="">-- Choose service --</option>
+            <option value="Web Design - Monthly Plan">Web Design - Monthly Plan</option>
+            <option value="Web Design - One-Time + Annual Maintenance">Web Design - One-Time + Annual Maintenance</option>
+            <option value="Reel Editing - 4 reels/month">Reel Editing - 4 reels/month (₹2,000)</option>
+            <option value="Reel Editing - 8 reels/month">Reel Editing - 8 reels/month (₹3,500)</option>
+            <option value="Tally Voucher Printing - Base Package">Tally Voucher Printing - Base Package (₹2,500)</option>
+            <option value="Tally Voucher Printing - Volume Order">Tally Voucher Printing - Volume Order</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Additional Details</label><input type="text" id="additionalDetails" placeholder="Any specific requirements"></div>
+      </div>
+      
+      <div class="checkbox-group"><input type="checkbox" id="termsCheckbox" required><label for="termsCheckbox">I confirm that I have read, understood, and agree to the <strong>Terms & Conditions, Payment Terms, and Cancellation Policy</strong>.</label></div>
+      <div class="checkbox-group"><input type="checkbox" id="paymentCheckbox" required><label for="paymentCheckbox">I understand the payment terms for my selected service and agree to pay as per the schedule.</label></div>
+      <div class="checkbox-group"><input type="checkbox" id="dataCheckbox" required><label for="dataCheckbox">For Tally printing: I confirm my data is accurate before sending. For web design: I will provide content within agreed timeline.</label></div>
+      
+      <button type="submit" class="btn-submit"><i class="fab fa-whatsapp"></i> Confirm & Send Agreement (WhatsApp)</button>
+    </form>
+    <div id="formFeedback" class="feedback-msg"></div>
+  </div>
+
+  <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Zingsite. All rights reserved. Mumbai, India</p>
+    <p style="margin-top: 12px;"><a href="terms.html">📜 View Full Terms & Client Agreement</a></p>
   </div>
 </footer>
 
-<a href="https://wa.me/918828685342?text=I%20want%20to%20sign%20the%20agreement" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
 <script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
   const form = document.getElementById('clientAgreementForm');
   const feedbackDiv = document.getElementById('formFeedback');
-
+  
   form.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const name = document.getElementById('fullName').value.trim();
     const business = document.getElementById('businessName').value.trim();
     const phone = document.getElementById('whatsappNum').value.trim();
     const email = document.getElementById('emailAgree').value.trim();
-    const plan = document.getElementById('planSelect').value;
-    const billing = document.getElementById('billingCycle').value;
-
-    const allChecked = ['termsCheckbox','upfrontCheckbox','refundCheckbox','paymentCheckbox','confirmationCheckbox'].every(id => document.getElementById(id).checked);
-
-    if (!name || !business || !phone || !plan) {
-      feedbackDiv.innerHTML = '❌ Please fill all required fields (Name, Business, WhatsApp, Plan)';
-      feedbackDiv.className = 'feedback-msg error';
+    const service = document.getElementById('serviceSelect').value;
+    const additional = document.getElementById('additionalDetails').value.trim();
+    const termsChecked = document.getElementById('termsCheckbox').checked;
+    const paymentChecked = document.getElementById('paymentCheckbox').checked;
+    const dataChecked = document.getElementById('dataCheckbox').checked;
+    
+    if (!name || !business || !phone || !service) {
+      feedbackDiv.innerHTML = '❌ Please fill all required fields (Name, Business, WhatsApp, Service)';
+      feedbackDiv.style.display = 'block';
+      feedbackDiv.style.background = '#fee2e2';
+      feedbackDiv.style.color = '#991b1b';
       return;
     }
-    if (!allChecked) {
-      feedbackDiv.innerHTML = '❌ You must accept all terms and policies to proceed.';
-      feedbackDiv.className = 'feedback-msg error';
+    if (!termsChecked || !paymentChecked || !dataChecked) {
+      feedbackDiv.innerHTML = '❌ You must accept all terms to proceed.';
+      feedbackDiv.style.display = 'block';
+      feedbackDiv.style.background = '#fee2e2';
+      feedbackDiv.style.color = '#991b1b';
       return;
     }
-
+    
     const now = new Date();
     const dateTime = now.toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
-    const termsUrl = window.location.href;
-
-    const waMessage = `📄 *ZINGSITE CLIENT AGREEMENT* 📄
-
-━━━━━━━━━━━━━━━━━━━━━━
-📅 *DATE & TIME:* ${dateTime}
-━━━━━━━━━━━━━━━━━━━━━━
+    
+    let waMessage = `📄 *ZINGSITE CLIENT AGREEMENT* 📄
+    
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📅 *DATE:* ${dateTime}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 👤 *CLIENT DETAILS*
 • Name: ${name}
 • Business: ${business}
 • WhatsApp: ${phone}
-• Email: ${email || 'Not provided'}
+${email ? `• Email: ${email}` : '• Email: Not provided'}
 
-━━━━━━━━━━━━━━━━━━━━━━
-💰 *SELECTED PLAN*
-• Package: ${plan}
-• Billing: ${billing}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🛠️ *SERVICE SELECTED*
+• ${service}
+${additional ? `• Additional: ${additional}` : ''}
 
-━━━━━━━━━━━━━━━━━━━━━━
-✅ *I HAVE READ & AGREED TO:*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ *TERMS AGREED*
 
+I confirm that I have read and agree to:
 1. Zingsite Terms & Conditions
-2. All payments are UPFRONT before work/service begins
-3. Setup fee — non-refundable once work begins
-4. Monthly fee — non-refundable
-5. Semi-annual — non-refundable after 15 days
-6. Annual — non-refundable after 30 days of service
-7. Work pauses if payment delayed >3 days
-8. 15-day cancellation notice required
-9. Edits: Basic(3), Standard(5), Professional(10)/month
+2. Payment terms for selected service
+3. Cancellation policy
+${service.includes('Tally') ? '4. I confirm my Tally data is accurate before sending' : '4. I will provide website content within agreed timeline'}
 
-━━━━━━━━━━━━━━━━━━━━━━
-🔐 *DIGITAL AGREEMENT*
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔐 *DIGITAL SIGNATURE*
 
-This WhatsApp message from my number serves as my digital agreement. I authorize Zingsite to proceed.
+This confirmation is sent from my WhatsApp number.
+I authorize Zingsite to start the service.
 
-📌 Terms reference: ${termsUrl}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ *ZINGSITE CONTACT*
+WhatsApp: +91 88286 85342
+Website: https://fernandesbenson876-coder.github.io/Zingsite-Website-/`;
 
-━━━━━━━━━━━━━━━━━━━━━━
-⚡ Zingsite | +91 88286 85342
-
-*Please save this message as proof of agreement.*`;
-
-    window.open('https://wa.me/918828685342?text=' + encodeURIComponent(waMessage), '_blank');
-
-    feedbackDiv.innerHTML = '✅ Agreement sent to Zingsite on WhatsApp! Please take a screenshot of the message as your proof of agreement.';
-    feedbackDiv.className = 'feedback-msg success';
-
+    window.open(`https://wa.me/918828685342?text=${encodeURIComponent(waMessage)}`, '_blank');
+    
+    setTimeout(() => {
+      window.open(`https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(waMessage)}`, '_blank');
+    }, 500);
+    
+    feedbackDiv.innerHTML = '✅ Agreement sent via WhatsApp to YOU and the CLIENT! 📸 Please save the message as proof. We will confirm & start your service shortly.';
+    feedbackDiv.style.display = 'block';
+    feedbackDiv.style.background = '#dcfce7';
+    feedbackDiv.style.color = '#166534';
+    
     form.reset();
     feedbackDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
