@@ -3,31 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zingsite — Royal Digital Agency for Mumbai Businesses</title>
+  <title>Zingsite — Websites, Reels & Tally Printing for Mumbai</title>
   <meta name="google-site-verification" content="YcsMpIsnHfhnLqgaOy9avE-tV-xHqyZbdn7lDzaz4Kc" />
-  <meta name="description" content="Premium websites, reel editing, and Tally printing for Mumbai businesses. Dark & royal theme. Royal treatment for your business.">
+  <meta name="description" content="Modern websites, reel editing, and Tally printing for Mumbai businesses. Fast, beautiful, and affordable.">
   
-  <!-- Google Fonts: Playfair Display for headings, Plus Jakarta Sans for body -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       background: #0a0a0f;
       color: #ecedee;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       line-height: 1.5;
-      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
     .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 
     /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #1a1a2e; }
-    ::-webkit-scrollbar-thumb { background: #c9a03d; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb { background: #00d9ff; border-radius: 4px; }
 
-    /* Navigation - Royal */
+    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -35,10 +38,12 @@
       right: 0;
       background: rgba(10, 10, 15, 0.95);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(201, 160, 61, 0.2);
+      border-bottom: 1px solid rgba(0, 217, 255, 0.15);
       z-index: 1000;
       padding: 16px 0;
+      transition: all 0.3s ease;
     }
+    nav.scrolled { background: rgba(10, 10, 15, 0.98); box-shadow: 0 5px 25px rgba(0,0,0,0.3); }
     .nav-inner {
       display: flex;
       align-items: center;
@@ -55,10 +60,9 @@
     }
     .logo-img { height: 42px; width: auto; }
     .logo span {
-      font-family: 'Playfair Display', serif;
       font-weight: 800;
-      font-size: 1.4rem;
-      background: linear-gradient(135deg, #e8d5a3, #c9a03d, #8b6914);
+      font-size: 1.3rem;
+      background: linear-gradient(135deg, #00d9ff, #0099cc);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -70,11 +74,10 @@
       font-weight: 500;
       transition: all 0.3s;
       font-size: 0.9rem;
-      letter-spacing: 0.3px;
     }
-    .nav-links a:hover { color: #c9a03d; }
-    .btn-gold {
-      background: linear-gradient(135deg, #c9a03d, #a0762c);
+    .nav-links a:hover { color: #00d9ff; }
+    .btn-primary {
+      background: linear-gradient(135deg, #00d9ff, #0099cc);
       color: #0a0a0f;
       padding: 8px 24px;
       border-radius: 40px;
@@ -88,11 +91,11 @@
       border: none;
       cursor: pointer;
     }
-    .btn-gold:hover { background: linear-gradient(135deg, #d4aa4a, #b8862e); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,160,61,0.3); }
-    .btn-outline-gold {
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,217,255,0.3); }
+    .btn-outline {
       background: transparent;
-      border: 1px solid #c9a03d;
-      color: #c9a03d;
+      border: 1px solid #00d9ff;
+      color: #00d9ff;
       padding: 8px 24px;
       border-radius: 40px;
       text-decoration: none;
@@ -103,130 +106,207 @@
       align-items: center;
       gap: 8px;
     }
-    .btn-outline-gold:hover { background: rgba(201,160,61,0.1); transform: translateY(-2px); }
+    .btn-outline:hover { background: rgba(0,217,255,0.1); transform: translateY(-2px); }
     .hamburger { display: none; background: none; border: none; color: #ecedee; font-size: 1.6rem; cursor: pointer; }
-    .mobile-menu { display: none; background: #0f0f1a; padding: 20px 24px; border-top: 1px solid #c9a03d20; }
+    .mobile-menu { display: none; background: #0f0f1a; padding: 20px 24px; border-top: 1px solid #00d9ff20; }
     .mobile-menu.open { display: block; }
     .mobile-menu a { display: block; color: #b8b8c8; text-decoration: none; padding: 12px 0; border-bottom: 1px solid #1f1f30; }
 
-    /* Hero Section */
+    /* Hero Section with Animation */
     .hero { min-height: 90vh; display: flex; align-items: center; padding: 140px 0 80px; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 60%; height: 100%; background: radial-gradient(circle at 70% 30%, rgba(201,160,61,0.08), transparent); pointer-events: none; }
+    .hero::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 150%; background: radial-gradient(circle, rgba(0,217,255,0.08), transparent); pointer-events: none; animation: float 20s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-20px,20px) rotate(5deg); } }
     .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-badge { font-size: 0.75rem; font-weight: 600; color: #c9a03d; letter-spacing: 2px; margin-bottom: 20px; display: inline-block; border: 1px solid rgba(201,160,61,0.3); padding: 4px 12px; border-radius: 40px; }
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.2; margin-bottom: 24px; }
-    .hero .gold-text { background: linear-gradient(135deg, #e8d5a3, #c9a03d); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero p { color: #a0a0b0; font-size: 1.05rem; margin-bottom: 32px; max-width: 90%; }
-    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
-    .hero-card { background: linear-gradient(135deg, #12121c, #0a0a0f); border: 1px solid rgba(201,160,61,0.2); border-radius: 32px; padding: 40px; text-align: center; position: relative; overflow: hidden; }
-    .hero-card::after { content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(201,160,61,0.05), transparent); pointer-events: none; }
-    .hero-card i { font-size: 3rem; color: #c9a03d; margin-bottom: 20px; }
-    .hero-card h3 { font-size: 1.8rem; margin-bottom: 10px; }
-    .floating-badge { position: absolute; bottom: 20px; right: 20px; background: #c9a03d; color: #0a0a0f; padding: 6px 14px; border-radius: 40px; font-size: 0.7rem; font-weight: 700; }
+    .hero-badge { font-size: 0.7rem; font-weight: 600; color: #00d9ff; letter-spacing: 2px; margin-bottom: 20px; display: inline-block; border: 1px solid rgba(0,217,255,0.3); padding: 4px 12px; border-radius: 40px; animation: fadeInUp 0.6s ease; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.2; margin-bottom: 24px; animation: fadeInUp 0.6s ease 0.1s both; }
+    .hero .gradient-text { background: linear-gradient(135deg, #00d9ff, #00ffcc); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { color: #a0a0b0; font-size: 1rem; margin-bottom: 32px; max-width: 90%; animation: fadeInUp 0.6s ease 0.2s both; }
+    .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeInUp 0.6s ease 0.3s both; }
+    .hero-image {
+      background: linear-gradient(135deg, #12121c, #0a0a0f);
+      border: 1px solid rgba(0,217,255,0.2);
+      border-radius: 32px;
+      padding: 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInRight 0.8s ease;
+    }
+    .hero-image img { width: 100%; max-width: 300px; border-radius: 20px; margin-bottom: 20px; }
+    .hero-image i { font-size: 3rem; color: #00d9ff; margin-bottom: 20px; display: inline-block; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    .floating-badge { position: absolute; bottom: 20px; right: 20px; background: #00d9ff; color: #0a0a0f; padding: 6px 14px; border-radius: 40px; font-size: 0.7rem; font-weight: 700; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+
+    /* Animations */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-50px); } to { opacity: 1; transform: translateX(0); } }
 
     /* Marquee */
-    .marquee-section { background: #0f0f1a; padding: 24px 0; border-top: 1px solid #c9a03d20; border-bottom: 1px solid #c9a03d20; overflow: hidden; }
+    .marquee-section { background: #0f0f1a; padding: 20px 0; border-top: 1px solid #00d9ff20; border-bottom: 1px solid #00d9ff20; overflow: hidden; }
     .marquee { display: flex; white-space: nowrap; animation: scroll 25s linear infinite; }
-    .marquee span { font-size: 0.9rem; font-weight: 500; color: #a0a0b0; margin: 0 24px; }
-    .marquee i { margin-right: 8px; color: #c9a03d; }
+    .marquee span { font-size: 0.85rem; font-weight: 500; color: #a0a0b0; margin: 0 20px; }
+    .marquee i { margin-right: 8px; color: #00d9ff; }
     @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
     /* Vision Section */
     .vision-section { padding: 80px 0; background: #0a0a0f; }
     .section-header { text-align: center; margin-bottom: 60px; }
-    .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 16px; }
+    .section-header h2 { font-size: 2rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #fff, #00d9ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .section-header p { color: #a0a0b0; max-width: 600px; margin: 0 auto; }
     .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-    .vision-card { text-align: center; padding: 30px 20px; background: #0f0f1a; border-radius: 24px; border: 1px solid #1f1f30; transition: all 0.3s; }
-    .vision-card:hover { transform: translateY(-5px); border-color: #c9a03d; }
-    .vision-number { width: 56px; height: 56px; background: linear-gradient(135deg, #c9a03d, #a0762c); color: #0a0a0f; border-radius: 60px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.4rem; margin: 0 auto 20px; }
+    .vision-card {
+      background: #0f0f1a;
+      border-radius: 24px;
+      padding: 30px 20px;
+      text-align: center;
+      border: 1px solid #1f1f30;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .vision-card:hover { transform: translateY(-8px); border-color: #00d9ff; box-shadow: 0 20px 30px -12px rgba(0,217,255,0.15); }
+    .vision-number {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #00d9ff, #0099cc);
+      color: #0a0a0f;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.4rem;
+      margin: 0 auto 20px;
+      transition: transform 0.3s;
+    }
+    .vision-card:hover .vision-number { transform: scale(1.1); }
     .vision-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
     .vision-card p { color: #a0a0b0; font-size: 0.9rem; line-height: 1.6; }
 
     /* Portfolio */
     .portfolio-section { padding: 80px 0; background: #0f0f1a; }
     .portfolio-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
-    .portfolio-card { background: #0a0a0f; border-radius: 24px; overflow: hidden; border: 1px solid #1f1f30; width: 320px; cursor: pointer; transition: all 0.3s; }
-    .portfolio-card:hover { transform: translateY(-8px); border-color: #c9a03d; box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5); }
-    .portfolio-img { width: 100%; height: 220px; object-fit: cover; background: #1a1a2e; display: flex; align-items: center; justify-content: center; }
+    .portfolio-card {
+      background: #0a0a0f;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid #1f1f30;
+      width: 320px;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .portfolio-card:hover { transform: translateY(-10px) scale(1.02); border-color: #00d9ff; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.5); }
+    .portfolio-img { width: 100%; height: 220px; object-fit: cover; background: linear-gradient(135deg, #1a1a2e, #0a0a0f); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .portfolio-card:hover .portfolio-img img { transform: scale(1.05); }
     .portfolio-info { padding: 20px; }
-    .portfolio-tag { background: rgba(201,160,61,0.15); color: #c9a03d; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; display: inline-block; }
+    .portfolio-tag { background: rgba(0,217,255,0.15); color: #00d9ff; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; display: inline-block; }
     .portfolio-info h3 { margin: 12px 0 6px; font-size: 1.1rem; }
-    .portfolio-info p { color: #a0a0b0; font-size: 0.85rem; }
 
     /* Services */
     .services-section { padding: 80px 0; background: #0a0a0f; }
     .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-    .service-card { background: #0f0f1a; border-radius: 24px; padding: 32px; width: 100%; max-width: 350px; text-align: center; border: 1px solid #1f1f30; transition: all 0.3s; }
-    .service-card:hover { transform: translateY(-5px); border-color: #c9a03d; }
-    .service-icon { font-size: 2.8rem; margin-bottom: 16px; }
+    .service-card {
+      background: #0f0f1a;
+      border-radius: 24px;
+      padding: 32px;
+      width: 100%;
+      max-width: 350px;
+      text-align: center;
+      border: 1px solid #1f1f30;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .service-card:hover { transform: translateY(-8px); border-color: #00d9ff; box-shadow: 0 20px 30px -12px rgba(0,217,255,0.15); }
+    .service-icon { font-size: 2.8rem; margin-bottom: 16px; display: inline-block; transition: transform 0.3s; }
+    .service-card:hover .service-icon { transform: scale(1.1); }
     .service-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
     .service-card p { color: #a0a0b0; font-size: 0.85rem; margin-bottom: 20px; }
-    .reel-pricing { margin: 16px 0; padding: 12px; background: rgba(201,160,61,0.08); border-radius: 16px; }
-    .reel-pricing .price { font-size: 1.2rem; font-weight: 700; color: #c9a03d; }
+    .reel-pricing { margin: 16px 0; padding: 12px; background: rgba(0,217,255,0.08); border-radius: 16px; }
+    .reel-pricing .price { font-size: 1.2rem; font-weight: 700; color: #00d9ff; }
 
     /* Pricing Section */
     .pricing-section { padding: 80px 0; background: #0f0f1a; }
     .pricing-toggle { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
-    .toggle-btn { background: #0a0a0f; border: 1px solid #1f1f30; padding: 10px 28px; border-radius: 40px; font-weight: 600; cursor: pointer; transition: all 0.3s; font-family: inherit; font-size: 0.85rem; color: #a0a0b0; }
-    .toggle-btn.active { background: linear-gradient(135deg, #c9a03d, #a0762c); color: #0a0a0f; border-color: transparent; }
+    .toggle-btn {
+      background: #0a0a0f;
+      border: 1px solid #1f1f30;
+      padding: 10px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: #a0a0b0;
+    }
+    .toggle-btn.active { background: linear-gradient(135deg, #00d9ff, #0099cc); color: #0a0a0f; border-color: transparent; }
     .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
-    .pricing-card { background: #0a0a0f; border-radius: 24px; padding: 28px; width: 100%; max-width: 320px; border: 1px solid #1f1f30; transition: all 0.3s; position: relative; }
-    .pricing-card:hover { transform: translateY(-5px); border-color: #c9a03d; }
-    .pricing-card.featured { border: 1px solid #c9a03d; box-shadow: 0 0 20px rgba(201,160,61,0.1); }
-    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #c9a03d; color: #0a0a0f; padding: 4px 16px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; }
-    .plan-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; }
+    .pricing-card {
+      background: #0a0a0f;
+      border-radius: 24px;
+      padding: 28px;
+      width: 100%;
+      max-width: 320px;
+      border: 1px solid #1f1f30;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      position: relative;
+    }
+    .pricing-card:hover { transform: translateY(-8px); border-color: #00d9ff; box-shadow: 0 20px 30px -12px rgba(0,217,255,0.15); }
+    .pricing-card.featured { border: 1px solid #00d9ff; box-shadow: 0 0 20px rgba(0,217,255,0.1); }
+    .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #00d9ff; color: #0a0a0f; padding: 4px 16px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; }
+    .plan-name { font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; }
     .setup-price { font-size: 0.8rem; color: #a0a0b0; margin-bottom: 16px; }
     .setup-price strong { font-size: 1.2rem; color: #ecedee; }
-    .monthly-price { font-size: 1rem; color: #a0a0b0; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1f1f30; }
-    .monthly-price strong { font-size: 1.8rem; color: #c9a03d; }
-    .semi-price, .annual-price { display: none; font-size: 1rem; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1f1f30; }
-    .semi-price strong, .annual-price strong { font-size: 1.6rem; color: #c9a03d; }
+    .monthly-price, .semi-price, .annual-price { font-size: 1rem; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #1f1f30; }
+    .monthly-price strong, .semi-price strong, .annual-price strong { font-size: 1.8rem; color: #00d9ff; }
+    .semi-price, .annual-price { display: none; }
     .pricing-card.show-semi .monthly-price { display: none; }
     .pricing-card.show-semi .semi-price { display: block; }
     .pricing-card.show-annual .monthly-price { display: none; }
     .pricing-card.show-annual .annual-price { display: block; }
     .features { list-style: none; margin: 20px 0; }
     .features li { padding: 8px 0; display: flex; align-items: center; gap: 10px; font-size: 0.8rem; color: #b8b8c8; }
-    .features li i { color: #c9a03d; width: 18px; }
+    .features li i { color: #00d9ff; width: 18px; }
     .btn-plan { width: 100%; text-align: center; padding: 12px; border-radius: 40px; font-weight: 700; text-decoration: none; display: inline-block; margin-top: 16px; transition: all 0.3s; font-size: 0.85rem; cursor: pointer; border: none; }
-    .btn-gold-full { background: linear-gradient(135deg, #c9a03d, #a0762c); color: #0a0a0f; }
-    .btn-gold-full:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,160,61,0.3); }
+    .btn-primary-full { background: linear-gradient(135deg, #00d9ff, #0099cc); color: #0a0a0f; }
+    .btn-primary-full:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,217,255,0.3); }
     .btn-outline-full { background: transparent; border: 1px solid #1f1f30; color: #ecedee; }
-    .btn-outline-full:hover { border-color: #c9a03d; color: #c9a03d; }
+    .btn-outline-full:hover { border-color: #00d9ff; color: #00d9ff; transform: translateY(-2px); }
 
     /* Tally Section */
     .tally-section { padding: 80px 0; background: #0a0a0f; }
     .tally-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-    .tally-info h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; }
-    .tally-card { background: #0f0f1a; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; }
-    .base-price { font-size: 1.8rem; font-weight: 800; color: #c9a03d; margin: 16px 0; }
+    .tally-info h2 { font-size: 1.8rem; margin-bottom: 20px; }
+    .tally-card { background: #0f0f1a; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; transition: all 0.3s; }
+    .tally-card:hover { transform: translateY(-5px); border-color: #00d9ff; }
+    .base-price { font-size: 1.8rem; font-weight: 800; color: #00d9ff; margin: 16px 0; }
     .volume-pricing { margin: 20px 0; padding: 16px; background: #0a0a0f; border-radius: 16px; }
     .volume-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1f1f30; }
     .volume-item:last-child { border-bottom: none; }
+    .volume-item span:last-child { color: #00d9ff; font-weight: 600; }
 
     /* CTA */
-    .cta-section { background: linear-gradient(135deg, #0f0f1a, #0a0a0f); padding: 80px 0; text-align: center; border-top: 1px solid #c9a03d20; border-bottom: 1px solid #c9a03d20; }
-    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
-    .cta-section .btn-gold { font-size: 1rem; padding: 14px 36px; }
+    .cta-section { background: linear-gradient(135deg, #0f0f1a, #0a0a0f); padding: 80px 0; text-align: center; border-top: 1px solid #00d9ff20; border-bottom: 1px solid #00d9ff20; }
+    .cta-section h2 { font-size: 2rem; margin-bottom: 16px; }
+    .cta-section .btn-primary { font-size: 1rem; padding: 14px 36px; }
 
     /* Contact */
     .contact-section { padding: 80px 0; background: #0f0f1a; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
     .contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; margin-bottom: 16px; background: #0a0a0f; border: 1px solid #1f1f30; border-radius: 16px; color: #ecedee; font-family: inherit; transition: all 0.3s; }
-    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #c9a03d; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #00d9ff; box-shadow: 0 0 10px rgba(0,217,255,0.2); }
     .error-message { color: #ff6b6b; font-size: 0.7rem; display: none; margin-top: -12px; margin-bottom: 12px; }
     .contact-info { background: #0a0a0f; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; }
     .contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-    .contact-row i { color: #c9a03d; width: 24px; }
+    .contact-row i { color: #00d9ff; width: 24px; }
 
     footer { background: #0a0a0f; border-top: 1px solid #1f1f30; padding: 40px 0; text-align: center; color: #a0a0b0; }
     footer a { color: #a0a0b0; text-decoration: none; }
-    footer a:hover { color: #c9a03d; }
+    footer a:hover { color: #00d9ff; }
 
     @media (max-width: 900px) {
       .hero-grid, .vision-grid, .tally-grid, .contact-grid { grid-template-columns: 1fr; }
-      .nav-links, .btn-gold.nav-wa { display: none; }
+      .nav-links, .btn-primary.nav-wa { display: none; }
       .hamburger { display: block; }
       .hero { padding: 100px 0 60px; }
     }
@@ -238,7 +318,7 @@
 </head>
 <body>
 
-<nav>
+<nav id="navbar">
   <div class="nav-inner">
     <a href="#" class="logo" onclick="scrollToTop(); return false;">
       <img src="logo.png" alt="Zingsite" class="logo-img" onerror="this.style.display='none'">
@@ -252,7 +332,7 @@
       <li><a href="#tally">Tally</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="https://wa.me/918828685342" target="_blank" class="btn-gold nav-wa">💬 Royal Support</a>
+    <a href="https://wa.me/918828685342" target="_blank" class="btn-primary nav-wa">💬 Zingsite Support</a>
     <button class="hamburger" onclick="toggleMenu()">☰</button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
@@ -262,7 +342,7 @@
     <a href="#pricing" onclick="closeMenu()">Pricing</a>
     <a href="#tally" onclick="closeMenu()">Tally</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
-    <a href="https://wa.me/918828685342" target="_blank" onclick="closeMenu()">💬 WhatsApp</a>
+    <a href="https://wa.me/918828685342" target="_blank" onclick="closeMenu()">💬 Zingsite Support</a>
     <a href="https://www.instagram.com/zingsite" target="_blank" onclick="closeMenu()">📸 Instagram</a>
   </div>
 </nav>
@@ -272,19 +352,19 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <span class="hero-badge">✦ MUMBAI'S ROYAL DIGITAL AGENCY ✦</span>
-        <h1>Websites That Bring <span class="gold-text">More Customers</span> – Without the Headache</h1>
-        <p>Premium websites, reel editing, and Tally printing – all under one roof. Free domain, SSL, hosting, and royal support included.</p>
+        <div class="hero-badge">✨ MUMBAI-BASED DIGITAL AGENCY</div>
+        <h1>Websites That Bring <span class="gradient-text">More Customers</span> – Without the Headache</h1>
+        <p>Modern websites, reel editing, and Tally printing – all under one roof. Free domain, SSL, hosting, and dedicated support included.</p>
         <div class="hero-buttons">
-          <a href="https://wa.me/918828685342?text=Royal%20inquiry%20for%20my%20business" target="_blank" class="btn-gold">👑 Start Royal Project</a>
-          <a href="#pricing" class="btn-outline-gold">View Pricing →</a>
+          <a href="https://wa.me/918828685342?text=Hi!%20I%20want%20to%20get%20a%20website%20for%20my%20business" target="_blank" class="btn-primary">💬 Start Your Project</a>
+          <a href="#pricing" class="btn-outline">View Pricing →</a>
         </div>
       </div>
-      <div class="hero-card">
-        <i class="fas fa-crown"></i>
-        <h3>20% OFF</h3>
-        <p>on web setup fee<br>First 5 clients only</p>
-        <div class="floating-badge">🔥 Limited Slots</div>
+      <div class="hero-image">
+        <i class="fas fa-chart-line"></i>
+        <!-- STOCK PHOTO PLACEHOLDER - Replace with your image -->
+        <img src="https://placehold.co/400x300/0f0f1a/00d9ff?text=Your+Website+Preview" alt="Website preview" style="max-width: 100%; border-radius: 16px;">
+        <div class="floating-badge">🔥 20% OFF Setup</div>
       </div>
     </div>
   </div>
@@ -296,7 +376,7 @@
     <span><i class="fas fa-code"></i> Web Design</span>
     <span><i class="fas fa-film"></i> Reel Editing</span>
     <span><i class="fas fa-print"></i> Tally Printing</span>
-    <span><i class="fas fa-mobile-alt"></i> Responsive</span>
+    <span><i class="fas fa-mobile-alt"></i> Responsive Design</span>
     <span><i class="fas fa-chart-simple"></i> SEO Ready</span>
     <span><i class="fas fa-cart-shopping"></i> E-commerce</span>
     <span><i class="fas fa-shield-alt"></i> SSL Security</span>
@@ -304,7 +384,7 @@
     <span><i class="fas fa-code"></i> Web Design</span>
     <span><i class="fas fa-film"></i> Reel Editing</span>
     <span><i class="fas fa-print"></i> Tally Printing</span>
-    <span><i class="fas fa-mobile-alt"></i> Responsive</span>
+    <span><i class="fas fa-mobile-alt"></i> Responsive Design</span>
     <span><i class="fas fa-chart-simple"></i> SEO Ready</span>
     <span><i class="fas fa-cart-shopping"></i> E-commerce</span>
     <span><i class="fas fa-shield-alt"></i> SSL Security</span>
@@ -317,20 +397,20 @@
   <div class="container">
     <div class="section-header">
       <h2>We don't just build. We research, design, and deliver.</h2>
-      <p>A royal process for Mumbai small businesses</p>
+      <p>A simple, transparent process for Mumbai small businesses</p>
     </div>
     <div class="vision-grid">
-      <div class="vision-card">
+      <div class="vision-card" data-aos="fade-up" data-aos-delay="0">
         <div class="vision-number">01</div>
         <h3>Research & Discuss</h3>
         <p>We understand your business, goals, and customers before writing a single line of code.</p>
       </div>
-      <div class="vision-card">
+      <div class="vision-card" data-aos="fade-up" data-aos-delay="100">
         <div class="vision-number">02</div>
         <h3>Design & Develop</h3>
         <p>Modern, responsive websites built with your brand and customers in mind.</p>
       </div>
-      <div class="vision-card">
+      <div class="vision-card" data-aos="fade-up" data-aos-delay="200">
         <div class="vision-number">03</div>
         <h3>Launch & Support</h3>
         <p>We handle hosting, security, updates, and edits – you focus on your business.</p>
@@ -350,21 +430,21 @@
   </div>
 </section>
 
-<!-- SERVICES - with Reel Pricing -->
+<!-- SERVICES -->
 <section id="services" class="services-section">
   <div class="container">
     <div class="section-header">
       <h2>What We Offer</h2>
-      <p>Three royal services to grow your business</p>
+      <p>Three services to help your business grow</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
         <div class="service-icon">🌐</div>
         <h3>Website Design</h3>
         <p>Professional websites with free domain, hosting, and SSL. Starting at ₹3,000/month.</p>
-        <a href="#pricing" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">Explore →</a>
+        <a href="#pricing" class="btn-outline" style="display: inline-block; padding: 8px 20px;">Explore →</a>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
         <div class="service-icon">🎬</div>
         <h3>Reel Editing</h3>
         <p>You shoot, we edit. SEO captions + custom thumbnails included.</p>
@@ -372,13 +452,13 @@
           <span class="price">₹2,000/month</span> — 4 reels<br>
           <span class="price">₹3,500/month</span> — 8 reels
         </div>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20Reel%20Editing" target="_blank" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">WhatsApp →</a>
+        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20Reel%20Editing" target="_blank" class="btn-outline" style="display: inline-block; padding: 8px 20px;">WhatsApp →</a>
       </div>
-      <div class="service-card">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
         <div class="service-icon">🖨️</div>
         <h3>Tally Voucher Printing</h3>
         <p>Stop struggling with printer settings. We handle your Tally vouchers professionally.</p>
-        <a href="#tally" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">Learn More →</a>
+        <a href="#tally" class="btn-outline" style="display: inline-block; padding: 8px 20px;">Learn More →</a>
       </div>
     </div>
   </div>
@@ -388,13 +468,13 @@
 <section id="pricing" class="pricing-section">
   <div class="container">
     <div class="section-header">
-      <h2>Royal Pricing, Transparent Plans</h2>
+      <h2>Simple, Transparent Pricing</h2>
       <p>Choose the perfect package for your business</p>
     </div>
     <div class="pricing-toggle">
       <button class="toggle-btn active" id="monthlyBtn">Monthly</button>
-      <button class="toggle-btn" id="semiBtn">6 Months <span style="color:#c9a03d; margin-left:6px;">+1 Free</span></button>
-      <button class="toggle-btn" id="annualBtn">12 Months <span style="color:#c9a03d; margin-left:6px;">+2 Free</span></button>
+      <button class="toggle-btn" id="semiBtn">6 Months <span style="color:#00d9ff; margin-left:6px;">+1 Free</span></button>
+      <button class="toggle-btn" id="annualBtn">12 Months <span style="color:#00d9ff; margin-left:6px;">+2 Free</span></button>
     </div>
     <div class="pricing-grid" id="pricingGrid"></div>
   </div>
@@ -405,36 +485,36 @@
   <div class="container">
     <div class="section-header">
       <h2>🖨️ Tally Voucher Printing Service</h2>
-      <p>Royal precision for your accounting needs</p>
+      <p>Professional printing for your accounting needs</p>
     </div>
     <div class="tally-grid">
-      <div class="tally-info">
+      <div class="tally-info" data-aos="fade-right">
         <h2>How It Works</h2>
         <ul style="list-style: none; margin: 20px 0;">
-          <li style="margin-bottom: 14px;"><i class="fas fa-folder-open" style="color:#c9a03d; width: 28px;"></i> Copy your Tally data folder (TallyPrime\Data\Company.900)</li>
-          <li style="margin-bottom: 14px;"><i class="fas fa-paper-plane" style="color:#c9a03d; width: 28px;"></i> Send via USB, WhatsApp, or email</li>
-          <li style="margin-bottom: 14px;"><i class="fas fa-cog" style="color:#c9a03d; width: 28px;"></i> We configure, print, and organize</li>
-          <li style="margin-bottom: 14px;"><i class="fas fa-truck" style="color:#c9a03d; width: 28px;"></i> Collect or get delivery</li>
+          <li style="margin-bottom: 14px;"><i class="fas fa-folder-open" style="color:#00d9ff; width: 28px;"></i> Copy your Tally data folder (TallyPrime\Data\Company.900)</li>
+          <li style="margin-bottom: 14px;"><i class="fas fa-paper-plane" style="color:#00d9ff; width: 28px;"></i> Send via USB, WhatsApp, or email</li>
+          <li style="margin-bottom: 14px;"><i class="fas fa-cog" style="color:#00d9ff; width: 28px;"></i> We configure, print, and organize</li>
+          <li style="margin-bottom: 14px;"><i class="fas fa-truck" style="color:#00d9ff; width: 28px;"></i> Collect or get delivery</li>
         </ul>
-        <div style="background: rgba(201,160,61,0.1); padding: 14px; border-radius: 16px; font-size: 0.8rem; margin: 20px 0; border-left: 3px solid #c9a03d;">
+        <div style="background: rgba(0,217,255,0.08); padding: 14px; border-radius: 16px; font-size: 0.8rem; margin: 20px 0; border-left: 3px solid #00d9ff;">
           <i class="fas fa-exclamation-triangle"></i> We don't modify your accounting entries. We only print what exists.
         </div>
-        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20service" target="_blank" class="btn-gold" style="display: inline-flex;">📩 Royal Tally Support →</a>
+        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20service" target="_blank" class="btn-primary" style="display: inline-flex;">📩 Zingsite Support →</a>
       </div>
-      <div class="tally-card">
-        <h3>💰 Royal Pricing</h3>
-        <div class="base-price">BASE — ₹2,500</div>
+      <div class="tally-card" data-aos="fade-left">
+        <h3>💰 Pricing</h3>
+        <div class="base-price">BASE PACKAGE — ₹2,500</div>
         <p style="margin: 12px 0; color: #a0a0b0;">• 200 printed copies (any voucher type)<br>• PDF + Excel soft copies<br>• GST invoice formats<br>• Next-day delivery</p>
         <div class="volume-pricing">
           <h4 style="margin-bottom: 12px;">📊 Volume Pricing</h4>
-          <div class="volume-item"><span>Tier 1 (201–500 pages)</span><span style="color:#c9a03d;">₹9/page</span></div>
-          <div class="volume-item"><span>Tier 2 (501–1000 pages)</span><span style="color:#c9a03d;">₹8/page</span></div>
-          <div class="volume-item"><span>Tier 3 (1000+ pages)</span><span style="color:#c9a03d;">₹6/page</span></div>
+          <div class="volume-item"><span>Tier 1 (201–500 pages)</span><span>₹9/page</span></div>
+          <div class="volume-item"><span>Tier 2 (501–1000 pages)</span><span>₹8/page</span></div>
+          <div class="volume-item"><span>Tier 3 (1000+ pages)</span><span>₹6/page</span></div>
         </div>
-        <div style="background: rgba(201,160,61,0.05); padding: 12px; border-radius: 12px; margin: 16px 0;">
-          <strong>📝 Example:</strong> 600 pages = ₹2,500 + ₹2,700 + ₹800 = <strong style="color:#c9a03d;">₹6,000</strong>
+        <div style="background: rgba(0,217,255,0.05); padding: 12px; border-radius: 12px; margin: 16px 0;">
+          <strong>📝 Example:</strong> 600 pages = ₹2,500 + ₹2,700 + ₹800 = <strong style="color:#00d9ff;">₹6,000</strong>
         </div>
-        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20for%20my%20business" target="_blank" class="btn-gold-full" style="display: block; text-align: center;">Get Royal Quote →</a>
+        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20for%20my%20business" target="_blank" class="btn-primary-full" style="display: block; text-align: center;">Get Quote →</a>
       </div>
     </div>
   </div>
@@ -443,9 +523,9 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
-    <h2>Ready to grow your business like royalty?</h2>
-    <p>Get a website, reels, or Tally printing – all at royal prices. WhatsApp us today!</p>
-    <a href="https://wa.me/918828685342?text=I%20want%20royal%20treatment%20for%20my%20business" target="_blank" class="btn-gold">👑 Start Your Royal Project →</a>
+    <h2>Ready to grow your business?</h2>
+    <p>Get a website, reels, or Tally printing – all at affordable prices. WhatsApp us today!</p>
+    <a href="https://wa.me/918828685342?text=I%20want%20to%20know%20more%20about%20Zingsite%20services" target="_blank" class="btn-primary">🚀 Start Your Project →</a>
   </div>
 </section>
 
@@ -453,11 +533,11 @@
 <section id="contact" class="contact-section">
   <div class="container">
     <div class="section-header">
-      <h2>Let's Talk Royal</h2>
+      <h2>Let's Talk</h2>
       <p>Have a question or ready to start? Reach out to us.</p>
     </div>
     <div class="contact-grid">
-      <div class="contact-form">
+      <div class="contact-form" data-aos="fade-right">
         <input type="text" id="name" placeholder="Your Name *">
         <div class="error-message" id="nameError">Please enter your name</div>
         <input type="email" id="email" placeholder="Your Email">
@@ -465,14 +545,14 @@
         <div class="error-message" id="phoneError">Please enter your WhatsApp number</div>
         <textarea id="message" rows="5" placeholder="Tell us about your project... *"></textarea>
         <div class="error-message" id="messageError">Please describe your project</div>
-        <button onclick="validateAndSend()" class="btn-gold" style="width:100%; justify-content:center;">📩 Send Royal Inquiry</button>
+        <button onclick="validateAndSend()" class="btn-primary" style="width:100%; justify-content:center;">📩 Send Inquiry</button>
       </div>
-      <div class="contact-info">
+      <div class="contact-info" data-aos="fade-left">
         <h3>Get in Touch</h3>
         <div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>Mumbai, Maharashtra, India</span></div>
         <div class="contact-row"><i class="fab fa-whatsapp"></i><a href="https://wa.me/918828685342" style="color: #ecedee;">+91 88286 85342</a></div>
         <div class="contact-row"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/zingsite" target="_blank" style="color: #ecedee;">@zingsite</a></div>
-        <a href="https://wa.me/918828685342" target="_blank" class="btn-outline-gold" style="display: block; text-align: center; margin-top: 20px;">💬 Chat on WhatsApp</a>
+        <a href="https://wa.me/918828685342" target="_blank" class="btn-outline" style="display: block; text-align: center; margin-top: 20px;">💬 Zingsite Support</a>
       </div>
     </div>
   </div>
@@ -480,16 +560,27 @@
 
 <footer>
   <div class="container">
-    <p>© 2026 Zingsite — Royal Digital Agency. Mumbai, India</p>
+    <p>© 2026 Zingsite. All rights reserved. Mumbai, India</p>
     <p style="margin-top: 12px;"><a href="terms.html">📜 View Full Terms & Client Agreement</a></p>
   </div>
 </footer>
 
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  // Initialize AOS animations
+  AOS.init({ duration: 800, once: true, offset: 100 });
+
   // Navigation
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
   function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
   function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 50) { nav.classList.add('scrolled'); } 
+    else { nav.classList.remove('scrolled'); }
+  });
 
   // Pricing Data
   const plans = {
@@ -513,8 +604,8 @@
         <div class="plan-name">Basic</div>
         <div class="setup-price"><strong>${data.basic.setup}</strong> setup</div>
         <div class="monthly-price"><strong>${data.basic.price}</strong> /month</div>
-        <div class="semi-price"><strong>${data.basic.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
-        <div class="annual-price"><strong>${data.basic.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
+        <div class="semi-price"><strong>${data.basic.semi}</strong> /6 months <span style="font-size:0.7rem; color:#00d9ff; display:block;">(+1 month free)</span></div>
+        <div class="annual-price"><strong>${data.basic.annual}</strong> /year <span style="font-size:0.7rem; color:#00d9ff; display:block;">(+2 months free)</span></div>
         <ul class="features"><li><i class="fas fa-check-circle"></i> 3 Pages</li><li><i class="fas fa-check-circle"></i> 3 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li></ul>
         <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Basic%20plan" target="_blank" class="btn-plan btn-outline-full">Get Started →</a>
       </div>
@@ -523,23 +614,22 @@
         <div class="plan-name">Standard</div>
         <div class="setup-price"><strong>${data.standard.setup}</strong> setup</div>
         <div class="monthly-price"><strong>${data.standard.price}</strong> /month</div>
-        <div class="semi-price"><strong>${data.standard.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
-        <div class="annual-price"><strong>${data.standard.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
+        <div class="semi-price"><strong>${data.standard.semi}</strong> /6 months <span style="font-size:0.7rem; color:#00d9ff; display:block;">(+1 month free)</span></div>
+        <div class="annual-price"><strong>${data.standard.annual}</strong> /year <span style="font-size:0.7rem; color:#00d9ff; display:block;">(+2 months free)</span></div>
         <ul class="features"><li><i class="fas fa-check-circle"></i> 5 Pages</li><li><i class="fas fa-check-circle"></i> 5 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Email Support</li></ul>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Standard%20plan" target="_blank" class="btn-plan btn-gold-full">Get Started →</a>
+        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Standard%20plan" target="_blank" class="btn-plan btn-primary-full">Get Started →</a>
       </div>
       <div class="pricing-card" id="cardPremium">
         <div class="plan-name">Professional</div>
         <div class="setup-price"><strong>${data.professional.setup}</strong> setup</div>
         <div class="monthly-price"><strong>${data.professional.price}</strong> /month</div>
-        <div class="semi-price"><strong>${data.professional.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
-        <div class="annual-price"><strong>${data.professional.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
+        <div class="semi-price"><strong>${data.professional.semi}</strong> /6 months <span style="font-size:0.7rem; color:#00d9ff; display:block;">(+1 month free)</span></div>
+        <div class="annual-price"><strong>${data.professional.annual}</strong> /year <span style="font-size:0.7rem; color:#00d9ff; display:block;">(+2 months free)</span></div>
         <ul class="features"><li><i class="fas fa-check-circle"></i> 10 Pages</li><li><i class="fas fa-check-circle"></i> 10 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Email Support</li><li><i class="fas fa-check-circle"></i> Blog Section</li><li><i class="fas fa-check-circle"></i> E-commerce Ready</li><li><i class="fas fa-check-circle"></i> Analytics & Reports</li></ul>
         <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20the%20Professional%20plan" target="_blank" class="btn-plan btn-outline-full">Get Started →</a>
       </div>
     `;
     
-    // Update visibility based on billing mode
     document.querySelectorAll('.pricing-card').forEach(card => {
       card.classList.remove('show-semi', 'show-annual');
       if (billingMode === 'semi') card.classList.add('show-semi');
@@ -565,8 +655,9 @@
   if (grid) portfolioItems.forEach(item => {
     const card = document.createElement('div');
     card.className = 'portfolio-card';
+    card.setAttribute('data-aos', 'fade-up');
     card.onclick = () => window.open(item.link, '_blank');
-    card.innerHTML = `<div class="portfolio-img"><img src="${item.image}" alt="${item.name}" style="width:100%; height:100%; object-fit:cover;" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown\' style=\'font-size:3rem; color:#c9a03d;\'></i>'"></div><div class="portfolio-info"><span class="portfolio-tag">${item.type}</span><h3>${item.name}</h3><p>View Live Site →</p></div>`;
+    card.innerHTML = `<div class="portfolio-img"><img src="${item.image}" alt="${item.name}" onerror="this.parentElement.innerHTML='<i class=\'fas fa-image\' style=\'font-size:3rem; color:#00d9ff;\'></i>'"></div><div class="portfolio-info"><span class="portfolio-tag">${item.type}</span><h3>${item.name}</h3><p>View Live Site →</p></div>`;
     grid.appendChild(card);
   });
 
@@ -584,9 +675,12 @@
     if (!phone) { document.getElementById('phoneError').style.display = 'block'; valid = false; }
     if (!message) { document.getElementById('messageError').style.display = 'block'; valid = false; }
     if (!valid) return;
-    const text = `Hi Zingsite!%0A%0A👑 Royal Inquiry:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email || 'Not provided')}%0AMessage: ${encodeURIComponent(message)}`;
+    const text = `Hi Zingsite!%0A%0A📋 New Inquiry:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email || 'Not provided')}%0AMessage: ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/918828685342?text=${text}`, '_blank');
   }
+
+  // Re-run AOS for dynamically added elements
+  setTimeout(() => AOS.refresh(), 500);
 </script>
 </body>
 </html>
