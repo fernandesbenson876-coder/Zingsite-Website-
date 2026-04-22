@@ -26,61 +26,8 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.5;
       overflow-x: hidden;
-      cursor: default;
     }
     .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
-
-    /* Custom Cursor Glow Effect (Metaminds style) */
-    .glow-wrapper {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    [glow-border="card"] {
-      position: relative;
-    }
-    
-    [glow-border="card"]::before {
-      content: "";
-      pointer-events: none;
-      user-select: none;
-      position: absolute;
-      inset: 0;
-      padding: 1.5px;
-      border-radius: inherit;
-      opacity: 0;
-      will-change: background, opacity;
-      transition: opacity 0.4s ease;
-      background: radial-gradient(circle 8rem at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(201,160,61,0.8), rgba(201,160,61,0));
-      z-index: 1;
-    }
-    
-    [glow-border="wrapper"]:hover [glow-border="card"]::before {
-      opacity: 1;
-    }
-
-    /* Interactive Section with mouse-follow glow */
-    .interactive-section {
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .interactive-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      opacity: 0;
-      pointer-events: none;
-      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(201,160,61,0.15), transparent 70%);
-      transition: opacity 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    }
-    
-    .interactive-section:hover .interactive-bg {
-      opacity: 1;
-    }
 
     /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
@@ -208,6 +155,52 @@
     .offer-badge-bottom { display: inline-block; background: rgba(201,160,61,0.15); border: 1px solid rgba(201,160,61,0.3); padding: 8px 20px; border-radius: 40px; font-size: 0.75rem; color: #c9a03d; font-weight: 600; }
     .floating-icon { position: absolute; bottom: 20px; left: 20px; font-size: 1rem; opacity: 0.3; }
 
+    /* Interactive Section with mouse-follow glow */
+    .interactive-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .interactive-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(201,160,61,0.15), transparent 70%);
+      transition: opacity 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .interactive-section:hover .interactive-bg {
+      opacity: 1;
+    }
+
+    /* Card Glow Border Effect */
+    [glow-border="wrapper"] {
+      position: relative;
+    }
+    [glow-border="card"] {
+      position: relative;
+    }
+    [glow-border="card"]::before {
+      content: "";
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      inset: 0;
+      padding: 1.5px;
+      border-radius: inherit;
+      opacity: 0;
+      will-change: background, opacity;
+      transition: opacity 0.4s ease;
+      background: radial-gradient(circle 8rem at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(201,160,61,0.8), rgba(201,160,61,0));
+      z-index: 1;
+    }
+    [glow-border="wrapper"]:hover [glow-border="card"]::before {
+      opacity: 1;
+    }
+
     /* Marquee */
     .marquee-section { background: #0f0f1a; padding: 20px 0; border-top: 1px solid #c9a03d20; border-bottom: 1px solid #c9a03d20; overflow: hidden; }
     .marquee { display: flex; white-space: nowrap; animation: scroll 25s linear infinite; }
@@ -215,12 +208,12 @@
     .marquee i { margin-right: 8px; color: #c9a03d; }
     @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* Section Headers with Split Text */
+    /* Section Headers */
     .section-header { text-align: center; margin-bottom: 60px; }
     .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #fff, #c9a03d); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .section-header p { color: #a0a0b0; max-width: 600px; margin: 0 auto; }
 
-    /* Vision Cards with Glow Effect */
+    /* Vision Cards */
     .vision-section { padding: 80px 0; background: #0a0a0f; }
     .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
     .vision-card {
@@ -251,7 +244,7 @@
     .vision-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
     .vision-card p { color: #a0a0b0; font-size: 0.9rem; line-height: 1.6; }
 
-    /* Portfolio Cards with Glow */
+    /* Portfolio */
     .portfolio-section { padding: 80px 0; background: #0f0f1a; }
     .portfolio-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
     .portfolio-card {
@@ -272,7 +265,7 @@
     .portfolio-tag { background: rgba(201,160,61,0.15); color: #c9a03d; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; display: inline-block; }
     .portfolio-info h3 { margin: 12px 0 6px; font-size: 1.1rem; }
 
-    /* Services Cards */
+    /* Services */
     .services-section { padding: 80px 0; background: #0a0a0f; }
     .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
     .service-card {
@@ -294,7 +287,7 @@
     .reel-pricing { margin: 16px 0; padding: 12px; background: rgba(201,160,61,0.08); border-radius: 16px; }
     .reel-pricing .price { font-size: 1.2rem; font-weight: 700; color: #c9a03d; }
 
-    /* Pricing Cards with Glow */
+    /* Pricing Sections */
     .pricing-section { padding: 80px 0; background: #0f0f1a; }
     .pricing-toggle { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
     .toggle-btn {
@@ -343,7 +336,6 @@
     .btn-outline-full { background: transparent; border: 1px solid #1f1f30; color: #ecedee; }
     .btn-outline-full:hover { border-color: #c9a03d; color: #c9a03d; transform: translateY(-2px); }
 
-    /* One-Time Section */
     .one-time-section { background: #0a0a0f; padding: 0 0 80px 0; }
     .trust-banner { background: rgba(201,160,61,0.08); border-radius: 20px; padding: 16px; text-align: center; margin-top: 20px; }
 
@@ -351,7 +343,7 @@
     .tally-section { padding: 80px 0; background: #0a0a0f; }
     .tally-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
     .tally-info h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; }
-    .tally-card { background: #0f0f1a; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; transition: all 0.3s; }
+    .tally-card { background: #0f0f1a; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; transition: all 0.3s; position: relative; }
     .tally-card:hover { transform: translateY(-5px); border-color: #c9a03d; }
     .base-price { font-size: 1.8rem; font-weight: 800; color: #c9a03d; margin: 16px 0; }
     .volume-pricing { margin: 20px 0; padding: 16px; background: #0a0a0f; border-radius: 16px; }
@@ -370,7 +362,7 @@
     .contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; margin-bottom: 16px; background: #0a0a0f; border: 1px solid #1f1f30; border-radius: 16px; color: #ecedee; font-family: inherit; transition: all 0.3s; }
     .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #c9a03d; box-shadow: 0 0 10px rgba(201,160,61,0.2); }
     .error-message { color: #ff6b6b; font-size: 0.7rem; display: none; margin-top: -12px; margin-bottom: 12px; }
-    .contact-info { background: #0a0a0f; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; }
+    .contact-info { background: #0a0a0f; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; position: relative; }
     .contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .contact-row i { color: #c9a03d; width: 24px; }
 
@@ -382,7 +374,7 @@
     .fade-up {
       opacity: 0;
       transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
     .fade-up.revealed {
       opacity: 1;
@@ -436,7 +428,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO SECTION with Interactive Background -->
 <section class="hero interactive-section" id="hero-section">
   <div class="interactive-bg" id="hero-bg"></div>
   <div class="container">
@@ -485,10 +477,10 @@
   </div>
 </div>
 
-<!-- VISION -->
+<!-- VISION SECTION -->
 <section id="vision" class="vision-section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header fade-up">
       <h2>We don't just build. We research, design, and deliver.</h2>
       <p>A premium process for Mumbai small businesses</p>
     </div>
@@ -518,10 +510,10 @@
   </div>
 </section>
 
-<!-- PORTFOLIO -->
+<!-- PORTFOLIO SECTION -->
 <section id="portfolio" class="portfolio-section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header fade-up">
       <h2>Evidence of Execution</h2>
       <p>More projects coming up</p>
     </div>
@@ -529,10 +521,10 @@
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES SECTION -->
 <section id="services" class="services-section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header fade-up">
       <h2>What We Offer</h2>
       <p>Three premium services to grow your business</p>
     </div>
@@ -569,14 +561,14 @@
   </div>
 </section>
 
-<!-- MONTHLY PRICING -->
+<!-- MONTHLY PRICING SECTION -->
 <section id="pricing" class="pricing-section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header fade-up">
       <h2>📅 Monthly Subscription Plans</h2>
       <p>Pay as you go – includes hosting, updates, and support</p>
     </div>
-    <div class="pricing-toggle">
+    <div class="pricing-toggle fade-up">
       <button class="toggle-btn active" id="monthlyBtn">Monthly</button>
       <button class="toggle-btn" id="semiBtn">6 Months <span style="color:#c9a03d; margin-left:6px;">+1 Free</span></button>
       <button class="toggle-btn" id="annualBtn">12 Months <span style="color:#c9a03d; margin-left:6px;">+2 Free</span></button>
@@ -585,10 +577,10 @@
   </div>
 </section>
 
-<!-- ONE-TIME PRICING -->
+<!-- ONE-TIME PRICING SECTION -->
 <section id="onetime-pricing" class="one-time-section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header fade-up">
       <h2>💰 One-Time Website Build + Annual Maintenance</h2>
       <p>Pay once, then just ₹7–19/day for security, updates, and peace of mind</p>
     </div>
@@ -598,13 +590,7 @@
           <div class="plan-name">Basic</div>
           <div class="setup-price"><strong>₹7,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹5,600</span></div>
           <div class="monthly-price"><strong>₹2,500</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
-          <ul class="features">
-            <li><i class="fas fa-check-circle"></i> 3 Pages</li>
-            <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-            <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-            <li><i class="fas fa-check-circle"></i> SSL Security</li>
-          </ul>
+          <ul class="features"><li><i class="fas fa-check-circle"></i> 3 Pages</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li><li><i class="fas fa-check-circle"></i> SSL Security</li></ul>
           <button onclick="openRazorpay('One-Time Basic', 5600, 'One-time setup + annual maintenance')" class="btn-plan btn-outline-full">Pay ₹5,600 →</button>
         </div>
       </div>
@@ -615,14 +601,7 @@
           <div class="plan-name">Standard</div>
           <div class="setup-price"><strong>₹12,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹9,600</span></div>
           <div class="monthly-price"><strong>₹5,000</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
-          <ul class="features">
-            <li><i class="fas fa-check-circle"></i> 5 Pages</li>
-            <li><i class="fas fa-check-circle"></i> Email Support</li>
-            <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-            <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-            <li><i class="fas fa-check-circle"></i> SSL Security</li>
-          </ul>
+          <ul class="features"><li><i class="fas fa-check-circle"></i> 5 Pages</li><li><i class="fas fa-check-circle"></i> Email Support</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li><li><i class="fas fa-check-circle"></i> SSL Security</li></ul>
           <button onclick="openRazorpay('One-Time Standard', 9600, 'One-time setup + annual maintenance')" class="btn-plan btn-gold-full">Pay ₹9,600 →</button>
         </div>
       </div>
@@ -632,32 +611,22 @@
           <div class="plan-name">Premium</div>
           <div class="setup-price"><strong>₹20,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹16,000</span></div>
           <div class="monthly-price"><strong>₹7,000</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
-          <ul class="features">
-            <li><i class="fas fa-check-circle"></i> 10 Pages</li>
-            <li><i class="fas fa-check-circle"></i> Blog Section</li>
-            <li><i class="fas fa-check-circle"></i> E-commerce Ready</li>
-            <li><i class="fas fa-check-circle"></i> Analytics & Reports</li>
-            <li><i class="fas fa-check-circle"></i> Email Support</li>
-            <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-            <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-            <li><i class="fas fa-check-circle"></i> SSL Security</li>
-          </ul>
+          <ul class="features"><li><i class="fas fa-check-circle"></i> 10 Pages</li><li><i class="fas fa-check-circle"></i> Blog Section</li><li><i class="fas fa-check-circle"></i> E-commerce Ready</li><li><i class="fas fa-check-circle"></i> Analytics & Reports</li><li><i class="fas fa-check-circle"></i> Email Support</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li><li><i class="fas fa-check-circle"></i> SSL Security</li></ul>
           <button onclick="openRazorpay('One-Time Premium', 16000, 'One-time setup + annual maintenance')" class="btn-plan btn-outline-full">Pay ₹16,000 →</button>
         </div>
       </div>
     </div>
 
-    <div class="trust-banner">
+    <div class="trust-banner fade-up">
       <i class="fas fa-gift" style="color: #c9a03d;"></i> <strong>Free domain and SSL included in all plans for the first year.</strong>
     </div>
   </div>
 </section>
 
-<!-- TALLY -->
+<!-- TALLY SECTION -->
 <section id="tally" class="tally-section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header fade-up">
       <h2>🖨️ Tally Voucher Printing Service</h2>
       <p>Premium printing for your accounting needs</p>
     </div>
@@ -696,7 +665,7 @@
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA SECTION -->
 <section class="cta-section fade-up">
   <div class="container">
     <h2>Ready to grow your business?</h2>
@@ -705,10 +674,10 @@
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT SECTION -->
 <section id="contact" class="contact-section">
   <div class="container">
-    <div class="section-header">
+    <div class="section-header fade-up">
       <h2>Let's Talk</h2>
       <p>Have a question or ready to start? Reach out to us.</p>
     </div>
@@ -783,19 +752,18 @@
     else nav.classList.remove('scrolled');
   });
 
-  // Interactive mouse-follow glow (Metaminds style)
-  document.querySelectorAll('.interactive-section').forEach(section => {
-    const bg = section.querySelector('.interactive-bg');
-    if (!bg) return;
-    
-    section.addEventListener('mousemove', (e) => {
-      const rect = section.getBoundingClientRect();
+  // Interactive mouse-follow glow for hero section
+  const heroSection = document.getElementById('hero-section');
+  const heroBg = document.getElementById('hero-bg');
+  if (heroSection && heroBg) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
-      bg.style.setProperty('--x', `${x}%`);
-      bg.style.setProperty('--y', `${y}%`);
+      heroBg.style.setProperty('--x', `${x}%`);
+      heroBg.style.setProperty('--y', `${y}%`);
     });
-  });
+  }
 
   // Card glow border cursor tracking
   document.querySelectorAll('[glow-border="wrapper"]').forEach(wrapper => {
@@ -811,18 +779,26 @@
     });
   });
 
-  // Scroll Reveal with GSAP
+  // GSAP Scroll Animations
   gsap.registerPlugin(ScrollTrigger);
   
   // Fade-up animation on scroll
-  document.querySelectorAll('.fade-up').forEach(el => {
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 85%',
-      onEnter: () => el.classList.add('revealed'),
-      once: true
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return rect.top <= windowHeight - 100 && rect.bottom >= 100;
+  }
+
+  function checkFadeUp() {
+    document.querySelectorAll('.fade-up').forEach(el => {
+      if (isElementInViewport(el)) el.classList.add('revealed');
+      else el.classList.remove('revealed');
     });
-  });
+  }
+
+  window.addEventListener('scroll', checkFadeUp);
+  window.addEventListener('resize', checkFadeUp);
+  setTimeout(checkFadeUp, 100);
 
   // Pricing Data for Monthly Plans
   const plans = {
@@ -900,17 +876,11 @@
       if (billingMode === 'annual') card.classList.add('show-annual');
     });
     
-    // Re-initialize fade-up animations for new cards
-    document.querySelectorAll('.pricing-card.fade-up').forEach(el => {
-      if (isElementInViewport(el)) el.classList.add('revealed');
-      else el.classList.remove('revealed');
-    });
-  }
-
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    return rect.top <= windowHeight - 100 && rect.bottom >= 100;
+    setTimeout(() => {
+      document.querySelectorAll('.pricing-card.fade-up').forEach(el => {
+        if (isElementInViewport(el)) el.classList.add('revealed');
+      });
+    }, 50);
   }
 
   function updateBilling() {
@@ -920,9 +890,9 @@
     renderPricing();
   }
   
-  monthlyBtn.onclick = () => { billingMode = 'monthly'; updateBilling(); };
-  semiBtn.onclick = () => { billingMode = 'semi'; updateBilling(); };
-  annualBtn.onclick = () => { billingMode = 'annual'; updateBilling(); };
+  if (monthlyBtn) monthlyBtn.onclick = () => { billingMode = 'monthly'; updateBilling(); };
+  if (semiBtn) semiBtn.onclick = () => { billingMode = 'semi'; updateBilling(); };
+  if (annualBtn) annualBtn.onclick = () => { billingMode = 'annual'; updateBilling(); };
   renderPricing();
 
   // Portfolio
@@ -936,6 +906,11 @@
     card.innerHTML = `<div glow-border="card"><div class="portfolio-img"><img src="${item.image}" alt="${item.name}" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown\' style=\'font-size:3rem; color:#c9a03d;\'></i>'"></div><div class="portfolio-info"><span class="portfolio-tag">${item.type}</span><h3>${item.name}</h3><p>View Live Site →</p></div></div>`;
     grid.appendChild(card);
   });
+  setTimeout(() => {
+    document.querySelectorAll('.portfolio-card.fade-up').forEach(el => {
+      if (isElementInViewport(el)) el.classList.add('revealed');
+    });
+  }, 100);
 
   // Contact Form
   function validateAndSend() {
@@ -954,13 +929,6 @@
     const text = `Hi Zingsite!%0A%0A📋 New Inquiry:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email || 'Not provided')}%0AMessage: ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/918828685342?text=${text}`, '_blank');
   }
-
-  // Trigger fade-up for existing elements on load
-  setTimeout(() => {
-    document.querySelectorAll('.fade-up').forEach(el => {
-      if (isElementInViewport(el)) el.classList.add('revealed');
-    });
-  }, 100);
 </script>
 </body>
 </html>
