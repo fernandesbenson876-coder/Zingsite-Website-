@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zingsite — Premium Websites, Reels & Tally Printing for Mumbai</title>
+  <title>Zingsite — Premium Digital Agency | Websites, Reels & Tally Printing</title>
   <meta name="google-site-verification" content="YcsMpIsnHfhnLqgaOy9avE-tV-xHqyZbdn7lDzaz4Kc" />
-  <meta name="description" content="Premium websites, reel editing, and Tally printing for Mumbai businesses. Dark royal theme with smooth animations.">
+  <meta name="description" content="Premium websites, reel editing, and Tally printing for Mumbai businesses. Interactive agency experience.">
   
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- GSAP for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
   
   <!-- Razorpay Script -->
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -21,8 +26,61 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       line-height: 1.5;
       overflow-x: hidden;
+      cursor: default;
     }
     .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
+    /* Custom Cursor Glow Effect (Metaminds style) */
+    .glow-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    [glow-border="card"] {
+      position: relative;
+    }
+    
+    [glow-border="card"]::before {
+      content: "";
+      pointer-events: none;
+      user-select: none;
+      position: absolute;
+      inset: 0;
+      padding: 1.5px;
+      border-radius: inherit;
+      opacity: 0;
+      will-change: background, opacity;
+      transition: opacity 0.4s ease;
+      background: radial-gradient(circle 8rem at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(201,160,61,0.8), rgba(201,160,61,0));
+      z-index: 1;
+    }
+    
+    [glow-border="wrapper"]:hover [glow-border="card"]::before {
+      opacity: 1;
+    }
+
+    /* Interactive Section with mouse-follow glow */
+    .interactive-section {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .interactive-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(201,160,61,0.15), transparent 70%);
+      transition: opacity 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    
+    .interactive-section:hover .interactive-bg {
+      opacity: 1;
+    }
 
     /* Custom Scrollbar */
     ::-webkit-scrollbar { width: 8px; }
@@ -157,11 +215,13 @@
     .marquee i { margin-right: 8px; color: #c9a03d; }
     @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* Vision Section */
-    .vision-section { padding: 80px 0; background: #0a0a0f; }
+    /* Section Headers with Split Text */
     .section-header { text-align: center; margin-bottom: 60px; }
     .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; margin-bottom: 16px; background: linear-gradient(135deg, #fff, #c9a03d); -webkit-background-clip: text; background-clip: text; color: transparent; }
     .section-header p { color: #a0a0b0; max-width: 600px; margin: 0 auto; }
+
+    /* Vision Cards with Glow Effect */
+    .vision-section { padding: 80px 0; background: #0a0a0f; }
     .vision-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
     .vision-card {
       background: #0f0f1a;
@@ -170,10 +230,8 @@
       text-align: center;
       border: 1px solid #1f1f30;
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      opacity: 0;
-      transform: translateY(30px);
+      position: relative;
     }
-    .vision-card.revealed { opacity: 1; transform: translateY(0); }
     .vision-card:hover { transform: translateY(-8px); border-color: #c9a03d; box-shadow: 0 20px 30px -12px rgba(201,160,61,0.15); }
     .vision-number {
       width: 56px;
@@ -193,7 +251,7 @@
     .vision-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
     .vision-card p { color: #a0a0b0; font-size: 0.9rem; line-height: 1.6; }
 
-    /* Portfolio */
+    /* Portfolio Cards with Glow */
     .portfolio-section { padding: 80px 0; background: #0f0f1a; }
     .portfolio-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
     .portfolio-card {
@@ -204,10 +262,8 @@
       width: 320px;
       cursor: pointer;
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      opacity: 0;
-      transform: translateY(30px);
+      position: relative;
     }
-    .portfolio-card.revealed { opacity: 1; transform: translateY(0); }
     .portfolio-card:hover { transform: translateY(-10px) scale(1.02); border-color: #c9a03d; box-shadow: 0 25px 35px -12px rgba(0,0,0,0.5); }
     .portfolio-img { width: 100%; height: 220px; object-fit: cover; background: linear-gradient(135deg, #1a1a2e, #0a0a0f); display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .portfolio-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
@@ -216,7 +272,7 @@
     .portfolio-tag { background: rgba(201,160,61,0.15); color: #c9a03d; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; display: inline-block; }
     .portfolio-info h3 { margin: 12px 0 6px; font-size: 1.1rem; }
 
-    /* Services */
+    /* Services Cards */
     .services-section { padding: 80px 0; background: #0a0a0f; }
     .services-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
     .service-card {
@@ -228,10 +284,8 @@
       text-align: center;
       border: 1px solid #1f1f30;
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      opacity: 0;
-      transform: translateY(30px);
+      position: relative;
     }
-    .service-card.revealed { opacity: 1; transform: translateY(0); }
     .service-card:hover { transform: translateY(-8px); border-color: #c9a03d; box-shadow: 0 20px 30px -12px rgba(201,160,61,0.15); }
     .service-icon { font-size: 2.8rem; margin-bottom: 16px; display: inline-block; transition: transform 0.3s; }
     .service-card:hover .service-icon { transform: scale(1.1); }
@@ -240,7 +294,7 @@
     .reel-pricing { margin: 16px 0; padding: 12px; background: rgba(201,160,61,0.08); border-radius: 16px; }
     .reel-pricing .price { font-size: 1.2rem; font-weight: 700; color: #c9a03d; }
 
-    /* Pricing Section */
+    /* Pricing Cards with Glow */
     .pricing-section { padding: 80px 0; background: #0f0f1a; }
     .pricing-toggle { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; }
     .toggle-btn {
@@ -266,10 +320,7 @@
       border: 1px solid #1f1f30;
       transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       position: relative;
-      opacity: 0;
-      transform: translateY(30px);
     }
-    .pricing-card.revealed { opacity: 1; transform: translateY(0); }
     .pricing-card:hover { transform: translateY(-8px); border-color: #c9a03d; box-shadow: 0 20px 30px -12px rgba(201,160,61,0.15); }
     .pricing-card.featured { border: 1px solid #c9a03d; box-shadow: 0 0 20px rgba(201,160,61,0.1); }
     .popular-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #c9a03d; color: #0a0a0f; padding: 4px 16px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; }
@@ -292,7 +343,7 @@
     .btn-outline-full { background: transparent; border: 1px solid #1f1f30; color: #ecedee; }
     .btn-outline-full:hover { border-color: #c9a03d; color: #c9a03d; transform: translateY(-2px); }
 
-    /* One-Time Pricing Section */
+    /* One-Time Section */
     .one-time-section { background: #0a0a0f; padding: 0 0 80px 0; }
     .trust-banner { background: rgba(201,160,61,0.08); border-radius: 20px; padding: 16px; text-align: center; margin-top: 20px; }
 
@@ -300,8 +351,7 @@
     .tally-section { padding: 80px 0; background: #0a0a0f; }
     .tally-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
     .tally-info h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 20px; }
-    .tally-card { background: #0f0f1a; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; transition: all 0.3s; opacity: 0; transform: translateX(-30px); }
-    .tally-card.revealed { opacity: 1; transform: translateX(0); }
+    .tally-card { background: #0f0f1a; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; transition: all 0.3s; }
     .tally-card:hover { transform: translateY(-5px); border-color: #c9a03d; }
     .base-price { font-size: 1.8rem; font-weight: 800; color: #c9a03d; margin: 16px 0; }
     .volume-pricing { margin: 20px 0; padding: 16px; background: #0a0a0f; border-radius: 16px; }
@@ -310,8 +360,7 @@
     .volume-item span:last-child { color: #c9a03d; font-weight: 600; }
 
     /* CTA */
-    .cta-section { background: linear-gradient(135deg, #0f0f1a, #0a0a0f); padding: 80px 0; text-align: center; border-top: 1px solid #c9a03d20; border-bottom: 1px solid #c9a03d20; opacity: 0; transform: scale(0.95); }
-    .cta-section.revealed { opacity: 1; transform: scale(1); }
+    .cta-section { background: linear-gradient(135deg, #0f0f1a, #0a0a0f); padding: 80px 0; text-align: center; border-top: 1px solid #c9a03d20; border-bottom: 1px solid #c9a03d20; }
     .cta-section h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; }
     .cta-section .btn-gold { font-size: 1rem; padding: 14px 36px; }
 
@@ -321,14 +370,24 @@
     .contact-form input, .contact-form textarea { width: 100%; padding: 14px 18px; margin-bottom: 16px; background: #0a0a0f; border: 1px solid #1f1f30; border-radius: 16px; color: #ecedee; font-family: inherit; transition: all 0.3s; }
     .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #c9a03d; box-shadow: 0 0 10px rgba(201,160,61,0.2); }
     .error-message { color: #ff6b6b; font-size: 0.7rem; display: none; margin-top: -12px; margin-bottom: 12px; }
-    .contact-info { background: #0a0a0f; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; opacity: 0; transform: translateX(30px); }
-    .contact-info.revealed { opacity: 1; transform: translateX(0); }
+    .contact-info { background: #0a0a0f; padding: 32px; border-radius: 24px; border: 1px solid #1f1f30; }
     .contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .contact-row i { color: #c9a03d; width: 24px; }
 
     footer { background: #0a0a0f; border-top: 1px solid #1f1f30; padding: 40px 0; text-align: center; color: #a0a0b0; }
     footer a { color: #a0a0b0; text-decoration: none; }
     footer a:hover { color: #c9a03d; }
+
+    /* Animation Classes */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-up.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     @media (max-width: 900px) {
       .hero-grid, .vision-grid, .tally-grid, .contact-grid { grid-template-columns: 1fr; }
@@ -356,8 +415,8 @@
       <li><a href="#vision">Vision</a></li>
       <li><a href="#portfolio">Work</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#pricing">Monthly Plans</a></li>
-      <li><a href="#onetime-pricing">One-Time Plans</a></li>
+      <li><a href="#pricing">Monthly</a></li>
+      <li><a href="#onetime-pricing">One-Time</a></li>
       <li><a href="#tally">Tally</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -368,8 +427,8 @@
     <a href="#vision" onclick="closeMenu()">Vision</a>
     <a href="#portfolio" onclick="closeMenu()">Work</a>
     <a href="#services" onclick="closeMenu()">Services</a>
-    <a href="#pricing" onclick="closeMenu()">Monthly Plans</a>
-    <a href="#onetime-pricing" onclick="closeMenu()">One-Time Plans</a>
+    <a href="#pricing" onclick="closeMenu()">Monthly</a>
+    <a href="#onetime-pricing" onclick="closeMenu()">One-Time</a>
     <a href="#tally" onclick="closeMenu()">Tally</a>
     <a href="#contact" onclick="closeMenu()">Contact</a>
     <a href="https://wa.me/918828685342" target="_blank" onclick="closeMenu()">💬 Zingsite Support</a>
@@ -378,25 +437,27 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero interactive-section" id="hero-section">
+  <div class="interactive-bg" id="hero-bg"></div>
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="hero-badge">✨ MUMBAI'S PREMIUM DIGITAL AGENCY</div>
-        <h1>Websites That Bring <span class="gold-text">More Customers</span> – Without the Headache</h1>
-        <p>Premium websites, reel editing, and Tally printing – all under one roof. Free domain, SSL, hosting, and dedicated support included.</p>
-        <div class="hero-buttons">
+        <div class="hero-badge fade-up">✨ MUMBAI'S PREMIUM DIGITAL AGENCY</div>
+        <h1 class="fade-up">Websites That Bring <span class="gold-text">More Customers</span> – Without the Headache</h1>
+        <p class="fade-up">Premium websites, reel editing, and Tally printing – all under one roof. Free domain, SSL, hosting, and dedicated support included.</p>
+        <div class="hero-buttons fade-up">
           <a href="https://wa.me/918828685342?text=Hi!%20I%20want%20to%20get%20a%20website%20for%20my%20business" target="_blank" class="btn-gold">💬 Start Your Project</a>
           <a href="#pricing" class="btn-outline-gold">View Pricing →</a>
         </div>
       </div>
-      <div class="hero-offer-card">
-        <i class="fas fa-crown offer-icon"></i>
-        <div class="offer-percent">20% OFF</div>
-        <div class="offer-text">Limited Time Offer</div>
-        <div class="offer-small">on website setup fee</div>
-        <div class="offer-badge-bottom">🔥 First 5 clients only</div>
-        <div class="floating-icon">✦</div>
+      <div class="hero-offer-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <i class="fas fa-crown offer-icon"></i>
+          <div class="offer-percent">20% OFF</div>
+          <div class="offer-text">Limited Time Offer</div>
+          <div class="offer-small">on website setup fee</div>
+          <div class="offer-badge-bottom">🔥 First 5 clients only</div>
+        </div>
       </div>
     </div>
   </div>
@@ -432,20 +493,26 @@
       <p>A premium process for Mumbai small businesses</p>
     </div>
     <div class="vision-grid">
-      <div class="vision-card">
-        <div class="vision-number">01</div>
-        <h3>Research & Discuss</h3>
-        <p>We understand your business, goals, and customers before writing a single line of code.</p>
+      <div class="vision-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="vision-number">01</div>
+          <h3>Research & Discuss</h3>
+          <p>We understand your business, goals, and customers before writing a single line of code.</p>
+        </div>
       </div>
-      <div class="vision-card">
-        <div class="vision-number">02</div>
-        <h3>Design & Develop</h3>
-        <p>Modern, responsive websites built with your brand and customers in mind.</p>
+      <div class="vision-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="vision-number">02</div>
+          <h3>Design & Develop</h3>
+          <p>Modern, responsive websites built with your brand and customers in mind.</p>
+        </div>
       </div>
-      <div class="vision-card">
-        <div class="vision-number">03</div>
-        <h3>Launch & Support</h3>
-        <p>We handle hosting, security, updates, and edits – you focus on your business.</p>
+      <div class="vision-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="vision-number">03</div>
+          <h3>Launch & Support</h3>
+          <p>We handle hosting, security, updates, and edits – you focus on your business.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -470,33 +537,39 @@
       <p>Three premium services to grow your business</p>
     </div>
     <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">🌐</div>
-        <h3>Website Design</h3>
-        <p>Professional websites with free domain, hosting, and SSL. Starting at ₹3,000/month.</p>
-        <a href="#pricing" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">Explore →</a>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">🎬</div>
-        <h3>Reel Editing</h3>
-        <p>You shoot, we edit. SEO captions + custom thumbnails included.</p>
-        <div class="reel-pricing">
-          <span class="price">₹2,000/month</span> — 4 reels<br>
-          <span class="price">₹3,500/month</span> — 8 reels
+      <div class="service-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="service-icon">🌐</div>
+          <h3>Website Design</h3>
+          <p>Professional websites with free domain, hosting, and SSL. Starting at ₹3,000/month.</p>
+          <a href="#pricing" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">Explore →</a>
         </div>
-        <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20Reel%20Editing" target="_blank" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">WhatsApp →</a>
       </div>
-      <div class="service-card">
-        <div class="service-icon">🖨️</div>
-        <h3>Tally Voucher Printing</h3>
-        <p>Stop struggling with printer settings. We handle your Tally vouchers professionally.</p>
-        <a href="#tally" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">Learn More →</a>
+      <div class="service-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="service-icon">🎬</div>
+          <h3>Reel Editing</h3>
+          <p>You shoot, we edit. SEO captions + custom thumbnails included.</p>
+          <div class="reel-pricing">
+            <span class="price">₹2,000/month</span> — 4 reels<br>
+            <span class="price">₹3,500/month</span> — 8 reels
+          </div>
+          <a href="https://wa.me/918828685342?text=I'm%20interested%20in%20Reel%20Editing" target="_blank" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">WhatsApp →</a>
+        </div>
+      </div>
+      <div class="service-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="service-icon">🖨️</div>
+          <h3>Tally Voucher Printing</h3>
+          <p>Stop struggling with printer settings. We handle your Tally vouchers professionally.</p>
+          <a href="#tally" class="btn-outline-gold" style="display: inline-block; padding: 8px 20px;">Learn More →</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MONTHLY PRICING SECTION -->
+<!-- MONTHLY PRICING -->
 <section id="pricing" class="pricing-section">
   <div class="container">
     <div class="section-header">
@@ -512,7 +585,7 @@
   </div>
 </section>
 
-<!-- ONE-TIME PRICING SECTION -->
+<!-- ONE-TIME PRICING -->
 <section id="onetime-pricing" class="one-time-section">
   <div class="container">
     <div class="section-header">
@@ -520,55 +593,58 @@
       <p>Pay once, then just ₹7–19/day for security, updates, and peace of mind</p>
     </div>
     <div class="pricing-grid">
-      <!-- BASIC One-Time -->
-      <div class="pricing-card">
-        <div class="plan-name">Basic</div>
-        <div class="setup-price"><strong>₹7,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹5,600</span></div>
-        <div class="monthly-price"><strong>₹2,500</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 3 Pages</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-          <li><i class="fas fa-check-circle"></i> SSL Security</li>
-        </ul>
-        <button onclick="openRazorpay('One-Time Basic', 5600, 'One-time setup + annual maintenance')" class="btn-plan btn-outline-full">Pay ₹5,600 →</button>
+      <div class="pricing-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="plan-name">Basic</div>
+          <div class="setup-price"><strong>₹7,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹5,600</span></div>
+          <div class="monthly-price"><strong>₹2,500</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> 3 Pages</li>
+            <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
+            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+            <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
+            <li><i class="fas fa-check-circle"></i> SSL Security</li>
+          </ul>
+          <button onclick="openRazorpay('One-Time Basic', 5600, 'One-time setup + annual maintenance')" class="btn-plan btn-outline-full">Pay ₹5,600 →</button>
+        </div>
       </div>
 
-      <!-- STANDARD One-Time (Most Popular) -->
-      <div class="pricing-card featured">
-        <div class="popular-badge">⭐ Most Popular</div>
-        <div class="plan-name">Standard</div>
-        <div class="setup-price"><strong>₹12,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹9,600</span></div>
-        <div class="monthly-price"><strong>₹5,000</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 5 Pages</li>
-          <li><i class="fas fa-check-circle"></i> Email Support</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-          <li><i class="fas fa-check-circle"></i> SSL Security</li>
-        </ul>
-        <button onclick="openRazorpay('One-Time Standard', 9600, 'One-time setup + annual maintenance')" class="btn-plan btn-gold-full">Pay ₹9,600 →</button>
+      <div class="pricing-card featured fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="popular-badge">⭐ Most Popular</div>
+          <div class="plan-name">Standard</div>
+          <div class="setup-price"><strong>₹12,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹9,600</span></div>
+          <div class="monthly-price"><strong>₹5,000</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> 5 Pages</li>
+            <li><i class="fas fa-check-circle"></i> Email Support</li>
+            <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
+            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+            <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
+            <li><i class="fas fa-check-circle"></i> SSL Security</li>
+          </ul>
+          <button onclick="openRazorpay('One-Time Standard', 9600, 'One-time setup + annual maintenance')" class="btn-plan btn-gold-full">Pay ₹9,600 →</button>
+        </div>
       </div>
 
-      <!-- PREMIUM One-Time -->
-      <div class="pricing-card">
-        <div class="plan-name">Premium</div>
-        <div class="setup-price"><strong>₹20,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹16,000</span></div>
-        <div class="monthly-price"><strong>₹7,000</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
-        <ul class="features">
-          <li><i class="fas fa-check-circle"></i> 10 Pages</li>
-          <li><i class="fas fa-check-circle"></i> Blog Section</li>
-          <li><i class="fas fa-check-circle"></i> E-commerce Ready</li>
-          <li><i class="fas fa-check-circle"></i> Analytics & Reports</li>
-          <li><i class="fas fa-check-circle"></i> Email Support</li>
-          <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
-          <li><i class="fas fa-check-circle"></i> Responsive Design</li>
-          <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
-          <li><i class="fas fa-check-circle"></i> SSL Security</li>
-        </ul>
-        <button onclick="openRazorpay('One-Time Premium', 16000, 'One-time setup + annual maintenance')" class="btn-plan btn-outline-full">Pay ₹16,000 →</button>
+      <div class="pricing-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <div class="plan-name">Premium</div>
+          <div class="setup-price"><strong>₹20,000</strong> setup <span style="color:#c9a03d; font-size:0.7rem; display:block;">20% OFF for first 5 clients = ₹16,000</span></div>
+          <div class="monthly-price"><strong>₹7,000</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">Annual Maintenance</span></div>
+          <ul class="features">
+            <li><i class="fas fa-check-circle"></i> 10 Pages</li>
+            <li><i class="fas fa-check-circle"></i> Blog Section</li>
+            <li><i class="fas fa-check-circle"></i> E-commerce Ready</li>
+            <li><i class="fas fa-check-circle"></i> Analytics & Reports</li>
+            <li><i class="fas fa-check-circle"></i> Email Support</li>
+            <li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp Button</li>
+            <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+            <li><i class="fas fa-check-circle"></i> Free Domain (1st Year)</li>
+            <li><i class="fas fa-check-circle"></i> SSL Security</li>
+          </ul>
+          <button onclick="openRazorpay('One-Time Premium', 16000, 'One-time setup + annual maintenance')" class="btn-plan btn-outline-full">Pay ₹16,000 →</button>
+        </div>
       </div>
     </div>
 
@@ -586,7 +662,7 @@
       <p>Premium printing for your accounting needs</p>
     </div>
     <div class="tally-grid">
-      <div class="tally-info">
+      <div class="tally-info fade-up">
         <h2>How It Works</h2>
         <ul style="list-style: none; margin: 20px 0;">
           <li style="margin-bottom: 14px;"><i class="fas fa-folder-open" style="color:#c9a03d; width: 28px;"></i> Copy your Tally data folder (TallyPrime\Data\Company.900)</li>
@@ -599,27 +675,29 @@
         </div>
         <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20service" target="_blank" class="btn-gold" style="display: inline-flex;">📩 Zingsite Support →</a>
       </div>
-      <div class="tally-card">
-        <h3>💰 Pricing</h3>
-        <div class="base-price">BASE PACKAGE — ₹2,500</div>
-        <p style="margin: 12px 0; color: #a0a0b0;">• 200 printed copies (any voucher type)<br>• PDF + Excel soft copies<br>• GST invoice formats<br>• Next-day delivery</p>
-        <div class="volume-pricing">
-          <h4 style="margin-bottom: 12px;">📊 Volume Pricing</h4>
-          <div class="volume-item"><span>Tier 1 (201–500 pages)</span><span>₹9/page</span></div>
-          <div class="volume-item"><span>Tier 2 (501–1000 pages)</span><span>₹8/page</span></div>
-          <div class="volume-item"><span>Tier 3 (1000+ pages)</span><span>₹6/page</span></div>
+      <div class="tally-card fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <h3>💰 Pricing</h3>
+          <div class="base-price">BASE PACKAGE — ₹2,500</div>
+          <p style="margin: 12px 0; color: #a0a0b0;">• 200 printed copies (any voucher type)<br>• PDF + Excel soft copies<br>• GST invoice formats<br>• Next-day delivery</p>
+          <div class="volume-pricing">
+            <h4 style="margin-bottom: 12px;">📊 Volume Pricing</h4>
+            <div class="volume-item"><span>Tier 1 (201–500 pages)</span><span>₹9/page</span></div>
+            <div class="volume-item"><span>Tier 2 (501–1000 pages)</span><span>₹8/page</span></div>
+            <div class="volume-item"><span>Tier 3 (1000+ pages)</span><span>₹6/page</span></div>
+          </div>
+          <div style="background: rgba(201,160,61,0.05); padding: 12px; border-radius: 12px; margin: 16px 0;">
+            <strong>📝 Example:</strong> 600 pages = ₹2,500 + ₹2,700 + ₹800 = <strong style="color:#c9a03d;">₹6,000</strong>
+          </div>
+          <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20for%20my%20business" target="_blank" class="btn-gold-full" style="display: block; text-align: center;">Get Quote →</a>
         </div>
-        <div style="background: rgba(201,160,61,0.05); padding: 12px; border-radius: 12px; margin: 16px 0;">
-          <strong>📝 Example:</strong> 600 pages = ₹2,500 + ₹2,700 + ₹800 = <strong style="color:#c9a03d;">₹6,000</strong>
-        </div>
-        <a href="https://wa.me/918828685342?text=I%20need%20Tally%20voucher%20printing%20for%20my%20business" target="_blank" class="btn-gold-full" style="display: block; text-align: center;">Get Quote →</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section class="cta-section fade-up">
   <div class="container">
     <h2>Ready to grow your business?</h2>
     <p>Get a website, reels, or Tally printing – all at premium prices. WhatsApp us today!</p>
@@ -635,7 +713,7 @@
       <p>Have a question or ready to start? Reach out to us.</p>
     </div>
     <div class="contact-grid">
-      <div class="contact-form">
+      <div class="contact-form fade-up">
         <input type="text" id="name" placeholder="Your Name *">
         <div class="error-message" id="nameError">Please enter your name</div>
         <input type="email" id="email" placeholder="Your Email">
@@ -645,12 +723,14 @@
         <div class="error-message" id="messageError">Please describe your project</div>
         <button onclick="validateAndSend()" class="btn-gold" style="width:100%; justify-content:center;">📩 Send Inquiry</button>
       </div>
-      <div class="contact-info">
-        <h3>Get in Touch</h3>
-        <div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>Mumbai, Maharashtra, India</span></div>
-        <div class="contact-row"><i class="fab fa-whatsapp"></i><a href="https://wa.me/918828685342" style="color: #ecedee;">+91 88286 85342</a></div>
-        <div class="contact-row"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/zingsite" target="_blank" style="color: #ecedee;">@zingsite</a></div>
-        <a href="https://wa.me/918828685342" target="_blank" class="btn-outline-gold" style="display: block; text-align: center; margin-top: 20px;">💬 Zingsite Support</a>
+      <div class="contact-info fade-up" glow-border="wrapper">
+        <div glow-border="card">
+          <h3>Get in Touch</h3>
+          <div class="contact-row"><i class="fas fa-map-marker-alt"></i><span>Mumbai, Maharashtra, India</span></div>
+          <div class="contact-row"><i class="fab fa-whatsapp"></i><a href="https://wa.me/918828685342" style="color: #ecedee;">+91 88286 85342</a></div>
+          <div class="contact-row"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/zingsite" target="_blank" style="color: #ecedee;">@zingsite</a></div>
+          <a href="https://wa.me/918828685342" target="_blank" class="btn-outline-gold" style="display: block; text-align: center; margin-top: 20px;">💬 Zingsite Support</a>
+        </div>
       </div>
     </div>
   </div>
@@ -671,13 +751,12 @@
   function openRazorpay(planName, amount, description) {
     const options = {
       key: RAZORPAY_KEY,
-      amount: amount * 100, // Amount in paise
+      amount: amount * 100,
       currency: 'INR',
       name: 'Zingsite',
       description: `${planName} - ${description}`,
       image: 'logo.png',
       handler: function(response) {
-        // Payment successful
         alert(`Payment successful! Payment ID: ${response.razorpay_payment_id}\n\nWe will contact you shortly to start your project.`);
         window.location.href = 'https://wa.me/918828685342?text=Payment%20successful!%20My%20Payment%20ID%20is%20' + response.razorpay_payment_id;
       },
@@ -686,22 +765,10 @@
         contact: document.getElementById('phone')?.value || '',
         email: document.getElementById('email')?.value || ''
       },
-      theme: {
-        color: '#c9a03d'
-      },
-      modal: {
-        ondismiss: function() {
-          console.log('Payment modal closed');
-        }
-      }
+      theme: { color: '#c9a03d' }
     };
     const rzp = new Razorpay(options);
     rzp.open();
-  }
-
-  // Monthly Plans with Razorpay
-  function payMonthly(planName, amount) {
-    openRazorpay(planName, amount, 'Monthly subscription - includes hosting, SSL, support');
   }
 
   // Navigation
@@ -712,27 +779,50 @@
   // Navbar scroll effect
   window.addEventListener('scroll', function() {
     const nav = document.getElementById('navbar');
-    if (window.scrollY > 50) { nav.classList.add('scrolled'); } 
-    else { nav.classList.remove('scrolled'); }
+    if (window.scrollY > 50) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
   });
 
-  // Scroll Reveal Function
-  function isElementInViewport(el) {
-    const rect = el.getBoundingClientRect();
-    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-    return rect.top <= windowHeight - 100 && rect.bottom >= 100;
-  }
-
-  function revealElements() {
-    document.querySelectorAll('.vision-card, .portfolio-card, .service-card, .pricing-card, .tally-card, .contact-info, .cta-section').forEach(el => {
-      if (isElementInViewport(el)) el.classList.add('revealed');
-      else el.classList.remove('revealed');
+  // Interactive mouse-follow glow (Metaminds style)
+  document.querySelectorAll('.interactive-section').forEach(section => {
+    const bg = section.querySelector('.interactive-bg');
+    if (!bg) return;
+    
+    section.addEventListener('mousemove', (e) => {
+      const rect = section.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      bg.style.setProperty('--x', `${x}%`);
+      bg.style.setProperty('--y', `${y}%`);
     });
-  }
+  });
 
-  window.addEventListener('scroll', revealElements);
-  window.addEventListener('resize', revealElements);
-  setTimeout(revealElements, 100);
+  // Card glow border cursor tracking
+  document.querySelectorAll('[glow-border="wrapper"]').forEach(wrapper => {
+    const card = wrapper.querySelector('[glow-border="card"]');
+    if (!card) return;
+    
+    wrapper.addEventListener('mousemove', (e) => {
+      const rect = wrapper.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--cursor-x', `${x}%`);
+      card.style.setProperty('--cursor-y', `${y}%`);
+    });
+  });
+
+  // Scroll Reveal with GSAP
+  gsap.registerPlugin(ScrollTrigger);
+  
+  // Fade-up animation on scroll
+  document.querySelectorAll('.fade-up').forEach(el => {
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 85%',
+      onEnter: () => el.classList.add('revealed'),
+      once: true
+    });
+  });
 
   // Pricing Data for Monthly Plans
   const plans = {
@@ -768,33 +858,39 @@
     }
 
     pricingGrid.innerHTML = `
-      <div class="pricing-card" id="cardBasic">
-        <div class="plan-name">Basic</div>
-        <div class="setup-price"><strong>${data.basic.setup}</strong> setup</div>
-        <div class="monthly-price"><strong>${data.basic.price}</strong> /month</div>
-        <div class="semi-price"><strong>${data.basic.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
-        <div class="annual-price"><strong>${data.basic.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
-        <ul class="features"><li><i class="fas fa-check-circle"></i> 3 Pages</li><li><i class="fas fa-check-circle"></i> 3 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li></ul>
-        <button onclick="openRazorpay('Basic Monthly - ${billingText}', ${priceAmount(data.basic)}, 'Monthly website subscription')" class="btn-plan btn-outline-full">Pay ${priceDisplay(data.basic)} →</button>
+      <div class="pricing-card fade-up" glow-border="wrapper" id="cardBasic">
+        <div glow-border="card">
+          <div class="plan-name">Basic</div>
+          <div class="setup-price"><strong>${data.basic.setup}</strong> setup</div>
+          <div class="monthly-price"><strong>${data.basic.price}</strong> /month</div>
+          <div class="semi-price"><strong>${data.basic.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
+          <div class="annual-price"><strong>${data.basic.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
+          <ul class="features"><li><i class="fas fa-check-circle"></i> 3 Pages</li><li><i class="fas fa-check-circle"></i> 3 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li></ul>
+          <button onclick="openRazorpay('Basic Monthly - ${billingText}', ${priceAmount(data.basic)}, 'Monthly website subscription')" class="btn-plan btn-outline-full">Pay ${priceDisplay(data.basic)} →</button>
+        </div>
       </div>
-      <div class="pricing-card featured" id="cardStandard">
-        <div class="popular-badge">⭐ Most Popular</div>
-        <div class="plan-name">Standard</div>
-        <div class="setup-price"><strong>${data.standard.setup}</strong> setup</div>
-        <div class="monthly-price"><strong>${data.standard.price}</strong> /month</div>
-        <div class="semi-price"><strong>${data.standard.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
-        <div class="annual-price"><strong>${data.standard.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
-        <ul class="features"><li><i class="fas fa-check-circle"></i> 5 Pages</li><li><i class="fas fa-check-circle"></i> 5 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Email Support</li></ul>
-        <button onclick="openRazorpay('Standard Monthly - ${billingText}', ${priceAmount(data.standard)}, 'Monthly website subscription')" class="btn-plan btn-gold-full">Pay ${priceDisplay(data.standard)} →</button>
+      <div class="pricing-card featured fade-up" glow-border="wrapper" id="cardStandard">
+        <div glow-border="card">
+          <div class="popular-badge">⭐ Most Popular</div>
+          <div class="plan-name">Standard</div>
+          <div class="setup-price"><strong>${data.standard.setup}</strong> setup</div>
+          <div class="monthly-price"><strong>${data.standard.price}</strong> /month</div>
+          <div class="semi-price"><strong>${data.standard.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
+          <div class="annual-price"><strong>${data.standard.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
+          <ul class="features"><li><i class="fas fa-check-circle"></i> 5 Pages</li><li><i class="fas fa-check-circle"></i> 5 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Email Support</li></ul>
+          <button onclick="openRazorpay('Standard Monthly - ${billingText}', ${priceAmount(data.standard)}, 'Monthly website subscription')" class="btn-plan btn-gold-full">Pay ${priceDisplay(data.standard)} →</button>
+        </div>
       </div>
-      <div class="pricing-card" id="cardPremium">
-        <div class="plan-name">Professional</div>
-        <div class="setup-price"><strong>${data.professional.setup}</strong> setup</div>
-        <div class="monthly-price"><strong>${data.professional.price}</strong> /month</div>
-        <div class="semi-price"><strong>${data.professional.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
-        <div class="annual-price"><strong>${data.professional.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
-        <ul class="features"><li><i class="fas fa-check-circle"></i> 10 Pages</li><li><i class="fas fa-check-circle"></i> 10 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Email Support</li><li><i class="fas fa-check-circle"></i> Blog Section</li><li><i class="fas fa-check-circle"></i> E-commerce Ready</li><li><i class="fas fa-check-circle"></i> Analytics & Reports</li></ul>
-        <button onclick="openRazorpay('Professional Monthly - ${billingText}', ${priceAmount(data.professional)}, 'Monthly website subscription')" class="btn-plan btn-outline-full">Pay ${priceDisplay(data.professional)} →</button>
+      <div class="pricing-card fade-up" glow-border="wrapper" id="cardPremium">
+        <div glow-border="card">
+          <div class="plan-name">Professional</div>
+          <div class="setup-price"><strong>${data.professional.setup}</strong> setup</div>
+          <div class="monthly-price"><strong>${data.professional.price}</strong> /month</div>
+          <div class="semi-price"><strong>${data.professional.semi}</strong> /6 months <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+1 month free)</span></div>
+          <div class="annual-price"><strong>${data.professional.annual}</strong> /year <span style="font-size:0.7rem; color:#c9a03d; display:block;">(+2 months free)</span></div>
+          <ul class="features"><li><i class="fas fa-check-circle"></i> 10 Pages</li><li><i class="fas fa-check-circle"></i> 10 Edits/month</li><li><i class="fas fa-check-circle"></i> Free Domain</li><li><i class="fas fa-check-circle"></i> Responsive Design</li><li><i class="fas fa-check-circle"></i> Contact Form + WhatsApp</li><li><i class="fas fa-check-circle"></i> Email Support</li><li><i class="fas fa-check-circle"></i> Blog Section</li><li><i class="fas fa-check-circle"></i> E-commerce Ready</li><li><i class="fas fa-check-circle"></i> Analytics & Reports</li></ul>
+          <button onclick="openRazorpay('Professional Monthly - ${billingText}', ${priceAmount(data.professional)}, 'Monthly website subscription')" class="btn-plan btn-outline-full">Pay ${priceDisplay(data.professional)} →</button>
+        </div>
       </div>
     `;
     
@@ -804,7 +900,17 @@
       if (billingMode === 'annual') card.classList.add('show-annual');
     });
     
-    setTimeout(revealElements, 50);
+    // Re-initialize fade-up animations for new cards
+    document.querySelectorAll('.pricing-card.fade-up').forEach(el => {
+      if (isElementInViewport(el)) el.classList.add('revealed');
+      else el.classList.remove('revealed');
+    });
+  }
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return rect.top <= windowHeight - 100 && rect.bottom >= 100;
   }
 
   function updateBilling() {
@@ -824,12 +930,12 @@
   const grid = document.getElementById('portfolioGrid');
   if (grid) portfolioItems.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'portfolio-card';
+    card.className = 'portfolio-card fade-up';
+    card.setAttribute('glow-border', 'wrapper');
     card.onclick = () => window.open(item.link, '_blank');
-    card.innerHTML = `<div class="portfolio-img"><img src="${item.image}" alt="${item.name}" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown\' style=\'font-size:3rem; color:#c9a03d;\'></i>'"></div><div class="portfolio-info"><span class="portfolio-tag">${item.type}</span><h3>${item.name}</h3><p>View Live Site →</p></div>`;
+    card.innerHTML = `<div glow-border="card"><div class="portfolio-img"><img src="${item.image}" alt="${item.name}" onerror="this.parentElement.innerHTML='<i class=\'fas fa-crown\' style=\'font-size:3rem; color:#c9a03d;\'></i>'"></div><div class="portfolio-info"><span class="portfolio-tag">${item.type}</span><h3>${item.name}</h3><p>View Live Site →</p></div></div>`;
     grid.appendChild(card);
   });
-  setTimeout(revealElements, 100);
 
   // Contact Form
   function validateAndSend() {
@@ -848,6 +954,13 @@
     const text = `Hi Zingsite!%0A%0A📋 New Inquiry:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email || 'Not provided')}%0AMessage: ${encodeURIComponent(message)}`;
     window.open(`https://wa.me/918828685342?text=${text}`, '_blank');
   }
+
+  // Trigger fade-up for existing elements on load
+  setTimeout(() => {
+    document.querySelectorAll('.fade-up').forEach(el => {
+      if (isElementInViewport(el)) el.classList.add('revealed');
+    });
+  }, 100);
 </script>
 </body>
 </html>
