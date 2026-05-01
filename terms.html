@@ -3,239 +3,361 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zingsite — Terms & Client Agreement</title>
-  <meta name="description" content="Clear, transparent terms for web design, reel editing, and Tally printing services from Zingsite.">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Zingsite — Client Terms & Agreement</title>
+  <meta name="description" content="Official terms, conditions, and client agreement for Zingsite's web design, reel editing, and Tally printing services.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     body {
-      font-family: 'DM Sans', sans-serif;
-      background: #0B0F1C;
-      color: #E2E8F0;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background-color: #05080f;
+      color: #eef2ff;
+      line-height: 1.5;
       padding: 2rem 1rem;
     }
+
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
-      background: #111827;
-      border-radius: 2rem;
-      padding: 2.5rem;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
-    h1 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
+
+    /* Header Section */
+    .legal-header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #1e2a3e;
+      padding-bottom: 1.5rem;
+    }
+
+    .legal-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #ffffff, #9ca3af);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
       margin-bottom: 0.5rem;
     }
-    .subhead {
-      color: #94A3B8;
-      margin-bottom: 2rem;
-      border-left: 3px solid #F59E0B;
+
+    .legal-subtitle {
+      color: #7f8ea3;
+      font-size: 1rem;
+      border-left: 3px solid #3b82f6;
       padding-left: 1rem;
+      margin-top: 0.5rem;
     }
-    .service-badges {
+
+    /* Service Tags */
+    .service-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
     }
-    .badge {
-      background: #1E293B;
-      padding: 0.5rem 1.2rem;
+
+    .tag {
+      background: #111827;
+      border: 1px solid #1f2a3e;
+      padding: 0.4rem 1.1rem;
       border-radius: 2rem;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 500;
-      border-left: 3px solid #F59E0B;
+      color: #b9c7d9;
+      letter-spacing: 0.01em;
     }
-    .badge i {
-      color: #F59E0B;
-      margin-right: 0.5rem;
+
+    /* Terms Grid & Cards */
+    .terms-section {
+      background: #0b1120;
+      border: 1px solid #1e293b;
+      border-radius: 1.25rem;
+      padding: 1.8rem 2rem;
+      margin-bottom: 2rem;
+      transition: all 0.2s ease;
     }
-    h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #F59E0B;
-      margin: 2rem 0 1rem 0;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #334155;
-    }
-    h3 {
-      font-size: 1.2rem;
+
+    .terms-section h2 {
+      font-size: 1.35rem;
       font-weight: 600;
-      color: #CBD5E1;
-      margin: 1.5rem 0 0.75rem 0;
+      color: #f0f4fe;
+      border-left: 4px solid #3b82f6;
+      padding-left: 1rem;
+      margin-bottom: 1.25rem;
     }
-    p, li {
-      color: #CBD5E1;
+
+    .terms-section p, .terms-section li {
+      color: #cbd5e6;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
     }
-    .terms-list {
+
+    .terms-section ul {
       list-style: none;
-      padding: 0;
+      padding-left: 0.5rem;
     }
-    .terms-list li {
-      margin-bottom: 1.5rem;
-      padding-left: 1.5rem;
+
+    .terms-section li {
+      padding-left: 1.4rem;
       position: relative;
+      margin-bottom: 0.6rem;
     }
-    .terms-list li strong {
-      color: #F59E0B;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .terms-list li::before {
-      content: "▹";
+
+    .terms-section li::before {
+      content: "—";
       position: absolute;
       left: 0;
-      color: #F59E0B;
+      color: #3b82f6;
+      font-weight: 500;
     }
-    .example-box {
-      background: #1E293B;
-      border-left: 4px solid #F59E0B;
-      padding: 1rem 1.5rem;
-      margin: 1rem 0;
-      border-radius: 0.75rem;
-      font-size: 0.95rem;
+
+    .example-card {
+      background: #0f172a;
+      border-left: 4px solid #3b82f6;
+      border-radius: 0.9rem;
+      padding: 1rem 1.25rem;
+      margin: 1.2rem 0 0.5rem 0;
+      font-size: 0.9rem;
+      color: #e0e7ff;
     }
-    .highlight {
-      color: #F59E0B;
-      font-weight: 600;
-    }
-    .contact-note {
-      background: #1E293B;
-      padding: 1.5rem;
-      border-radius: 1rem;
-      margin-top: 2rem;
-      text-align: center;
-    }
-    .contact-note a {
-      color: #F59E0B;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .contact-note a:hover {
-      text-decoration: underline;
-    }
+
     hr {
-      border-color: #334155;
-      margin: 1.5rem 0;
+      border: none;
+      height: 1px;
+      background: #1e2a3e;
+      margin: 1.2rem 0;
     }
-    @media (max-width: 640px) {
-      .container {
-        padding: 1.5rem;
+
+    /* Client Agreement - Professional */
+    .client-agreement {
+      background: #0f172a;
+      border: 1px solid #2d3a5e;
+      border-radius: 1.25rem;
+      padding: 2rem;
+      margin: 2rem 0 1.5rem;
+    }
+
+    .client-agreement h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+
+    .agreement-line {
+      background: #111827;
+      border-radius: 0.75rem;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+      border: 1px solid #25324b;
+      font-family: monospace;
+      font-size: 0.9rem;
+      color: #b9c7d9;
+    }
+
+    .checkbox-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin: 1.5rem 0 1rem;
+      padding: 0.75rem 0;
+      border-top: 1px solid #1e2a3e;
+      border-bottom: 1px solid #1e2a3e;
+    }
+
+    .checkbox-line input {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: #3b82f6;
+    }
+
+    .contact-button {
+      display: inline-block;
+      background: #3b82f6;
+      color: white;
+      font-weight: 600;
+      padding: 0.7rem 1.5rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.3px;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contact-button:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #5c6f8c;
+      margin-top: 2.5rem;
+      border-top: 1px solid #1e293b;
+      padding-top: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .terms-section {
+        padding: 1.2rem 1.2rem;
       }
-      h1 {
-        font-size: 1.8rem;
+      .legal-title {
+        font-size: 1.7rem;
       }
     }
   </style>
 </head>
 <body>
 <div class="container">
-  <h1>📜 Terms & Client Agreement</h1>
-  <div class="subhead">Clear, transparent terms for web design, reel editing, and Tally printing services</div>
-
-  <div class="service-badges">
-    <div class="badge"><i class="fas fa-code"></i> Web Design</div>
-    <div class="badge"><i class="fas fa-video"></i> Reel Editing</div>
-    <div class="badge"><i class="fas fa-print"></i> Tally Printing</div>
+  
+  <!-- Header without emojis -->
+  <div class="legal-header">
+    <div class="legal-title">Client Terms & Agreement</div>
+    <div class="legal-subtitle">Clear, enforceable terms for web design, reel editing, and Tally printing — last updated May 2026</div>
   </div>
 
-  <h2>1. Web Design Services</h2>
-  <p>Zingsite provides website design, hosting, content editing, and maintenance as per selected plan. Delivery within 5–7 working days after receiving all content from client.</p>
-
-  <h2>2. Reel Editing Services</h2>
-  <p>You shoot raw footage, we edit including SEO captions and custom thumbnails. Delivery within 3 working days of receiving footage. Reels are delivered via WhatsApp or Google Drive.</p>
-
-  <h2>3. Tally Voucher Printing</h2>
-  <p>We print vouchers exactly as they appear in your Tally data. We do not modify or verify accounting entries. Delivery within 1-2 working days after receiving data. Client is responsible for data accuracy before sending.</p>
-
-  <h2>4. Payment Terms</h2>
-  <ul>
-    <li>Web setup fees due before work begins.</li>
-    <li>Monthly retainer due by 1st of each month.</li>
-    <li>Work will pause if payment is delayed beyond 3 days.</li>
-    <li>Tally printing: full payment before dispatch.</li>
-    <li>Reel editing: monthly advance payment required.</li>
-    <li>All payments are upfront and non-refundable as per Section 5 below.</li>
-  </ul>
-
-  <h2>5. Refund Policy</h2>
-  <ul>
-    <li><strong>Setup Fee:</strong> Non-refundable once work has begun.</li>
-    <li><strong>Monthly Retainer:</strong> Non-refundable. No partial refunds for unused days.</li>
-    <li><strong>Semi-Annual Plan:</strong> Non-refundable after 15 days from plan start date.</li>
-    <li><strong>Annual Plan:</strong> Non-refundable after 30 days (1 month) of service.</li>
-    <li><strong>Reel Editing:</strong> No refunds for completed reels.</li>
-    <li><strong>Tally Printing:</strong> No refunds after printing has started.</li>
-  </ul>
-
-  <h2>6. Content & Data Responsibility</h2>
-  <p>Client is responsible for providing accurate content (text, images, logo) for websites. For Tally printing, client is solely responsible for data accuracy before sending files. Zingsite is not liable for errors originating from client-provided data.</p>
-
-  <h2>7. Cancellation Policy</h2>
-  <ul>
-    <li><strong>Web Plans:</strong> 15 days written notice via WhatsApp before next renewal date. Setup fee is non-refundable after work begins. No partial refunds for unused months.</li>
-    <li><strong>Reel Editing:</strong> Cancel anytime with 7 days notice.</li>
-    <li><strong>Tally Printing:</strong> No cancellation once printing process begins.</li>
-    <li>Clients who return after cancellation will not be charged the setup fee again (web plans only).</li>
-  </ul>
-
-  <h2>8. Hosting & Ownership</h2>
-  <p>Websites are hosted on Zingsite's infrastructure as part of the monthly retainer. If retainer is cancelled, the live website goes offline. All client-provided content (text, images, logo) remains the client's property. Domain can be transferred to client upon request after cancellation.</p>
-
-  <h2>9. Switching from Monthly to One-Time Plan</h2>
-  <p>If a client initially chooses a Monthly Plan and later wishes to switch to the One-Time Build + Annual Maintenance Plan, the following applies:</p>
-  <ul>
-    <li>The setup fee already paid for the Monthly Plan will be credited toward the One-Time Plan's setup fee.</li>
-    <li>The client must pay the <strong>difference</strong>: One-Time Setup Fee minus Monthly Setup Fee.</li>
-    <li>Annual Maintenance fee applies separately as per the One-Time Plan.</li>
-    <li>This switch can be requested anytime via WhatsApp.</li>
-    <li><strong>The new plan takes effect immediately upon payment of the remaining difference.</strong></li>
-  </ul>
-  <div class="example-box">
-    <strong>📌 Example:</strong><br>
-    Basic Monthly setup paid: ₹4,999<br>
-    Basic One-Time setup fee: ₹7,000<br>
-    <strong>Amount due at switch: ₹2,001</strong>
+  <div class="service-tags">
+    <span class="tag">Web Design</span>
+    <span class="tag">Reel Editing</span>
+    <span class="tag">Tally Printing</span>
+    <span class="tag">Monthly / One‑Time</span>
   </div>
 
-  <h2>10. Plan Upgrades (Monthly to Higher Monthly)</h2>
-  <p>Upgrading from one monthly plan to another requires a one-time upgrade fee:</p>
-  <ul>
-    <li>Basic → Standard: ₹2,500</li>
-    <li>Basic → Professional: ₹5,000</li>
-    <li>Standard → Professional: ₹2,500</li>
-  </ul>
-  <p>New monthly retainer applies from the next billing cycle.</p>
+  <!-- Terms Sections (clean, no emojis) -->
+  <div class="terms-section">
+    <h2>1. Web Design Services</h2>
+    <p>Zingsite provides website design, hosting, content editing, and maintenance as per selected plan. Delivery occurs within 5–7 working days after receiving all required content from the client.</p>
+  </div>
 
-  <h2>11. Limitation of Liability</h2>
-  <p>Zingsite is not liable for loss of business, revenue, or data due to website downtime, hosting issues, printing errors arising from client-provided data, or third-party service interruptions.</p>
+  <div class="terms-section">
+    <h2>2. Reel Editing Services</h2>
+    <p>You provide raw footage; we deliver professionally edited reels including SEO captions and custom thumbnails. Delivery within 3 working days of receiving footage. Reels are shared via WhatsApp or Google Drive.</p>
+  </div>
 
-  <h2>12. Confidentiality</h2>
-  <p>We will never share your business information, Tally files, website content, or contact details with any third party without your explicit consent.</p>
+  <div class="terms-section">
+    <h2>3. Tally Voucher Printing</h2>
+    <p>We print vouchers exactly as they appear in your Tally data. We do not modify or verify accounting entries. Delivery within 1–2 working days after receiving data. Client bears full responsibility for data accuracy before sending.</p>
+  </div>
 
-  <h2>13. Portfolio Rights</h2>
-  <p>Zingsite reserves the right to showcase your website, sample work, or case studies as part of our portfolio unless you request otherwise in writing via WhatsApp.</p>
+  <div class="terms-section">
+    <h2>4. Payment Terms — All Payments Are Upfront</h2>
+    <ul>
+      <li>Web setup fees are due before any work begins.</li>
+      <li>Monthly retainer is due on or before the 1st of each month.</li>
+      <li>Work will pause if payment is delayed beyond 3 days.</li>
+      <li>Tally printing: full payment required before dispatch.</li>
+      <li>Reel editing: monthly advance payment is mandatory.</li>
+    </ul>
+  </div>
 
-  <hr>
+  <div class="terms-section">
+    <h2>5. Refund Policy</h2>
+    <ul>
+      <li><strong>Setup fee:</strong> Non-refundable once work has begun.</li>
+      <li><strong>Monthly retainer:</strong> Non-refundable. No partial refunds for unused days.</li>
+      <li><strong>Semi-annual plan:</strong> Non-refundable after 15 days from start date.</li>
+      <li><strong>Annual plan:</strong> Non-refundable after 30 days of service.</li>
+      <li><strong>Reel editing:</strong> No refunds for completed reels.</li>
+      <li><strong>Tally printing:</strong> No refunds after printing has started.</li>
+    </ul>
+  </div>
 
-  <h2>📄 Client Agreement</h2>
-  <p>By submitting the contact form on our website or sending payment, you confirm that you have read, understood, and agreed to all the terms and conditions stated above. You will receive a WhatsApp confirmation — please save it as a screenshot or PDF as your proof of agreement.</p>
+  <div class="terms-section">
+    <h2>6. Content & Data Responsibility</h2>
+    <p>Client is responsible for providing accurate content (text, images, logo) for websites. For Tally printing, client is solely responsible for data accuracy before sending files. Zingsite is not liable for errors originating from client-provided data.</p>
+  </div>
 
-  <div class="contact-note">
-    <i class="fas fa-envelope" style="color: #F59E0B; margin-right: 0.5rem;"></i> For questions or to request changes to these terms, WhatsApp us at <a href="https://wa.me/918828685342" target="_blank">+91 88286 85342</a>
+  <div class="terms-section">
+    <h2>7. Cancellation Policy</h2>
+    <ul>
+      <li><strong>Web plans:</strong> 15 days written notice via WhatsApp before next renewal date. Setup fee is non-refundable after work begins. No partial refunds for unused months.</li>
+      <li><strong>Reel editing:</strong> Cancel anytime with 7 days notice.</li>
+      <li><strong>Tally printing:</strong> No cancellation once printing process begins.</li>
+      <li>Clients who return after web plan cancellation will not be charged the setup fee again.</li>
+    </ul>
+  </div>
+
+  <div class="terms-section">
+    <h2>8. Hosting & Ownership</h2>
+    <p>Websites are hosted on Zingsite's infrastructure as part of the monthly retainer. If the retainer is cancelled, the live website goes offline. All client-provided content remains client property. The domain can be transferred upon request after cancellation.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2>9. Switching from Monthly to One‑Time Plan</h2>
+    <p>If a client initially chooses a Monthly Plan and later wishes to switch to a One-Time Build + Annual Maintenance Plan:</p>
+    <ul>
+      <li>The setup fee already paid for the Monthly Plan will be credited toward the One-Time Plan’s setup fee.</li>
+      <li>The client must pay the difference: One‑Time Setup Fee minus Monthly Setup Fee.</li>
+      <li>Annual Maintenance fee applies separately as per the One‑Time Plan.</li>
+      <li>Switch can be requested anytime via WhatsApp.</li>
+      <li>The new plan takes effect immediately upon payment of the remaining difference.</li>
+    </ul>
+    <div class="example-card">
+      <strong>Example – Basic Plan:</strong><br>
+      Monthly setup paid: ₹4,999<br>
+      One‑Time setup fee: ₹7,000<br>
+      Amount due at switch: <strong>₹2,001</strong>
+    </div>
+  </div>
+
+  <div class="terms-section">
+    <h2>10. Plan Upgrades (Monthly to Higher Monthly)</h2>
+    <ul>
+      <li>Basic → Standard: ₹2,500</li>
+      <li>Basic → Professional: ₹5,000</li>
+      <li>Standard → Professional: ₹2,500</li>
+    </ul>
+    <p>New monthly retainer applies from the next billing cycle.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2>11. Limitation of Liability</h2>
+    <p>Zingsite is not liable for any loss of business, revenue, or data due to website downtime, hosting issues, printing errors arising from client‑provided data, or third‑party service interruptions.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2>12. Confidentiality</h2>
+    <p>We will never share your business information, Tally files, website content, or contact details with any third party without your explicit consent.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2>13. Portfolio Rights</h2>
+    <p>Zingsite reserves the right to showcase your website, sample work, or case studies as part of our portfolio unless you request otherwise in writing via WhatsApp.</p>
+  </div>
+
+  <div class="terms-section">
+    <h2>14. Governing Law</h2>
+    <p>These terms shall be governed by and construed in accordance with the laws of Maharashtra, India. Any disputes arising shall be subject to the exclusive jurisdiction of the courts in Mumbai, Maharashtra.</p>
+  </div>
+
+  <!-- PROFESSIONAL CLIENT AGREEMENT -->
+  <div class="client-agreement">
+    <h3>Client Agreement & Acknowledgment</h3>
+    <p style="margin-top: 0.5rem; color: #9ca9c5;">By proceeding, you confirm that you have read, understood, and accepted all the terms above.</p>
+    
+    <div class="agreement-line">
+      “I have read the Zingsite Terms & Client Agreement and agree to be bound by the payment, cancellation, and switching policies.”
+    </div>
+
+    <div class="checkbox-line">
+      <input type="checkbox" id="legalAgreeCheckbox">
+      <label for="legalAgreeCheckbox" style="color: #e2e8f0; font-size: 0.9rem;">I confirm my acceptance of these terms. I understand that setup fees are non‑refundable once work begins and that monthly retainers are non‑refundable.</label>
+    </div>
+
+    <p style="font-size: 0.85rem; margin: 1rem 0 0.2rem; color: #98a9c7;">To proceed with any service, WhatsApp us with your confirmation and selected plan.</p>
+    <a href="https://wa.me/918828685342" class="contact-button" style="display: inline-block; margin-top: 0.75rem;">Contact via WhatsApp →</a>
+  </div>
+
+  <div class="footer-note">
+    Zingsite — Mumbai • All agreements confirmed via WhatsApp. You will receive a written confirmation PDF/screenshot upon request.
   </div>
 </div>
 </body>
